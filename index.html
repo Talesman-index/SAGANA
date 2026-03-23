@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAGANA — Agence Digitale Premium</title>
+  <meta name="description" content="SAGANA accompagne les entreprises ambitieuses dans la conception, le développement et la croissance de leurs produits numériques." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="bg-base text-main antialiased selection:bg-accent selection:text-white">
+
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 inset-x-0 z-50 px-4 sm:px-6 lg:px-12 py-4" id="navbar">
+    <div class="max-w-[1440px] mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full border-2 border-brand-lime flex items-center justify-center">
+            <div class="w-4 h-4 rounded-full bg-brand-lime"></div>
+        </div>
+        <a href="#hero" class="font-sans font-bold text-xl tracking-tight text-white uppercase">SAGANA</a>
+      </div>
+      
+      <ul class="hidden lg:flex items-center gap-8 font-sans text-[13px] font-semibold text-white/70 uppercase tracking-widest">
+        <li><a href="#hero" class="hover:text-white transition-colors">Accueil</a></li>
+        <li><a href="#about-company" class="hover:text-white transition-colors">À propos de nous</a></li>
+        <li><a href="#capabilities" class="hover:text-white transition-colors">Services</a></li>
+        <li><a href="#process" class="hover:text-white transition-colors">Process</a></li>
+        <li><a href="#testimonials" class="hover:text-white transition-colors">Réalisation</a></li>
+        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+      </ul>
+      
+      <div class="hidden lg:block">
+        <a href="#contact" class="btn-brand-lime px-6 py-3 text-[13px] group">
+          Prendre rendez-vous
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="ml-2 stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <button class="lg:hidden p-2 text-white" id="navToggle" aria-label="Menu">
+        <span class="block w-6 h-[2px] bg-current mb-[5px] transition-transform"></span>
+        <span class="block w-6 h-[2px] bg-current transition-transform"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-24 overflow-hidden bg-main" id="hero">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0">
+        <img src="/images/african-american-man-and-woman-sit-at-a-stylish-ho-2026-01-11-10-58-43-utc.jpg" alt="Meeting" class="w-full h-full object-cover">
+        <div class="hero-overlay"></div>
+        <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+
+    <div class="relative z-10 max-w-[1440px] mx-auto w-full pt-20">
+      <div class="max-w-4xl reveal">
+        <!-- Top Small Text -->
+          <span class="inline-flex items-center px-4 py-2 rounded-full bg-brand-lime/10 border border-brand-lime/20 text-brand-lime text-[10px] font-bold uppercase tracking-widest mb-8 reveal">
+            +15 projets réalisés • 100% de satisfaction • Accompagnement sur mesure
+          </span>
+        
+        <!-- Headline -->
+        <h1 class="font-sans text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.95] font-bold tracking-tight text-white mb-10 lg:mb-14">
+          Nous concevons, développons <br class="hidden lg:block">
+          et faisons grandir les <br class="hidden lg:block">
+          produits digitaux.
+        </h1>
+        
+        <!-- Subtext -->
+        <p class="text-white/70 text-xl lg:text-2xl leading-relaxed mb-12 lg:mb-20 max-w-2xl">
+            SAGANA accompagne les entreprises ambitieuses avec une approche alliant design, technologie et croissance.
+        </p>
+        
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-6">
+          <a href="#contact" class="btn-brand-lime px-10 py-5 text-lg group w-fit">
+            Prendre rendez-vous
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="ml-3 stroke-current stroke-2 group-hover:translate-x-2 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="#testimonials" class="px-10 py-5 text-lg font-bold text-white border border-white/20 rounded-full hover:bg-white/10 transition-all">
+            Voir nos réalisations
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PHILOSOPHY & CLARITY SECTION -->
+  <section class="py-24 bg-white overflow-hidden" id="about">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-12 text-center">
+      <h2 class="font-sans text-xl sm:text-2xl text-main/80 max-w-4xl mx-auto leading-relaxed mb-16 reveal">
+        Nous filtrons le bruit pour nous concentrer sur l'essentiel. <br class="hidden sm:block">
+        Nous apportons la clarté nécessaire pour faire rayonner votre entreprise.
+      </h2>
+
+      <!-- Floating Tag Cloud -->
+      <div class="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-5xl mx-auto reveal reveal-delay-1">
+        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Quels sont les risques à anticiper ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Comment optimiser ma rentabilité ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Quel canal d'acquisition privilégier ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Le marché est-il prêt pour mon produit ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Comment me différencier de la concurrence ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Qui est mon client idéal ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Comment accélérer ma croissance ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Quel capital pour mon expansion ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Comment structurer mes opérations ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Quelle est ma vision à long terme ?</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE GRID SECTION -->
+  <section class="bg-brand-beige/50 border-t border-black/5" id="features">
+    <div class="max-w-[1440px] mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 divide-x divide-black/5 divide-dashed border-b border-black/5 border-dashed">
+        <!-- Feature 1 -->
+        <div class="p-10 lg:p-16 flex flex-col gap-8 reveal">
+          <div class="text-accent">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" class="stroke-current stroke-1"><circle cx="20" cy="20" r="8"/><circle cx="44" cy="20" r="8"/><circle cx="20" cy="44" r="8"/><circle cx="44" cy="44" r="8"/><circle cx="20" cy="20" r="4"/><circle cx="44" cy="20" r="4"/><circle cx="20" cy="44" r="4"/><circle cx="44" cy="44" r="4"/></svg>
+          </div>
+          <div>
+            <h3 class="font-sans font-bold text-2xl mb-4">Simplicité radicale</h3>
+            <p class="text-main/70 leading-relaxed font-medium">Pas de jargon. Des étapes claires pour lancer et faire croître votre entreprise en toute confiance.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="p-10 lg:p-16 flex flex-col gap-8 reveal reveal-delay-1">
+          <div class="text-accent">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" class="stroke-current stroke-1"><path d="M12 40a20 20 0 0 1 40 0"/><path d="M16 40a16 16 0 0 1 32 0"/><path d="M20 40a12 12 0 0 1 24 0"/><path d="M24 40a8 8 0 0 1 16 0"/><path d="M28 40a4 4 0 0 1 8 0"/></svg>
+          </div>
+          <div>
+            <h3 class="font-sans font-bold text-2xl mb-4">Résultats concrets</h3>
+            <p class="text-main/70 leading-relaxed font-medium">Chaque stratégie est pensée pour accélérer votre lancement et maximiser vos profits.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="p-10 lg:p-16 flex flex-col gap-8 reveal reveal-delay-2">
+          <div class="text-accent">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" class="stroke-current stroke-1"><circle cx="32" cy="32" r="20"/><circle cx="32" cy="32" r="16"/><circle cx="32" cy="32" r="12"/><circle cx="32" cy="32" r="8"/><circle cx="32" cy="32" r="4"/></svg>
+          </div>
+          <div>
+            <h3 class="font-sans font-bold text-2xl mb-4">Expertise éprouvée</h3>
+            <p class="text-main/70 leading-relaxed font-medium">Notre expérience multisectorielle nous permet d'apporter des solutions pratiques et durables.</p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="p-10 lg:p-16 flex flex-col gap-8 reveal reveal-delay-3">
+          <div class="text-accent">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" class="stroke-current stroke-1"><path d="M32 12v40M12 32h40"/><circle cx="32" cy="32" r="20"/><circle cx="32" cy="32" r="15"/><circle cx="32" cy="32" r="10"/></svg>
+          </div>
+          <div>
+            <h3 class="font-sans font-bold text-2xl mb-4">Partenaire durable</h3>
+            <p class="text-main/70 leading-relaxed font-medium">De l'idée initiale au passage à l'échelle, nous vous accompagnons à chaque étape stratégique.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT COMPANY SECTION (Dark) -->
+  <section class="py-24 bg-main text-white" id="about-company">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-24">
+      <!-- Breadcrumb Label -->
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-32">
+          <div class="reveal">
+            <div class="flex items-center gap-3 mb-8">
+              <div class="w-1.5 h-1.5 bg-brand-lime rounded-full"></div>
+              <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">L'Agence</span>
+            </div>
+            
+            <h2 class="section-heading mb-4">SAGANA</h2>
+            <h3 class="text-2xl lg:text-3xl font-bold text-white mb-8 border-l-2 border-brand-lime pl-6">
+              L'architecture de votre <br> <span class="text-brand-lime">croissance digitale.</span>
+            </h3>
+            
+            <p class="text-white/40 text-lg leading-relaxed mb-10 max-w-xl font-medium">
+              Plus de <span class="text-white font-bold">15 entreprises</span> accompagnées, <span class="text-white font-bold">25 stratégies</span> sur mesure et une présence dans <span class="text-white font-bold">2 pays</span>. Nous construisons des systèmes qui durent.
+            </p>
+            
+            <div class="flex flex-wrap gap-4 mb-12">
+                <div class="px-5 py-3 bg-white/5 border border-white/10 rounded-2xl text-[10px] font-bold uppercase tracking-widest text-white/60">Performance</div>
+                <div class="px-5 py-3 bg-white/5 border border-white/10 rounded-2xl text-[10px] font-bold uppercase tracking-widest text-white/60">Transparence</div>
+                <div class="px-5 py-3 bg-white/5 border border-white/10 rounded-2xl text-[10px] font-bold uppercase tracking-widest text-white/60">Innovation</div>
+            </div>
+
+            <a href="#contact" class="btn-brand-lime px-8 py-4 text-sm group">
+              Notre Approche
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="ml-2 stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        <div class="reveal reveal-delay-2 relative flex items-center justify-center">
+            <div class="glass-orb-container scale-125 lg:scale-150">
+                <div class="glass-orb-glow"></div>
+                <div class="glass-orb-ring"></div>
+                <div class="glass-orb"></div>
+                <!-- Additional floating particles for depth -->
+                <div class="absolute w-4 h-4 rounded-full bg-brand-lime/40 blur-sm top-0 left-10 animation-float-slow"></div>
+                <div class="absolute w-2 h-2 rounded-full bg-white/40 blur-[1px] bottom-10 right-0 animation-float"></div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Value Grid (Three Columns) -->
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Value 1 -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-10 reveal">
+          <div class="text-brand-lime mb-8 flex items-center gap-3">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 2v20M2 12h20"/><path d="m4.93 4.93 14.14 14.14"/><path d="m4.93 19.07 14.14-14.14"/></svg>
+            <h3 class="font-sans font-bold text-xl">Sur-mesure</h3>
+          </div>
+          <p class="text-white/50 leading-relaxed">Pas de solutions génériques. Chaque projet est façonné selon vos objectifs précis.</p>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-10 reveal reveal-delay-1">
+          <div class="text-brand-lime mb-8 flex items-center gap-3">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.5-1 1-4c2 1 2 1 4 4z"/><path d="M12 15v5c-3-2-3-2-4-4z"/></svg>
+            <h3 class="font-sans font-bold text-xl">Impact direct</h3>
+          </div>
+          <p class="text-white/50 leading-relaxed">Nous privilégions les actions qui génèrent de la valeur immédiate pour votre business.</p>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-10 reveal reveal-delay-2">
+          <div class="text-brand-lime mb-8 flex items-center gap-3">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            <h3 class="font-sans font-bold text-xl">Proximité</h3>
+          </div>
+          <p class="text-white/50 leading-relaxed">Une communication fluide et transparente pour avancer ensemble, sans friction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS SECTION (Dark) -->
+  <section class="py-32 bg-main text-white border-t border-white/5" id="metrics">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-24">
+      <div class="grid lg:grid-cols-2 gap-24 items-center reveal">
+        <div>
+            <h2 class="font-sans text-[clamp(2.5rem,6vw,4.5rem)] font-bold tracking-tight leading-none mb-10">
+                Les chiffres parlent d'eux-mêmes — <br>
+                vous êtes entre de <span class="text-brand-lime italic">bonnes mains</span>.
+            </h2>
+            <p class="text-xl text-white/50 max-w-md leading-relaxed">
+                Une trajectoire de succès bâtie sur un impact mesurable, une précision stratégique et un dévouement total à l'excellence.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-12 sm:gap-20">
+            <div class="reveal reveal-delay-1 border-l border-white/10 pl-8 py-4">
+              <div class="font-sans text-6xl sm:text-8xl font-bold text-white mb-4 counter" data-target="2">0</div>
+              <p class="text-white/40 font-sans font-bold tracking-[0.2em] uppercase text-xs">Années d'exp.</p>
+            </div>
+            <div class="reveal reveal-delay-2 border-l border-white/10 pl-8 py-4">
+              <div class="font-sans text-6xl sm:text-8xl font-bold text-white mb-4 counter" data-target="100">0</div>
+              <p class="text-white/40 font-sans font-bold tracking-[0.2em] uppercase text-xs">Satisfaction %</p>
+            </div>
+            <div class="reveal reveal-delay-3 border-l border-white/10 pl-8 py-4">
+              <div class="font-sans text-6xl sm:text-8xl font-bold text-white mb-4 counter" data-target="35">0</div>
+              <p class="text-white/40 font-sans font-bold tracking-[0.2em] uppercase text-xs">Projets livrés</p>
+            </div>
+            <div class="reveal reveal-delay-4 border-l border-white/10 pl-8 py-4">
+              <div class="font-sans text-6xl sm:text-8xl font-bold text-white mb-4 counter" data-target="4">0</div>
+              <p class="text-white/40 font-sans font-bold tracking-[0.2em] uppercase text-xs">Pays atteints</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES / SERVICES (Stacking Cards) -->
+  <section class="py-32 bg-main text-white relative" id="capabilities">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-24">
+      
+      <div class="mb-32 reveal">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-2 h-2 bg-brand-lime"></div>
+          <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Nos Expertises</span>
+        </div>
+        <h2 class="font-sans text-[clamp(2.5rem,8vw,4.5rem)] font-bold tracking-tight leading-[1.1] mb-12 max-w-5xl">
+          Plus besoin de multiplier les experts. <br>
+          <span class="text-brand-lime">Nous maîtrisons tout</span>, pour que vous puissiez vous concentrer sur l'essentiel.
+        </h2>
+      </div>
+
+      <div class="sticky-card-container">
+        <!-- Card 1: Développement Web -->
+        <div class="sticky-card top-32">
+          <div class="card-light flex flex-col gap-12 lg:gap-16 min-h-[70vh] justify-center">
+            <!-- Row 1: Header -->
+            <div class="flex items-start gap-8 lg:gap-12">
+              <div class="w-20 h-20 lg:w-24 lg:h-24 bg-main/5 rounded-2xl flex items-center justify-center shrink-0">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="stroke-main stroke-[1.5]"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+              </div>
+              <div class="flex-1 pt-2">
+                <h3 class="font-sans text-4xl lg:text-5xl font-bold mb-4 text-main">Développement Web</h3>
+                <p class="text-xl text-main/60 leading-relaxed max-w-2xl">Plateformes robustes et performantes, pensées pour l'expérience utilisateur et la conversion.</p>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="h-[1px] bg-main/10 w-full"></div>
+
+            <!-- Row 2: Body -->
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+              <div class="rounded-3xl overflow-hidden aspect-[16/9] lg:aspect-auto">
+                <img src="/images/young-black-man-collaborating-with-colleagues-in-m-2026-01-21-02-38-50-utc.jpg" alt="Web Dev" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+              </div>
+              <div class="flex flex-col h-full justify-between py-2">
+                <ul class="space-y-4">
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">01 STRATÉGIE TECHNIQUE</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">02 ARCHITECTURE NEXT.JS</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">03 OPTIMISATION PERFORMANCE</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">04 E-COMMERCE HEADLESS</li>
+                </ul>
+                <a href="#contact" class="group flex items-center gap-3 text-main font-bold mt-12 hover:text-accent transition-colors">
+                  Découvrir le service
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Développement Mobile -->
+        <div class="sticky-card sm:top-36 top-24">
+          <div class="card-light flex flex-col gap-12 lg:gap-16 min-h-[70vh] justify-center">
+            <div class="flex items-start gap-8 lg:gap-12">
+              <div class="w-20 h-20 lg:w-24 lg:h-24 bg-main/5 rounded-2xl flex items-center justify-center shrink-0">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="stroke-main stroke-[1.5]"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              </div>
+              <div class="flex-1 pt-2">
+                <h3 class="font-sans text-4xl lg:text-5xl font-bold mb-4 text-main">Développement Mobile</h3>
+                <p class="text-xl text-main/60 leading-relaxed max-w-2xl">Applications natives et hybrides intuitives pour connecter votre marque à vos utilisateurs partout.</p>
+              </div>
+            </div>
+            <div class="h-[1px] bg-main/10 w-full"></div>
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+              <div class="rounded-3xl overflow-hidden aspect-[16/9] lg:aspect-auto">
+                <img src="/images/african-american-man-and-woman-sit-at-a-stylish-ho-2026-01-11-10-58-43-utc.jpg" alt="Mobile Dev" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+              </div>
+              <div class="flex flex-col h-full justify-between py-2">
+                <ul class="space-y-4">
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">01 DESIGN MOBILE-FIRST</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">02 REACT NATIVE & FLUTTER</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">03 INTÉGRATION API</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">04 MAINTENANCE PROACTIVE</li>
+                </ul>
+                <a href="#contact" class="group flex items-center gap-3 text-main font-bold mt-12 hover:text-accent transition-colors">
+                  Découvrir le service
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Design UI/UX -->
+        <div class="sticky-card sm:top-40 top-28">
+          <div class="card-light flex flex-col gap-12 lg:gap-16 min-h-[70vh] justify-center">
+            <div class="flex items-start gap-8 lg:gap-12">
+              <div class="w-20 h-20 lg:w-24 lg:h-24 bg-main/5 rounded-2xl flex items-center justify-center shrink-0">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="stroke-main stroke-[1.5]"><path d="M12 20h9"/><path d="m16.5 3.5 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+              </div>
+              <div class="flex-1 pt-2">
+                <h3 class="font-sans text-4xl lg:text-5xl font-bold mb-4 text-main">Design UI/UX</h3>
+                <p class="text-xl text-main/60 leading-relaxed max-w-2xl">Interfaces mémorables qui racontent une histoire et simplifient le parcours de vos clients.</p>
+              </div>
+            </div>
+            <div class="h-[1px] bg-main/10 w-full"></div>
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+              <div class="rounded-3xl overflow-hidden aspect-[16/9] lg:aspect-auto">
+                <img src="/images/portrait-of-smiling-businessman-working-in-busy-mo-2026-03-10-04-50-52-utc.jpg" alt="UX Design" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+              </div>
+              <div class="flex flex-col h-full justify-between py-2">
+                <ul class="space-y-4">
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">01 RECHERCHE UTILISATEUR</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">02 PROTOTYPAGE INTERACTIF</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">03 DESIGN SYSTEMS</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">04 AUDITS D'ACCESSIBILITÉ</li>
+                </ul>
+                <a href="#contact" class="group flex items-center gap-3 text-main font-bold mt-12 hover:text-accent transition-colors">
+                  Découvrir le service
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: SEO & Performance -->
+        <div class="sticky-card sm:top-44 top-32">
+          <div class="card-light flex flex-col gap-12 lg:gap-16 min-h-[70vh] justify-center">
+            <div class="flex items-start gap-8 lg:gap-12">
+              <div class="w-20 h-20 lg:w-24 lg:h-24 bg-main/5 rounded-2xl flex items-center justify-center shrink-0">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="stroke-main stroke-[1.5]"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              </div>
+              <div class="flex-1 pt-2">
+                <h3 class="font-sans text-4xl lg:text-5xl font-bold mb-4 text-main">SEO & Performance</h3>
+                <p class="text-xl text-main/60 leading-relaxed max-w-2xl">Dominez les moteurs de recherche avec une vitesse de chargement fulgurante et un contenu optimisé.</p>
+              </div>
+            </div>
+            <div class="h-[1px] bg-main/10 w-full"></div>
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+              <div class="rounded-3xl overflow-hidden aspect-[16/9] lg:aspect-auto">
+                <img src="/images/positive-black-man-is-sitting-business-people-are-2026-01-09-10-35-01-utc.JPG" alt="SEO" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+              </div>
+              <div class="flex flex-col h-full justify-between py-2">
+                <ul class="space-y-4">
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">01 AUDIT TECHNIQUE COMPLET</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">02 STRATÉGIE DE CONTENU</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">03 NETLINKING QUALITATIF</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">04 CORE WEB VITALS</li>
+                </ul>
+                <a href="#contact" class="group flex items-center gap-3 text-main font-bold mt-12 hover:text-accent transition-colors">
+                  Découvrir le service
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Branding & Stratégie -->
+        <div class="sticky-card sm:top-48 top-36">
+          <div class="card-light flex flex-col gap-12 lg:gap-16 min-h-[70vh] justify-center">
+            <div class="flex items-start gap-8 lg:gap-12">
+              <div class="w-20 h-20 lg:w-24 lg:h-24 bg-main/5 rounded-2xl flex items-center justify-center shrink-0">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="stroke-main stroke-[1.5]"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16v.01"/></svg>
+              </div>
+              <div class="flex-1 pt-2">
+                <h3 class="font-sans text-4xl lg:text-5xl font-bold mb-4 text-main">Branding & Stratégie</h3>
+                <p class="text-xl text-main/60 leading-relaxed max-w-2xl">Nous définissons votre identité unique pour vous démarquer sur un marché saturé.</p>
+              </div>
+            </div>
+            <div class="h-[1px] bg-main/10 w-full"></div>
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+              <div class="rounded-3xl overflow-hidden aspect-[16/9] lg:aspect-auto">
+                <img src="/images/portrait-of-smiling-young-businessman-working-in-b-2026-01-05-23-03-38-utc.jpg" alt="Branding" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+              </div>
+              <div class="flex flex-col h-full justify-between py-2">
+                <ul class="space-y-4">
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">01 IDENTITÉ VISUELLE</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">02 CHARTE GRAPHIQUE</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">03 POSITIONNEMENT</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">04 STORYTELLING</li>
+                </ul>
+                <a href="#contact" class="group flex items-center gap-3 text-main font-bold mt-12 hover:text-accent transition-colors">
+                  Découvrir le service
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Marketing Digital -->
+        <div class="sticky-card sm:top-52 top-40">
+          <div class="card-light flex flex-col gap-12 lg:gap-16 min-h-[70vh] justify-center">
+            <div class="flex items-start gap-8 lg:gap-12">
+              <div class="w-20 h-20 lg:w-24 lg:h-24 bg-main/5 rounded-2xl flex items-center justify-center shrink-0">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="stroke-main stroke-[1.5]"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+              </div>
+              <div class="flex-1 pt-2">
+                <h3 class="font-sans text-4xl lg:text-5xl font-bold mb-4 text-main">Marketing Digital</h3>
+                <p class="text-xl text-main/60 leading-relaxed max-w-2xl">Stratégies d'acquisition pilotées par la donnée pour booster votre retour sur investissement.</p>
+              </div>
+            </div>
+            <div class="h-[1px] bg-main/10 w-full"></div>
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+              <div class="rounded-3xl overflow-hidden aspect-[16/9] lg:aspect-auto">
+                <img src="/images/portrait-of-smiling-businessman-working-in-busy-mo-2026-03-10-04-50-52-utc.jpg" alt="Marketing" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+              </div>
+              <div class="flex flex-col h-full justify-between py-2">
+                <ul class="space-y-4">
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">01 PUBLICITÉ (GOOGLE, META)</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">02 EMAIL AUTOMATION</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">03 INBOUND MARKETING</li>
+                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">04 ANALYSE DE DONNÉES</li>
+                </ul>
+                <a href="#contact" class="group flex items-center gap-3 text-main font-bold mt-12 hover:text-accent transition-colors">
+                  Découvrir le service
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- PROCESS / STEPS SECTION (Dark) -->
+  <!-- ROTATING PROCESS SECTION (Dark) -->
+  <section id="process" class="relative h-[350vh] bg-main overflow-visible">
+    <div class="sticky top-0 h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
+      <!-- Centered Header -->
+      <div id="processHeader" class="absolute inset-x-0 top-1/4 flex flex-col items-center text-center px-6 transition-all duration-500 z-20">
+         <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-white/40 mb-8 lg:mb-12">NOTRE PROCESS</span>
+         <h2 class="font-sans text-[clamp(2rem,6vw,4rem)] font-bold tracking-tight leading-[1.1] max-w-4xl text-white">
+           Le Protocole SAGANA : Votre passage à l'échelle <br class="hidden lg:block"> en 3 phases chirurgicales.
+         </h2>
+      </div>
+
+      <!-- Background Arc -->
+      <div class="absolute inset-0 flex justify-center items-end pointer-events-none">
+        <div class="process-glow" id="processGlow"></div>
+        <div id="processWheel" class="w-[200vw] h-[200vw] lg:w-[130vw] lg:h-[130vw] border-[1px] border-white/5 rounded-full absolute -bottom-[170vw] lg:-bottom-[105vw] transition-transform duration-150 ease-out will-change-transform">
+            <!-- Dynamic Markers -->
+            <div class="wheel-marker" style="transform: rotate(0deg) translateY(0);"><span>01</span></div>
+            <div class="wheel-marker" style="transform: rotate(120deg) translateY(0);"><span>02</span></div>
+            <div class="wheel-marker" style="transform: rotate(240deg) translateY(0);"><span>03</span></div>
+            
+            <!-- Decorative dots -->
+            <div class="absolute top-0 left-1/2 w-1 h-1 bg-white/5 rounded-full" style="transform: rotate(60deg) translateY(-50%); transform-origin: 50% 100%;"></div>
+            <div class="absolute top-0 left-1/2 w-1 h-1 bg-white/5 rounded-full" style="transform: rotate(180deg) translateY(-50%); transform-origin: 50% 100%;"></div>
+            <div class="absolute top-0 left-1/2 w-1 h-1 bg-white/5 rounded-full" style="transform: rotate(300deg) translateY(-50%); transform-origin: 50% 100%;"></div>
+        </div>
+      </div>
+
+      <!-- Active Step Content (Dynamic & Centered) -->
+      <div class="relative z-10 text-center max-w-2xl px-6 opacity-0 translate-y-8 transition-all duration-700" id="stepContent">
+          <div class="flex flex-col items-center">
+              <div class="flex flex-col items-center mb-12">
+                  <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-brand-lime" id="stepLabelDisplay">ÉTAPE 01</span>
+                  <div class="w-[1px] h-16 bg-white/10 my-6"></div>
+                  <div class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center text-xl font-bold text-white bg-white/5" id="stepNumberDisplay">1</div>
+              </div>
+              <h3 class="font-sans text-[clamp(2rem,4vw,3rem)] font-bold text-white mb-6 tracking-tight" id="stepTitleDisplay">Immersion & Stratégie</h3>
+              <p class="text-white/50 text-xl lg:text-2xl leading-relaxed max-w-lg" id="stepDescriptionDisplay">Nous plongeons dans votre univers pour définir une trajectoire claire, robuste et ambitieuse.</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON SECTION (Dark) -->
+  <section class="py-32 lg:py-48 px-4 sm:px-6 lg:px-24 bg-main text-white border-t border-white/5" id="comparison">
+    <div class="max-w-[1000px] mx-auto overflow-hidden">
+      <div class="text-center mb-24 reveal">
+        <h2 class="font-sans text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight mb-6">Côte à côte, le choix est <span class="text-brand-lime">simple</span></h2>
+        <p class="text-white/50 font-sans font-medium">Pourquoi SAGANA est le partenaire privilégié des entreprises ambitieuses.</p>
+      </div>
+      
+      <div class="bg-white/5 rounded-[3rem] border border-white/10 overflow-hidden reveal reveal-delay-1">
+        <div class="grid grid-cols-2 text-center font-sans font-bold text-sm tracking-widest uppercase border-b border-white/10">
+           <div class="p-8 text-white/40">Les Autres</div>
+           <div class="p-8 bg-brand-lime text-main">SAGANA</div>
+        </div>
+        <div class="divide-y divide-white/10 text-white/70">
+          <div class="grid grid-cols-2 text-center text-sm lg:text-base font-medium">
+            <div class="p-8">Frais cachés et devis flous</div>
+            <div class="p-8 text-white font-bold">Transparence totale des prix</div>
+          </div>
+          <div class="grid grid-cols-2 text-center text-sm lg:text-base font-medium">
+            <div class="p-8">Communication lente (emails)</div>
+            <div class="p-8 text-white font-bold">Channel Slack & Updates hebdo</div>
+          </div>
+          <div class="grid grid-cols-2 text-center text-sm lg:text-base font-medium">
+            <div class="p-8">Code obsolète et peu évolutif</div>
+            <div class="p-8 text-white font-bold">Stack moderne (Next.js, Tailwind v4)</div>
+          </div>
+          <div class="grid grid-cols-2 text-center text-sm lg:text-base font-medium">
+            <div class="p-8">Focus sur le design uniquement</div>
+            <div class="p-8 text-white font-bold">Focus sur le ROI et le Business</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS / CASE STUDIES SECTION (Dark) -->
+  <section class="py-32 lg:py-56 px-4 sm:px-6 lg:px-24 bg-main text-white border-t border-white/5" id="testimonials">
+    <div class="max-w-[1440px] mx-auto">
+      <div class="reveal mb-32 max-w-4xl">
+        <div class="flex items-center gap-3 mb-10">
+          <div class="w-1.5 h-1.5 bg-brand-lime rounded-full"></div>
+          <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Nos Réalisations</span>
+        </div>
+        
+        <h2 class="section-heading mb-10">
+          Des projets qui <br>
+          marquent <span class="text-brand-lime italic">notre impact</span>.
+        </h2>
+        <div class="w-20 h-1 bg-brand-lime/20 mb-10"></div>
+        <p class="text-white/40 text-lg lg:text-xl leading-relaxed font-medium max-w-2xl">
+          Nous accompagnons nos partenaires avec une approche pragmatique, centrée sur des solutions concrètes et une croissance maîtrisée.
+        </p>
+      </div>
+
+      <!-- Vertical Card Stack -->
+      <div class="flex flex-col gap-12 lg:gap-20">
+
+        <!-- Project 1: Vortex -->
+        <div class="reveal relative overflow-hidden rounded-[3rem] border border-white/10 group transition-all duration-700 hover:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)]">
+            <div class="grid lg:grid-cols-3">
+                <!-- Left Column: Metrics & Title (Beige) -->
+                <div class="bg-brand-beige p-12 lg:p-16 flex flex-col justify-between text-main">
+                    <div>
+                    <h3 class="font-sans text-2xl lg:text-3xl font-bold leading-tight mb-8">Comment Vortex a révolutionné l'accès au carburant avec une expérience mobile fluide</h3>
+                    <div class="flex flex-wrap gap-x-4 gap-y-2 mb-12 opacity-60">
+                        <span class="text-[9px] font-bold uppercase tracking-widest">Mobile Development</span>
+                        <span class="text-[9px] font-bold uppercase tracking-widest">Digital Wallet</span>
+                        <span class="text-[9px] font-bold uppercase tracking-widest">Geolocation</span>
+                        <span class="text-[9px] font-bold uppercase tracking-widest">UX Design</span>
+                    </div>
+                    </div>
+                    <div class="space-y-10 pt-10 border-t border-main/10">
+                     <div>
+                         <div class="text-4xl lg:text-5xl font-black mb-1">+8%</div>
+                         <div class="text-[10px] uppercase font-bold tracking-widest text-main/60">Optimisation du parcours client</div>
+                     </div>
+                     <div>
+                         <div class="text-4xl lg:text-5xl font-black mb-1">50+</div>
+                         <div class="text-[10px] uppercase font-bold tracking-widest text-main/60">Utilisateurs bêta-testeurs</div>
+                     </div>
+                     </div>
+                </div>
+
+                <!-- Middle Column: Immersive Image -->
+                <div class="relative h-[400px] lg:h-auto overflow-hidden">
+                    <img src="/portfolio/vortex.webp" alt="Vortex Mobile App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="absolute inset-0 flex items-center justify-center p-12 text-center text-white font-black text-4xl lg:text-5xl uppercase tracking-[0.2em] mix-blend-overlay">
+                        VORTEX
+                    </div>
+                </div>
+
+                <!-- Right Column: Testimonial & Quote (Dark) -->
+                <div class="bg-[#121212] p-12 lg:p-16 flex flex-col justify-between">
+                    <div class="mb-12">
+                        <blockquote class="font-sans text-lg lg:text-xl font-medium leading-relaxed text-white/80 italic">
+                            "Une solution simple et efficace pour digitaliser nos paiements. L'application a apporté une réelle clarté dans le suivi de nos consommations de carburant."
+                        </blockquote>
+                    </div>
+                    <div class="space-y-12">
+                        <div class="flex items-center gap-6">
+                            <div class="w-14 h-14 bg-brand-lime rounded-md flex items-center justify-center text-main font-black text-xl">VX</div>
+                            <div>
+                                <div class="font-bold text-lg text-white">Marc K.</div>
+                                <div class="text-[10px] uppercase font-bold tracking-widest text-white/30 mt-1">CEO Vortex</div>
+                            </div>
+                        </div>
+                        <a href="#" class="flex items-center justify-between font-sans text-[10px] font-bold uppercase tracking-[0.4em] text-white/40 group-hover:text-white transition-colors pt-8 border-t border-white/5">
+                            Voir le projet
+                            <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-brand-lime group-hover:text-main transition-all duration-500">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 5v14M5 12h14"/></svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2: Art du Bénin -->
+        <div class="reveal reveal-delay-1 relative overflow-hidden rounded-[3rem] border border-white/10 group transition-all duration-700 hover:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)]">
+            <div class="grid lg:grid-cols-3">
+                <!-- Left Column: Metrics & Title (Beige) -->
+                <div class="bg-brand-beige p-12 lg:p-16 flex flex-col justify-between text-main">
+                    <div>
+                    <h3 class="font-sans text-2xl lg:text-3xl font-bold leading-tight mb-8">Valoriser l'héritage culturel béninois à travers une médiation numérique immersive</h3>
+                    <div class="flex flex-wrap gap-x-4 gap-y-2 mb-12 opacity-60">
+                        <span class="text-[9px] font-bold uppercase tracking-widest">Android APK</span>
+                        <span class="text-[9px] font-bold uppercase tracking-widest">Médiation Culturelle</span>
+                        <span class="text-[9px] font-bold uppercase tracking-widest">Case Study</span>
+                        <span class="text-[9px] font-bold uppercase tracking-widest">UI/UX Design</span>
+                    </div>
+                    </div>
+                    <div class="space-y-10 pt-10 border-t border-main/10">
+                     <div>
+                         <div class="text-4xl lg:text-5xl font-black mb-1">450+</div>
+                         <div class="text-[10px] uppercase font-bold tracking-widest text-main/60">Visiteurs mobiles uniques</div>
+                     </div>
+                     <div>
+                         <div class="text-4xl lg:text-5xl font-black mb-1">4.7/5</div>
+                         <div class="text-[10px] uppercase font-bold tracking-widest text-main/60">Score d'utilisabilité</div>
+                     </div>
+                     </div>
+                </div>
+
+                <!-- Middle Column: Immersive Image -->
+                <div class="relative h-[400px] lg:h-auto overflow-hidden">
+                    <img src="/portfolio/case study.webp" alt="Art du Bénin APK" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="absolute inset-0 flex items-center justify-center p-12 text-center text-white font-black text-4xl lg:text-5xl uppercase tracking-[0.2em] mix-blend-overlay">
+                        BÉNIN ART
+                    </div>
+                </div>
+
+                <!-- Right Column: Testimonial & Quote (Dark) -->
+                <div class="bg-[#121212] p-12 lg:p-16 flex flex-col justify-between">
+                    <div class="mb-12">
+                        <blockquote class="font-sans text-lg lg:text-xl font-medium leading-relaxed text-white/80 italic">
+                            "Un bel outil qui a permis d'enrichir l'expérience de nos visiteurs. L'interface est intuitive et le contenu culturel est très bien mis en valeur."
+                        </blockquote>
+                    </div>
+                    <div class="space-y-12">
+                        <div class="flex items-center gap-6">
+                            <div class="w-14 h-14 bg-brand-lime rounded-md flex items-center justify-center text-main font-black text-xl">AB</div>
+                            <div>
+                                <div class="font-bold text-lg text-white">Direction</div>
+                                <div class="text-[10px] uppercase font-bold tracking-widest text-white/30 mt-1">Patrimoine Culturel</div>
+                            </div>
+                        </div>
+                        <a href="#" class="flex items-center justify-between font-sans text-[10px] font-bold uppercase tracking-[0.4em] text-white/40 group-hover:text-white transition-colors pt-8 border-t border-white/5">
+                            Voir le Case Study
+                            <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-brand-lime group-hover:text-main transition-all duration-500">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 5v14M5 12h14"/></svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3: Sport Advisor -->
+        <div class="reveal reveal-delay-2 relative overflow-hidden rounded-[3rem] border border-white/10 group transition-all duration-700 hover:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)]">
+            <div class="grid lg:grid-cols-3">
+                <!-- Left Column: Metrics & Title (Beige) -->
+                <div class="bg-brand-beige p-12 lg:p-16 flex flex-col justify-between text-main">
+                    <div>
+                    <h3 class="font-sans text-2xl lg:text-3xl font-bold leading-tight mb-8">Une plateforme d'analyse sportive propulsée par l'IA pour des prédictions ultra-précises</h3>
+                    <div class="flex flex-wrap gap-x-4 gap-y-2 mb-12 opacity-60">
+                        <span class="text-[9px] font-bold uppercase tracking-widest">Landing Page</span>
+                        <span class="text-[9px] font-bold uppercase tracking-widest">AI Analysis</span>
+                        <span class="text-[9px] font-bold uppercase tracking-widest">Sports Tech</span>
+                        <span class="text-[9px] font-bold uppercase tracking-widest">Dashboard Design</span>
+                    </div>
+                    </div>
+                    <div class="space-y-10 pt-10 border-t border-main/10">
+                     <div>
+                         <div class="text-4xl lg:text-5xl font-black mb-1">+12%</div>
+                         <div class="text-[10px] uppercase font-bold tracking-widest text-main/60">Taux de clic sur Landing Page</div>
+                     </div>
+                     <div>
+                         <div class="text-4xl lg:text-5xl font-black mb-1">Beta</div>
+                         <div class="text-[10px] uppercase font-bold tracking-widest text-main/60">Validation du concept (MVP)</div>
+                     </div>
+                     </div>
+                </div>
+
+                <!-- Middle Column: Immersive Image -->
+                <div class="relative h-[400px] lg:h-auto overflow-hidden">
+                    <img src="/portfolio/advisor.webp" alt="Sport Advisor IA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+                    <div class="absolute inset-0 bg-black/20"></div>
+                    <div class="absolute inset-0 flex items-center justify-center p-12 text-center text-white font-black text-4xl lg:text-5xl uppercase tracking-[0.2em] mix-blend-overlay">
+                        SPORT AI
+                    </div>
+                </div>
+
+                <!-- Right Column: Testimonial & Quote (Dark) -->
+                <div class="bg-[#121212] p-12 lg:p-16 flex flex-col justify-between">
+                    <div class="mb-12">
+                        <blockquote class="font-sans text-lg lg:text-xl font-medium leading-relaxed text-white/80 italic">
+                            "Une plateforme prometteuse pour centraliser les données sportives. Les analyses fournies sont une aide précieuse pour comprendre les dynamiques de match."
+                        </blockquote>
+                    </div>
+                    <div class="space-y-12">
+                        <div class="flex items-center gap-6">
+                            <div class="w-14 h-14 bg-brand-lime rounded-md flex items-center justify-center text-main font-black text-xl">SA</div>
+                            <div>
+                                <div class="font-bold text-lg text-white">Jean-Luc T.</div>
+                                <div class="text-[10px] uppercase font-bold tracking-widest text-white/30 mt-1">Analyste Sportif Senior</div>
+                            </div>
+                        </div>
+                        <a href="#" class="flex items-center justify-between font-sans text-[10px] font-bold uppercase tracking-[0.4em] text-white/40 group-hover:text-white transition-colors pt-8 border-t border-white/5">
+                            Voir la Landing Page
+                            <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-brand-lime group-hover:text-main transition-all duration-500">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 5v14M5 12h14"/></svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIBRARY / BLOG SECTION (Dark) -->
+  <section class="py-32 lg:py-48 px-4 sm:px-6 lg:px-24 bg-main text-white border-t border-white/5" id="library">
+    <div class="max-w-[1440px] mx-auto">
+      <div class="reveal mb-32 max-w-4xl">
+        <div class="flex items-center gap-3 mb-10">
+          <div class="w-1.5 h-1.5 bg-brand-lime rounded-full"></div>
+          <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Librairie SAGANA</span>
+        </div>
+        
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
+            <div>
+                <h2 class="section-heading mb-10">
+                  Votre base de <br> 
+                  <span class="text-brand-lime italic">connaissances.</span>
+                </h2>
+                <div class="w-20 h-1 bg-brand-lime/20 mb-10"></div>
+                <p class="text-white/40 text-lg lg:text-xl leading-relaxed font-medium max-w-2xl">
+                  Découvrez nos analyses et méthodes pour comprendre les dynamiques du digital et propulser votre business.
+                </p>
+            </div>
+            <div class="flex gap-4 mb-2">
+               <button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-lime hover:text-main transition-all duration-300" id="prevSlide">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><polyline points="15 18 9 12 15 6"/></svg>
+               </button>
+               <button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-lime hover:text-main transition-all duration-300" id="nextSlide">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><polyline points="9 18 15 12 9 6"/></svg>
+               </button>
+            </div>
+        </div>
+      </div>
+
+      <div class="flex gap-8 overflow-x-auto pb-12 snap-x snap-mandatory scrollbar-hide no-scrollbar" id="blogSlider">
+        <!-- Article 1 -->
+        <article class="min-w-[320px] md:min-w-[450px] snap-start reveal group cursor-pointer">
+           <div class="rounded-[2.5rem] overflow-hidden aspect-[4/3] mb-8 relative border border-white/10">
+              <img src="/images/young-black-man-collaborating-with-colleagues-in-m-2026-01-21-02-38-50-utc.jpg" alt="Article 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div class="absolute top-8 left-8 bg-brand-lime px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-main">Stratégie</div>
+           </div>
+           <div class="px-2">
+             <div class="text-white/40 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Mars 2024 • 5 min lecture</div>
+             <h3 class="font-sans text-2xl font-bold group-hover:text-brand-lime transition-colors leading-snug">7 clés pour valider votre idée de startup avant de coder.</h3>
+           </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="min-w-[320px] md:min-w-[450px] snap-start reveal reveal-delay-1 group cursor-pointer">
+           <div class="rounded-[2.5rem] overflow-hidden aspect-[4/3] mb-8 relative border border-white/10">
+              <img src="/images/portrait-of-smiling-businessman-working-in-busy-mo-2026-03-10-04-50-52-utc.jpg" alt="Article 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div class="absolute top-8 left-8 bg-brand-lime px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-main">Design</div>
+           </div>
+           <div class="px-2">
+             <div class="text-white/40 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Février 2024 • 8 min lecture</div>
+             <h3 class="font-sans text-2xl font-bold group-hover:text-brand-lime transition-colors leading-snug">La puissance du design éditorial dans les interfaces premium.</h3>
+           </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="min-w-[320px] md:min-w-[450px] snap-start reveal reveal-delay-2 group cursor-pointer">
+           <div class="rounded-[2.5rem] overflow-hidden aspect-[4/3] mb-8 relative border border-white/10">
+              <img src="/images/positive-black-man-is-sitting-business-people-are-2026-01-09-10-35-01-utc.JPG" alt="Article 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div class="absolute top-8 left-8 bg-brand-lime px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-main">Ingénierie</div>
+           </div>
+           <div class="px-2">
+             <div class="text-white/40 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Janvier 2024 • 12 min lecture</div>
+             <h3 class="font-sans text-2xl font-bold group-hover:text-brand-lime transition-colors leading-snug">Next.js & Tailwind v4 : la stack ultime pour 2024.</h3>
+           </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA & FOOTER (Dark) -->
+  <footer class="bg-main text-white pt-32 lg:pt-48 pb-16 px-4 sm:px-6 lg:px-24 border-t border-white/5" id="contact">
+    <div class="max-w-[1440px] mx-auto">
+      <div class="grid lg:grid-cols-2 gap-24 items-start mb-32 reveal">
+        <div class="space-y-12">
+           <div class="flex items-center gap-3">
+             <div class="w-2 h-2 bg-brand-lime"></div>
+             <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Contact</span>
+           </div>
+           <h2 class="section-heading text-white mb-8">
+             Construisons ensemble <br> 
+             votre prochain <br> 
+             <span class="text-brand-lime">succès digital.</span>
+           </h2>
+           <p class="text-white/40 text-lg leading-relaxed mb-12 max-w-md font-medium">
+             Transformez vos ambitions en produits digitaux d'exception. Notre équipe est prête à vous accompagner.
+           </p>
+           <div class="reveal relative py-12 flex items-center justify-center">
+              <div class="glass-orb-container scale-110">
+                  <div class="glass-orb-glow"></div>
+                  <div class="glass-orb-ring" style="animation-duration: 15s; border-color: rgba(255,255,255,0.05)"></div>
+                  <div class="glass-orb" style="width: 70%; height: 70%; animation-delay: -2s"></div>
+                  <div class="absolute w-3 h-3 rounded-full bg-brand-lime/30 blur-sm top-20 right-10 animation-float-slow"></div>
+              </div>
+           </div>
+        </div>
+        
+        <div class="bg-white/5 backdrop-blur-sm p-12 lg:p-16 rounded-[3rem] border border-white/10 shadow-2xl">
+           <form id="contactForm" class="space-y-12">
+             <div class="space-y-6">
+                <label class="block text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">Vos Informations</label>
+                <div class="grid grid-cols-2 gap-10">
+                   <input type="text" placeholder="Nom Complet" required class="bg-transparent border-b border-white/10 py-5 focus:outline-none focus:border-brand-lime transition-colors rounded-none placeholder:text-white/20 font-sans" />
+                   <input type="email" placeholder="Email Professionnel" required class="bg-transparent border-b border-white/10 py-5 focus:outline-none focus:border-brand-lime transition-colors rounded-none placeholder:text-white/20 font-sans" />
+                </div>
+             </div>
+             <div class="space-y-6">
+                <label class="block text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">Votre Projet</label>
+                <textarea rows="4" placeholder="Décrivez votre besoin..." required class="bg-transparent border-b border-white/10 py-5 focus:outline-none focus:border-brand-lime transition-colors resize-none w-full rounded-none placeholder:text-white/20 font-sans"></textarea>
+             </div>
+             <button type="submit" class="btn-brand-lime w-full py-6 text-lg">Envoyer la demande</button>
+             <div id="formSuccess" class="hidden text-brand-lime font-sans font-bold text-xl text-center">Merci ! Notre équipe vous répondra sous 24h.</div>
+           </form>
+        </div>
+      </div>
+
+      <!-- PREMIUM FOOTER -->
+      <div class="mt-32">
+        <!-- 1. CTA BANNER -->
+        <div class="reveal">
+          <div class="bg-brand-lime rounded-[2rem] p-8 lg:p-16 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-12 group">
+            <!-- Decorative Graphic -->
+            <div class="cta-banner-graphic hidden lg:block">
+              <div class="cta-banner-circles"></div>
+            </div>
+            
+            <div class="relative z-10 max-w-2xl text-center lg:text-left">
+              <h2 class="font-sans text-3xl lg:text-4xl font-bold leading-tight text-main">
+                Parfois, le plus dur est de faire le premier pas. <br class="hidden lg:block">Une fois franchi, nous nous occupons du reste.
+              </h2>
+            </div>
+            
+            <div class="relative z-10">
+              <a href="#contact" class="flex items-center gap-4 bg-main text-white px-10 py-6 rounded-2xl font-bold text-lg hover:scale-105 transition-transform group">
+                Parlons de votre projet dès aujourd'hui
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform group-hover:translate-x-1">
+                  <path d="M4.16663 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Small Grid Detail -->
+            <div class="absolute top-4 right-4 flex gap-1 opacity-20">
+               <div class="w-2 h-2 bg-main"></div>
+               <div class="w-2 h-2 bg-main"></div>
+               <div class="hidden lg:block w-2 h-2 bg-main"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. CONTACT INFO SECTION -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-24 mt-12 border-t border-white/5 reveal reveal-delay-1">
+          <div class="space-y-6">
+            <div class="footer-section-title">
+              <div class="footer-bullet"></div> TÉLÉPHONE
+            </div>
+            <div class="space-y-2">
+              <p class="text-white hover:text-brand-lime transition-colors font-medium">+33 (0) 1 23 45 67 89</p>
+              <p class="text-white/40 text-sm">Disponible du lun. au ven.</p>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="footer-section-title">
+              <div class="footer-bullet"></div> EMAIL
+            </div>
+            <div class="space-y-2">
+              <p class="text-white hover:text-brand-lime transition-colors font-medium">contact@sagana.ai</p>
+              <p class="text-white hover:text-brand-lime transition-colors font-medium">support@sagana.ai</p>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="footer-section-title">
+              <div class="footer-bullet"></div> ADRESSE
+            </div>
+            <div class="space-y-2">
+              <p class="text-white font-medium">8 Rue de la Paix</p>
+              <p class="text-white/40 text-sm">75002 Paris, France</p>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="footer-section-title">
+              <div class="footer-bullet"></div> HORAIRES
+            </div>
+            <div class="space-y-2">
+              <p class="text-white font-medium">Lun. au Ven. : 9h00 - 18h30</p>
+              <p class="text-brand-lime font-bold tracking-widest uppercase text-[10px]" id="footerClock">CHARGEMENT HORLOGE...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. LINKS SECTION -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-32 py-24 border-t border-white/5 reveal reveal-delay-2">
+          <!-- Pages -->
+          <div class="space-y-8">
+            <div class="footer-section-title">
+              <div class="footer-bullet"></div> PAGES
+            </div>
+            <div class="flex flex-col">
+              <a href="#hero" class="footer-arrow-link"><span>Accueil</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#about-company" class="footer-arrow-link"><span>À propos</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#capabilities" class="footer-arrow-link"><span>Services</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#process" class="footer-arrow-link"><span>Process</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#testimonials" class="footer-arrow-link"><span>Réalisations</span> <span class="footer-arrow-icon">→</span></a>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div class="space-y-8">
+            <div class="footer-section-title">
+              <div class="footer-bullet"></div> EXPERTISES
+            </div>
+            <div class="flex flex-col">
+              <a href="#" class="footer-arrow-link"><span>Développement Web</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#" class="footer-arrow-link"><span>Expérience Mobile</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#" class="footer-arrow-link"><span>Intelligence Artificielle</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#" class="footer-arrow-link"><span>Stratégie SEO</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#" class="footer-arrow-link"><span>Automatisation SaaS</span> <span class="footer-arrow-icon">→</span></a>
+            </div>
+          </div>
+
+          <!-- Socials -->
+          <div class="space-y-8">
+            <div class="footer-section-title">
+              <div class="footer-bullet"></div> RÉSEAUX
+            </div>
+            <div class="flex flex-col">
+              <a href="#" class="footer-arrow-link"><span>LinkedIn</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#" class="footer-arrow-link"><span>X / Twitter</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#" class="footer-arrow-link"><span>Instagram</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#" class="footer-arrow-link"><span>YouTube</span> <span class="footer-arrow-icon">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8 py-12 border-t border-white/5 opacity-40 hover:opacity-100 transition-opacity">
+           <div class="font-sans font-black text-2xl tracking-tighter text-white">SAGANA.</div>
+           <div class="text-[10px] font-bold uppercase tracking-[0.2em]">© 2024 SAGANA LIMITED — TOUS DROITS RÉSERVÉS</div>
+           <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em]">
+              FABRIQUÉ AVEC PASSION PAR <span class="text-brand-lime">SAGANA</span>
+           </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
