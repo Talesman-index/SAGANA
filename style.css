@@ -19,6 +19,10 @@
   50% { transform: translateY(-10px) rotate(1deg); }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .floating-tag {
   animation: float 6s ease-in-out infinite;
 }
@@ -32,10 +36,20 @@
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
   
   body {
     @apply bg-base text-main font-sans selection:bg-accent selection:text-white;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -47,7 +61,33 @@
   .section-tag-light {
     @apply inline-flex items-center gap-3 text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase text-accent-light before:content-[''] before:block before:w-8 before:h-[1px] before:bg-accent-light/30;
   }
-  
+ /* Mobile Menu Icon Animation */
+#navToggle span:first-child.is-active {
+  transform: translateY(4px) rotate(45deg);
+}
+
+#navToggle span:last-child.is-active {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+#mobileMenu.opacity-100 .reveal-mobile-item {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.reveal-mobile-item {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-mobile-item:nth-child(1) { transition-delay: 0.1s; }
+.reveal-mobile-item:nth-child(2) { transition-delay: 0.15s; }
+.reveal-mobile-item:nth-child(3) { transition-delay: 0.2s; }
+.reveal-mobile-item:nth-child(4) { transition-delay: 0.25s; }
+.reveal-mobile-item:nth-child(5) { transition-delay: 0.3s; }
+.reveal-mobile-item:nth-child(6) { transition-delay: 0.35s; }
+
   .section-heading {
     @apply font-sans text-[clamp(2rem,5vw,4rem)] font-bold leading-[1.05] tracking-tight text-main;
   }
@@ -71,7 +111,7 @@
   }
 
   .btn-brand-lime {
-    @apply inline-flex items-center justify-center bg-brand-lime text-main rounded-xl font-bold tracking-tight transition-all duration-500 hover:brightness-110 hover:translate-y-[-2px] hover:shadow-2xl hover:shadow-brand-lime/30 active:translate-y-0 active:scale-95;
+    @apply inline-flex items-center justify-center bg-brand-lime text-main px-8 py-4 sm:px-10 sm:py-5 rounded-full font-bold tracking-tight transition-all duration-500 hover:brightness-105 hover:translate-y-[-2px] hover:shadow-2xl hover:shadow-brand-lime/20 active:translate-y-0 active:scale-95;
   }
 
   .avatar-stack {
@@ -95,46 +135,85 @@
     mask-image: radial-gradient(circle, black 60%, transparent 100%);
   }
 
-  /* Process Section Enhancements */
-  .process-glow {
-    @apply absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-1000;
-    background: radial-gradient(circle at center, rgba(191, 255, 0, 0.05) 0%, transparent 70%);
+  /* --- Expertises Dark Overhaul --- */
+  .expertise-card {
+    @apply bg-white/[0.03] border border-white/5 backdrop-blur-xl transition-all duration-700 hover:bg-white/[0.07] hover:border-white/20;
   }
 
-  .process-glow.is-active {
-    @apply opacity-100;
+  .expertise-card-lime {
+    @apply bg-brand-lime/5 border border-brand-lime/20 backdrop-blur-xl transition-all duration-700 hover:bg-brand-lime/10 hover:border-brand-lime/40;
   }
 
-  .wheel-marker {
-    @apply absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white/20 rounded-full border border-white/10 flex items-center justify-center transition-all duration-500;
-    transform-origin: 50% calc(100vw + 0px); /* Matches lg width if needed */
+  .icon-box-dark {
+    @apply bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center transition-colors text-white/40;
   }
 
-  @media (min-width: 1024px) {
-    .wheel-marker {
-      transform-origin: 50% 65vw; /* Close to lg half-height */
+  .expertise-card:hover .icon-box-dark {
+    @apply border-brand-lime/40 text-brand-lime bg-brand-lime/5;
+  }
+
+  /* --- Robust Process Wheel Rewrite --- */
+  #processWheel {
+    --wheel-radius: 160px;
+  }
+
+  @media (min-width: 768px) {
+    #processWheel {
+      --wheel-radius: 350px;
     }
   }
 
+  .wheel-marker {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 bg-main border border-white/10 rounded-full flex items-center justify-center transition-all duration-500 backdrop-blur-md;
+    transform: rotate(var(--marker-angle)) translateY(calc(-1 * var(--wheel-radius))) rotate(calc(-1 * var(--marker-angle)));
+  }
+
+  .wheel-marker[data-step="1"] { --marker-angle: 0deg; }
+  .wheel-marker[data-step="2"] { --marker-angle: 120deg; }
+  .wheel-marker[data-step="3"] { --marker-angle: 240deg; }
+
   .wheel-marker.active {
-    @apply bg-brand-lime scale-125 border-brand-lime shadow-[0_0_20px_rgba(191,255,0,0.5)];
+    @apply bg-brand-lime border-brand-lime scale-[1.5] shadow-[0_0_50px_rgba(212,255,62,0.3)];
+    @apply z-20;
   }
 
   .wheel-marker span {
-    @apply text-[8px] font-bold text-main opacity-0 transition-opacity duration-300;
+    @apply text-[9px] md:text-[10px] font-black text-white/40 transition-colors duration-300;
   }
 
   .wheel-marker.active span {
-    @apply opacity-100;
+    @apply text-main;
   }
 
   #stepContent {
-    @apply flex flex-col items-center transition-all duration-700;
+    @apply transition-all duration-500;
     transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .process-transition {
+    transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   #stepContent.is-changing {
     @apply opacity-0 translate-y-8 blur-sm;
+  }
+
+  /* Navbar Color Switching - CRITICAL FIX */
+  #navbar.nav-is-dark {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Target all white text variants in Tailwind 4 / 3 */
+  #navbar.nav-is-dark [class*="text-white"] { 
+    color: #0A0A0A !important; 
+    opacity: 1 !important;
+  }
+
+  #navbar.nav-is-dark .stroke-white { 
+    stroke: #0A0A0A !important; 
   }
 
   /* Glassmorphism Orb Illustration */
@@ -224,8 +303,8 @@
 }
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-base); }
-::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.05); border-radius: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
 
 .mobile-link {
@@ -278,4 +357,8 @@
 
 .cta-banner-circles::before {
   @apply content-[''] absolute inset-8 border border-main/5 rounded-full;
+}
+
+#processWheel {
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }

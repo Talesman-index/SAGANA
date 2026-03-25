@@ -147,128 +147,215 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1500);
     });
   }
-  // --- Rotating Process Wheel Logic ---
+
+  // --- Navbar Color Switcher ---
+  const navbar = document.getElementById('navbar');
+  const navTriggerSections = document.querySelectorAll('section[data-nav-dark="true"]');
+  
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      let isDarkNav = false;
+      const navbarRect = navbar.getBoundingClientRect();
+      const navbarCenter = navbarRect.top + navbarRect.height / 2;
+
+      navTriggerSections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (navbarCenter >= rect.top && navbarCenter <= rect.bottom) {
+          isDarkNav = true;
+        }
+      });
+
+      if (isDarkNav) {
+        navbar.classList.add('nav-is-dark');
+      } else {
+        navbar.classList.remove('nav-is-dark');
+      }
+    }, { passive: true });
+  }
+
+  // --- BI-DIRECTIONAL SCROLL-LOCKED PROCESS WHEEL ---
   const processSection = document.getElementById('process');
   const processHeader = document.getElementById('processHeader');
   const processWheel = document.getElementById('processWheel');
   const stepContent = document.getElementById('stepContent');
-  const stepNumberDisplay = document.getElementById('stepNumberDisplay');
+  const stepLabelDisplay = document.getElementById('stepLabelDisplay');
   const stepTitleDisplay = document.getElementById('stepTitleDisplay');
   const stepDescriptionDisplay = document.getElementById('stepDescriptionDisplay');
+  const wheelMarkers = document.querySelectorAll('.wheel-marker');
+  const progressBar = document.getElementById('processProgressBar');
 
   const steps = [
-    {
-      label: "ÉTAPE 01",
-      number: "1",
-      title: "Découverte & Audit",
-      description: "Nous commençons par comprendre exactement comment votre équipe travaille aujourd'hui pour identifier les leviers de croissance critiques."
-    },
-    {
-      label: "ÉTAPE 02",
-      number: "2",
-      title: "Conception & Construction",
-      description: "Notre équipe conçoit des solutions sur mesure, adaptées à vos processus, puis les construit et les teste rigoureusement."
-    },
-    {
-      label: "ÉTAPE 03",
-      number: "3",
-      title: "Déploiement & Optimisation",
-      description: "Nous déployons vos systèmes, surveillons les performances et les affinons pour garantir un ROI maximal et durable."
-    }
+    { label: "PHASE 01", title: "Immersion & Audit", desc: "Nous forgeons une trajectoire précise en analysant vos leviers de croissance les plus profonds." },
+    { label: "PHASE 02", title: "Build & Propulsion", desc: "Conception sur-mesure de solutions à haute performance, orchestrées avec une précision chirurgicale." },
+    { label: "PHASE 03", title: "Impact & Évolution", desc: "Déploiement massif et optimisation continue pour garantir une dominance durable sur votre marché." }
   ];
 
   let currentStepIndex = -1;
+  let lockProgress = 0; 
+  let lerpProgress = 0;
+  let isLocked = false;
+  let isExiting = false;
+  let touchStartY = 0;
 
-  const processGlow = document.getElementById('processGlow');
-  const wheelMarkers = document.querySelectorAll('.wheel-marker');
-  
-  if (processSection && processWheel && stepContent) {
-    const stepLabelDisplay = document.getElementById('stepLabelDisplay');
+  function updateProcessVisuals(prog) {
+    if (processHeader) {
+      const headerOpacity = Math.max(0, 1 - prog * 8);
+      processHeader.style.opacity = headerOpacity;
+      processHeader.style.pointerEvents = headerOpacity < 0.1 ? 'none' : 'auto';
+    }
 
-    window.addEventListener('scroll', () => {
-      const sectionRect = processSection.getBoundingClientRect();
-      const sectionTop = sectionRect.top;
-      const sectionHeight = sectionRect.height;
-      const windowHeight = window.innerHeight;
+    const angle = -(prog * 240);
+    if (processWheel) processWheel.style.transform = `rotate(${angle}deg)`;
 
-      // Calculate progress (0 to 1) based on sticky scroll
-      let progress = -sectionTop / (sectionHeight - windowHeight);
-      progress = Math.max(0, Math.min(1, progress));
+    let stepIndex = 0;
+    if (prog > 0.35 && prog <= 0.7) stepIndex = 1;
+    else if (prog > 0.7) stepIndex = 2;
 
-      // Active glow
-      if (processGlow) {
-        if (progress > 0.1 && progress < 0.9) {
-          processGlow.classList.add('is-active');
-        } else {
-          processGlow.classList.remove('is-active');
-        }
+    if (stepIndex !== currentStepIndex) {
+      currentStepIndex = stepIndex;
+      const step = steps[stepIndex];
+      
+      stepContent.style.opacity = '0';
+      setTimeout(() => {
+        if (stepLabelDisplay) stepLabelDisplay.innerText = step.label;
+        if (stepTitleDisplay) stepTitleDisplay.innerText = step.title;
+        if (stepDescriptionDisplay) stepDescriptionDisplay.innerText = step.desc;
+        stepContent.style.opacity = '1';
+      }, 300);
+    }
+
+    wheelMarkers.forEach((marker, idx) => {
+      if (idx === stepIndex) marker.classList.add('active');
+      else marker.classList.remove('active');
+    });
+
+    if (progressBar) progressBar.style.width = `${prog * 100}%`;
+  }
+
+  // --- Smooth Lerp Animation Loop ---
+  function animate() {
+    if (!isLocked && !isExiting && Math.abs(lerpProgress - lockProgress) < 0.001) {
+        requestAnimationFrame(animate);
+        return;
+    }
+
+    // Smoothly interpolate lockProgress -> lerpProgress
+    const ease = 0.12; // Adjust for "weight" feel (lower = heavier)
+    lerpProgress += (lockProgress - lerpProgress) * ease;
+    
+    updateProcessVisuals(Math.max(0, Math.min(1, lerpProgress)));
+    
+    requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
+
+  function handleInteraction(delta) {
+    if (!isLocked) return;
+    
+    const sensitivity = 0.0015; // Increased for more dynamism
+    lockProgress = Math.max(-0.05, Math.min(1.05, lockProgress + delta * sensitivity));
+
+    if (lockProgress >= 1.05 && delta > 0) {
+        unlockProcess('down');
+    } else if (lockProgress <= -0.05 && delta < 0) {
+        unlockProcess('up');
+    }
+  }
+
+  function unlockProcess(direction) {
+    isLocked = false;
+    isExiting = true;
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+    
+    if (direction === 'down') {
+        lockProgress = 1.05; // Set to end
+        const nextTarget = document.getElementById('comparison');
+        if (nextTarget) nextTarget.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        lockProgress = -0.05; // Set to start
+        const prevTarget = document.getElementById('expertises');
+        if (prevTarget) prevTarget.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    setTimeout(() => { isExiting = false; }, 800);
+  }
+
+  if (processSection) {
+    window.addEventListener('wheel', (e) => {
+      if (isExiting) return;
+
+      const rect = processSection.getBoundingClientRect();
+      const atTop = Math.abs(rect.top) < 30;
+
+      // Enter from ABOVE (scrolling down)
+      if (!isLocked && atTop && e.deltaY > 0 && lockProgress < 1) {
+          isLocked = true;
+          lockProgress = 0;
+          document.body.style.overflow = 'hidden';
+          document.documentElement.style.overflow = 'hidden';
+          processSection.scrollIntoView({ behavior: 'auto' });
+          updateProcessVisuals(0);
+      }
+      
+      // Enter from BELOW (scrolling up)
+      if (!isLocked && atTop && e.deltaY < 0 && lockProgress > 0) {
+          isLocked = true;
+          lockProgress = 1;
+          document.body.style.overflow = 'hidden';
+          document.documentElement.style.overflow = 'hidden';
+          processSection.scrollIntoView({ behavior: 'auto' });
+          updateProcessVisuals(1);
       }
 
-      // Fade out main header faster to avoid overlap
-      if (processHeader) {
-        if (progress > 0.05) {
-          const headerOpacity = Math.max(0, 1 - (progress - 0.05) * 8);
-          processHeader.style.opacity = headerOpacity;
-          processHeader.style.transform = `translateY(${(progress - 0.05) * -100}px)`;
-          processHeader.style.pointerEvents = headerOpacity < 0.1 ? 'none' : 'auto';
-        } else {
-          processHeader.style.opacity = '1';
-          processHeader.style.transform = 'translateY(0)';
-          processHeader.style.pointerEvents = 'auto';
-        }
+      if (isLocked) {
+        e.preventDefault();
+        handleInteraction(e.deltaY);
       }
+    }, { passive: false });
 
-      // Rotate wheel
-      const rotation = (progress * 60) - 30; // Slightly tighter rotation
-      processWheel.style.transform = `rotate(${-rotation}deg)`;
-
-      // Determine active step
-      let stepIndex = Math.floor(progress * steps.length);
-      if (stepIndex >= steps.length) stepIndex = steps.length - 1;
-
-      // Update markers
-      wheelMarkers.forEach((marker, idx) => {
-        if (idx === stepIndex && progress > 0.1 && progress < 0.9) {
-          marker.classList.add('active');
-        } else {
-          marker.classList.remove('active');
-        }
-      });
-
-      if (stepIndex !== currentStepIndex) {
-        currentStepIndex = stepIndex;
-        const step = steps[stepIndex];
-
-        // Fade out current content
-        stepContent.classList.add('is-changing');
+    // Touch Support
+    window.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+    });
+    window.addEventListener('touchmove', (e) => {
+        if (isExiting) return;
         
-        setTimeout(() => {
-          if (stepLabelDisplay) stepLabelDisplay.innerText = step.label;
-          if (stepNumberDisplay) stepNumberDisplay.innerText = step.number;
-          if (stepTitleDisplay) stepTitleDisplay.innerText = step.title;
-          if (stepDescriptionDisplay) stepDescriptionDisplay.innerText = step.description;
-          
-          stepContent.classList.remove('is-changing');
-          
-          // Only fade in if we are in the active range
-          if (progress > 0.1 && progress < 0.95) {
-            stepContent.style.opacity = '1';
-          }
-        }, 350);
-      }
-      
-      // Control step content visibility range
-      if (progress > 0.15 && progress < 0.95) {
-        if (!stepContent.classList.contains('is-changing')) {
-            stepContent.style.opacity = '1';
-            stepContent.style.transform = 'translateY(0)';
+        const rect = processSection.getBoundingClientRect();
+        const atTop = Math.abs(rect.top) < 30;
+
+        if (isLocked) {
+            e.preventDefault();
+            const touchY = e.touches[0].clientY;
+            const deltaY = (touchStartY - touchY) * 2;
+            handleInteraction(deltaY);
+            touchStartY = touchY;
+            return;
         }
-      } else if (progress <= 0.15) {
-          stepContent.style.opacity = '0';
-          stepContent.style.transform = 'translateY(20px)';
-      }
-      
-    }, { passive: true });
+
+        // Detect entry (swipe up = scroll down)
+        if (!isLocked && atTop) {
+            const deltaY = touchStartY - e.touches[0].clientY;
+            // From top going down
+            if (deltaY > 0 && lockProgress < 1) {
+                isLocked = true;
+                lockProgress = 0;
+                document.body.style.overflow = 'hidden';
+                document.documentElement.style.overflow = 'hidden';
+                processSection.scrollIntoView({ behavior: 'auto' });
+                updateProcessVisuals(0);
+            }
+            // From bottom going up
+            else if (deltaY < 0 && lockProgress > 0) {
+                isLocked = true;
+                lockProgress = 1;
+                document.body.style.overflow = 'hidden';
+                document.documentElement.style.overflow = 'hidden';
+                processSection.scrollIntoView({ behavior: 'auto' });
+                updateProcessVisuals(1);
+            }
+        }
+    }, { passive: false });
   }
 
   // Footer Clock
@@ -277,10 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateClock() {
       const now = new Date();
       const timeString = now.toLocaleTimeString('fr-FR', { 
-        hour: '2-digit', 
-        minute: '2-digit', 
-        second: '2-digit',
-        hour12: false 
+        hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false 
       });
       footerClock.innerText = timeString + " PARIS TIME";
     }

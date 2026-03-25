@@ -12,38 +12,60 @@
 </head>
 <body class="bg-base text-main antialiased selection:bg-accent selection:text-white">
 
-  <!-- NAVIGATION -->
-  <nav class="fixed top-0 inset-x-0 z-50 px-4 sm:px-6 lg:px-12 py-4" id="navbar">
-    <div class="max-w-[1440px] mx-auto flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded-full border-2 border-brand-lime flex items-center justify-center">
-            <div class="w-4 h-4 rounded-full bg-brand-lime"></div>
+  <nav class="fixed top-0 left-0 w-full z-[70] px-6 sm:px-10 lg:px-12 py-6 transition-all duration-300" id="navbar">
+    <div class="max-w-[1440px] mx-auto flex items-center justify-between w-full">
+      <div class="flex items-center gap-3 shrink-0">
+        <div class="w-10 h-10 rounded-full border-2 border-brand-lime flex items-center justify-center shrink-0">
+            <div class="w-5 h-5 rounded-full bg-brand-lime animate-pulse-slow"></div>
         </div>
-        <a href="#hero" class="font-sans font-bold text-xl tracking-tight text-white uppercase">SAGANA</a>
+        <a href="#hero" class="font-sans font-black text-2xl tracking-tighter text-white uppercase whitespace-nowrap">SAGANA</a>
       </div>
       
-      <ul class="hidden lg:flex items-center gap-8 font-sans text-[13px] font-semibold text-white/70 uppercase tracking-widest">
-        <li><a href="#hero" class="hover:text-white transition-colors">Accueil</a></li>
-        <li><a href="#about-company" class="hover:text-white transition-colors">À propos de nous</a></li>
-        <li><a href="#capabilities" class="hover:text-white transition-colors">Services</a></li>
-        <li><a href="#process" class="hover:text-white transition-colors">Process</a></li>
-        <li><a href="#testimonials" class="hover:text-white transition-colors">Réalisation</a></li>
-        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+      <ul class="hidden lg:flex items-center gap-10 font-sans text-[12px] font-bold text-white/50 uppercase tracking-[0.2em]">
+        <li><a href="#hero" class="hover:text-brand-lime transition-colors">Accueil</a></li>
+        <li><a href="#about-company" class="hover:text-brand-lime transition-colors">Vision</a></li>
+        <li><a href="#capabilities" class="hover:text-brand-lime transition-colors">Expertises</a></li>
+        <li><a href="#process" class="hover:text-brand-lime transition-colors">Méthode</a></li>
+        <li><a href="#testimonials" class="hover:text-brand-lime transition-colors">Réalisations</a></li>
       </ul>
       
       <div class="hidden lg:block">
-        <a href="#contact" class="btn-brand-lime px-6 py-3 text-[13px] group">
-          Prendre rendez-vous
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="ml-2 stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        <a href="#contact" class="btn-brand-lime px-8 py-4 text-[12px] group">
+          Démarrer un projet
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="ml-2 stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </div>
 
-      <button class="lg:hidden p-2 text-white" id="navToggle" aria-label="Menu">
-        <span class="block w-6 h-[2px] bg-current mb-[5px] transition-transform"></span>
-        <span class="block w-6 h-[2px] bg-current transition-transform"></span>
+      <button class="lg:hidden relative z-[60] w-12 h-12 text-white flex flex-col items-center justify-center gap-1.5 bg-white/5 rounded-full border border-white/10 transition-all hover:bg-white/10" id="navToggle" aria-label="Menu">
+        <span class="block w-6 h-[2px] bg-current transition-all duration-300 origin-center"></span>
+        <span class="block w-6 h-[2px] bg-current transition-all duration-300 origin-center"></span>
       </button>
     </div>
   </nav>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div id="mobileMenu" class="fixed inset-0 z-50 bg-[#0A0A0A] hidden opacity-0 transition-all duration-500 overflow-hidden h-[100dvh]">
+    <div class="h-full flex flex-col justify-center px-10 sm:px-16 relative overflow-hidden">
+      <!-- Background pattern -->
+      <div class="absolute inset-0 opacity-[0.02] pointer-events-none" style="background-image: radial-gradient(#FFF 1px, transparent 1px); background-size: 60px 60px;"></div>
+      <ul class="flex flex-col gap-8 text-4xl sm:text-5xl font-bold text-white lowercase">
+        <li class="reveal-mobile-item"><a href="#hero">Accueil</a></li>
+        <li class="reveal-mobile-item"><a href="#about-company">À propos</a></li>
+        <li class="reveal-mobile-item"><a href="#capabilities">Services</a></li>
+        <li class="reveal-mobile-item"><a href="#process">Process</a></li>
+        <li class="reveal-mobile-item"><a href="#testimonials">Réalisations</a></li>
+        <li class="reveal-mobile-item"><a href="#contact">Contact</a></li>
+      </ul>
+      
+      <div class="mt-20 pt-10 border-t border-white/10">
+        <p class="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-6">Prêt à lancer ?</p>
+        <a href="mailto:dafiashalom@gmail.com" class="inline-flex items-center gap-4 text-brand-lime text-xl font-bold">
+          Prendre rendez-vous
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- HERO SECTION -->
   <header class="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-24 overflow-hidden bg-main" id="hero">
@@ -56,30 +78,32 @@
 
     <div class="relative z-10 max-w-[1440px] mx-auto w-full pt-20">
       <div class="max-w-4xl reveal">
-        <!-- Top Small Text -->
-          <span class="inline-flex items-center px-4 py-2 rounded-full bg-brand-lime/10 border border-brand-lime/20 text-brand-lime text-[10px] font-bold uppercase tracking-widest mb-8 reveal">
-            +15 projets réalisés • 100% de satisfaction • Accompagnement sur mesure
-          </span>
+        <!-- Top Small Text (Badge) -->
+          <div class="flex flex-wrap reveal mb-8">
+            <span class="inline-flex items-center px-4 py-2 rounded-full bg-brand-lime/10 border border-brand-lime/20 text-brand-lime text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-center">
+              +15 projets réalisés • 100% de satisfaction • Accompagnement sur mesure
+            </span>
+          </div>
         
         <!-- Headline -->
-        <h1 class="font-sans text-[clamp(2.25rem,6vw,4.5rem)] leading-[0.95] font-bold tracking-tight text-white mb-10 lg:mb-14">
+        <h1 class="font-sans text-3xl sm:text-5xl lg:text-[clamp(2.25rem,6vw,4.5rem)] leading-[1.1] lg:leading-[0.95] font-bold tracking-tight text-white mb-10 lg:mb-14">
           Nous concevons, développons <br class="hidden lg:block">
           et faisons grandir les <br class="hidden lg:block">
           produits digitaux.
         </h1>
         
         <!-- Subtext -->
-        <p class="text-white/70 text-xl lg:text-2xl leading-relaxed mb-12 lg:mb-20 max-w-2xl">
+        <p class="text-white/70 text-lg sm:text-xl lg:text-2xl leading-relaxed mb-12 lg:mb-20 max-w-2xl">
             SAGANA accompagne les entreprises ambitieuses avec une approche alliant design, technologie et croissance.
         </p>
         
         <!-- CTA Buttons -->
-        <div class="flex flex-wrap gap-6">
-          <a href="#contact" class="btn-brand-lime px-10 py-5 text-lg group w-fit">
+        <div class="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6">
+          <a href="mailto:dafiashalom@gmail.com" class="btn-brand-lime px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg group w-full sm:w-fit !text-main">
             Prendre rendez-vous
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="ml-3 stroke-current stroke-2 group-hover:translate-x-2 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="ml-3 stroke-main stroke-2 group-hover:translate-x-2 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="#testimonials" class="px-10 py-5 text-lg font-bold text-white border border-white/20 rounded-full hover:bg-white/10 transition-all">
+          <a href="#testimonials" class="px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg font-bold text-white border border-white/20 rounded-full hover:bg-white/10 transition-all w-full sm:w-fit text-center">
             Voir nos réalisations
           </a>
         </div>
@@ -96,29 +120,31 @@
       </h2>
 
       <!-- Floating Tag Cloud -->
-      <div class="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-5xl mx-auto reveal reveal-delay-1">
-        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Quels sont les risques à anticiper ?</span>
-        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Comment optimiser ma rentabilité ?</span>
-        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Quel canal d'acquisition privilégier ?</span>
-        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Le marché est-il prêt pour mon produit ?</span>
-        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Comment me différencier de la concurrence ?</span>
-        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Qui est mon client idéal ?</span>
-        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Comment accélérer ma croissance ?</span>
-        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Quel capital pour mon expansion ?</span>
-        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Comment structurer mes opérations ?</span>
-        <span class="floating-tag bg-brand-beige text-main/80 px-4 py-2 rounded-lg text-sm font-medium border border-black/5 shadow-sm">Quelle est ma vision à long terme ?</span>
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-4 max-w-5xl mx-auto reveal reveal-delay-1 px-4">
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Quels sont les risques à anticiper ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Comment optimiser ma rentabilité ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Quel canal d'acquisition privilégier ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Le marché est-il prêt pour mon produit ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Comment me différencier de la concurrence ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Qui est mon client idéal ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Comment accélérer ma croissance ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Quel capital pour mon expansion ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Comment structurer mes opérations ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Quelle est ma vision à long terme ?</span>
       </div>
     </div>
   </section>
 
   <!-- FEATURE GRID SECTION -->
-  <section class="bg-brand-beige/50 border-t border-black/5" id="features">
+  <section class="bg-brand-beige border-t border-black/5 overflow-hidden" id="features">
     <div class="max-w-[1440px] mx-auto">
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 divide-x divide-black/5 divide-dashed border-b border-black/5 border-dashed">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 border-b border-black/5">
         <!-- Feature 1 -->
-        <div class="p-10 lg:p-16 flex flex-col gap-8 reveal">
+        <div class="p-10 lg:p-16 flex flex-col gap-8 reveal border-b sm:border-b-0 sm:border-r border-black/5 border-dashed">
           <div class="text-accent">
-            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" class="stroke-current stroke-1"><circle cx="20" cy="20" r="8"/><circle cx="44" cy="20" r="8"/><circle cx="20" cy="44" r="8"/><circle cx="44" cy="44" r="8"/><circle cx="20" cy="20" r="4"/><circle cx="44" cy="20" r="4"/><circle cx="20" cy="44" r="4"/><circle cx="44" cy="44" r="4"/></svg>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2">
+              <circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="7" r="2.5"/><circle cx="7" cy="17" r="2.5"/><circle cx="17" cy="17" r="2.5"/>
+            </svg>
           </div>
           <div>
             <h3 class="font-sans font-bold text-2xl mb-4">Simplicité radicale</h3>
@@ -127,9 +153,11 @@
         </div>
 
         <!-- Feature 2 -->
-        <div class="p-10 lg:p-16 flex flex-col gap-8 reveal reveal-delay-1">
-          <div class="text-accent">
-            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" class="stroke-current stroke-1"><path d="M12 40a20 20 0 0 1 40 0"/><path d="M16 40a16 16 0 0 1 32 0"/><path d="M20 40a12 12 0 0 1 24 0"/><path d="M24 40a8 8 0 0 1 16 0"/><path d="M28 40a4 4 0 0 1 8 0"/></svg>
+        <div class="p-10 lg:p-16 flex flex-col gap-8 reveal reveal-delay-1 border-b sm:border-b-0 lg:border-r border-black/5 border-dashed">
+          <div class="text-accent text-3xl">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2">
+               <path d="M12 22a10 10 0 0 0-10-10"/><path d="M12 18a6 6 0 0 0-6-6"/><path d="M12 14a2 2 0 0 0-2-2"/>
+            </svg>
           </div>
           <div>
             <h3 class="font-sans font-bold text-2xl mb-4">Résultats concrets</h3>
@@ -138,9 +166,11 @@
         </div>
 
         <!-- Feature 3 -->
-        <div class="p-10 lg:p-16 flex flex-col gap-8 reveal reveal-delay-2">
-          <div class="text-accent">
-            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" class="stroke-current stroke-1"><circle cx="32" cy="32" r="20"/><circle cx="32" cy="32" r="16"/><circle cx="32" cy="32" r="12"/><circle cx="32" cy="32" r="8"/><circle cx="32" cy="32" r="4"/></svg>
+        <div class="p-10 lg:p-16 flex flex-col gap-8 reveal reveal-delay-2 border-b sm:border-b-0 sm:border-r border-black/5 border-dashed">
+          <div class="text-accent text-3xl">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+            </svg>
           </div>
           <div>
             <h3 class="font-sans font-bold text-2xl mb-4">Expertise éprouvée</h3>
@@ -149,9 +179,11 @@
         </div>
 
         <!-- Feature 4 -->
-        <div class="p-10 lg:p-16 flex flex-col gap-8 reveal reveal-delay-3">
-          <div class="text-accent">
-            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" class="stroke-current stroke-1"><path d="M32 12v40M12 32h40"/><circle cx="32" cy="32" r="20"/><circle cx="32" cy="32" r="15"/><circle cx="32" cy="32" r="10"/></svg>
+        <div class="p-10 lg:p-16 flex flex-col gap-8 reveal reveal-delay-3 border-black/5 border-dashed">
+          <div class="text-accent text-3xl">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2">
+              <circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/>
+            </svg>
           </div>
           <div>
             <h3 class="font-sans font-bold text-2xl mb-4">Partenaire durable</h3>
@@ -188,13 +220,13 @@
                 <div class="px-5 py-3 bg-white/5 border border-white/10 rounded-2xl text-[10px] font-bold uppercase tracking-widest text-white/60">Innovation</div>
             </div>
 
-            <a href="#contact" class="btn-brand-lime px-8 py-4 text-sm group">
+            <a href="mailto:dafiashalom@gmail.com" class="btn-brand-lime px-8 py-4 text-sm group">
               Notre Approche
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="ml-2 stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
           </div>
         <div class="reveal reveal-delay-2 relative flex items-center justify-center">
-            <div class="glass-orb-container scale-125 lg:scale-150">
+            <div class="glass-orb-container scale-100 lg:scale-150">
                 <div class="glass-orb-glow"></div>
                 <div class="glass-orb-ring"></div>
                 <div class="glass-orb"></div>
@@ -210,7 +242,9 @@
         <!-- Value 1 -->
         <div class="bg-white/5 border border-white/10 rounded-2xl p-10 reveal">
           <div class="text-brand-lime mb-8 flex items-center gap-3">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 2v20M2 12h20"/><path d="m4.93 4.93 14.14 14.14"/><path d="m4.93 19.07 14.14-14.14"/></svg>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2">
+              <circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="7" r="2.5"/><circle cx="7" cy="17" r="2.5"/><circle cx="17" cy="17" r="2.5"/>
+            </svg>
             <h3 class="font-sans font-bold text-xl">Sur-mesure</h3>
           </div>
           <p class="text-white/50 leading-relaxed">Pas de solutions génériques. Chaque projet est façonné selon vos objectifs précis.</p>
@@ -219,7 +253,9 @@
         <!-- Value 2 -->
         <div class="bg-white/5 border border-white/10 rounded-2xl p-10 reveal reveal-delay-1">
           <div class="text-brand-lime mb-8 flex items-center gap-3">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.5-1 1-4c2 1 2 1 4 4z"/><path d="M12 15v5c-3-2-3-2-4-4z"/></svg>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2">
+               <path d="M12 22a10 10 0 0 0-10-10"/><path d="M12 18a6 6 0 0 0-6-6"/><path d="M12 14a2 2 0 0 0-2-2"/>
+            </svg>
             <h3 class="font-sans font-bold text-xl">Impact direct</h3>
           </div>
           <p class="text-white/50 leading-relaxed">Nous privilégions les actions qui génèrent de la valeur immédiate pour votre business.</p>
@@ -228,7 +264,9 @@
         <!-- Value 3 -->
         <div class="bg-white/5 border border-white/10 rounded-2xl p-10 reveal reveal-delay-2">
           <div class="text-brand-lime mb-8 flex items-center gap-3">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+            </svg>
             <h3 class="font-sans font-bold text-xl">Proximité</h3>
           </div>
           <p class="text-white/50 leading-relaxed">Une communication fluide et transparente pour avancer ensemble, sans friction.</p>
@@ -238,7 +276,7 @@
   </section>
 
   <!-- METRICS SECTION (Dark) -->
-  <section class="py-32 bg-main text-white border-t border-white/5" id="metrics">
+  <section class="py-32 bg-main text-white border-t border-white/5 overflow-hidden" id="metrics">
     <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-24">
       <div class="grid lg:grid-cols-2 gap-24 items-center reveal">
         <div>
@@ -253,19 +291,19 @@
         
         <div class="grid grid-cols-2 gap-12 sm:gap-20">
             <div class="reveal reveal-delay-1 border-l border-white/10 pl-8 py-4">
-              <div class="font-sans text-6xl sm:text-8xl font-bold text-white mb-4 counter" data-target="2">0</div>
+              <div class="font-sans text-5xl sm:text-8xl font-bold text-white mb-4 counter" data-target="2">0</div>
               <p class="text-white/40 font-sans font-bold tracking-[0.2em] uppercase text-xs">Années d'exp.</p>
             </div>
             <div class="reveal reveal-delay-2 border-l border-white/10 pl-8 py-4">
-              <div class="font-sans text-6xl sm:text-8xl font-bold text-white mb-4 counter" data-target="100">0</div>
+              <div class="font-sans text-5xl sm:text-8xl font-bold text-white mb-4 counter" data-target="100">0</div>
               <p class="text-white/40 font-sans font-bold tracking-[0.2em] uppercase text-xs">Satisfaction %</p>
             </div>
             <div class="reveal reveal-delay-3 border-l border-white/10 pl-8 py-4">
-              <div class="font-sans text-6xl sm:text-8xl font-bold text-white mb-4 counter" data-target="35">0</div>
+              <div class="font-sans text-5xl sm:text-8xl font-bold text-white mb-4 counter" data-target="35">0</div>
               <p class="text-white/40 font-sans font-bold tracking-[0.2em] uppercase text-xs">Projets livrés</p>
             </div>
             <div class="reveal reveal-delay-4 border-l border-white/10 pl-8 py-4">
-              <div class="font-sans text-6xl sm:text-8xl font-bold text-white mb-4 counter" data-target="4">0</div>
+              <div class="font-sans text-5xl sm:text-8xl font-bold text-white mb-4 counter" data-target="4">0</div>
               <p class="text-white/40 font-sans font-bold tracking-[0.2em] uppercase text-xs">Pays atteints</p>
             </div>
         </div>
@@ -273,275 +311,205 @@
     </div>
   </section>
 
-  <!-- CAPABILITIES / SERVICES (Stacking Cards) -->
-  <section class="py-32 bg-main text-white relative" id="capabilities">
-    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-24">
+  <!-- EXPERTISE SECTION (MINIMALIST PREMIUM) -->
+  <section class="py-32 bg-main relative overflow-hidden" id="capabilities" data-nav-dark="true">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-24">
       
-      <div class="mb-32 reveal">
-        <div class="flex items-center gap-3 mb-8">
-          <div class="w-2 h-2 bg-brand-lime"></div>
-          <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Nos Expertises</span>
+      <!-- Header Area -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32 reveal">
+        <div>
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-10 h-px bg-brand-lime"></div>
+            <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-white/40">Expertise de pointe</span>
+          </div>
+          <h2 class="section-heading text-white">
+            Architecture digitale <span class="text-brand-lime/80">&</span> <br> Performance Business.
+          </h2>
         </div>
-        <h2 class="font-sans text-[clamp(2.5rem,8vw,4.5rem)] font-bold tracking-tight leading-[1.1] mb-12 max-w-5xl">
-          Plus besoin de multiplier les experts. <br>
-          <span class="text-brand-lime">Nous maîtrisons tout</span>, pour que vous puissiez vous concentrer sur l'essentiel.
-        </h2>
+        <div class="lg:pt-16">
+          <p class="text-white/50 text-xl font-medium leading-relaxed max-w-xl">
+            Nous combinons design d'exception et technologies scalables pour transformer votre vision en leader du marché.
+          </p>
+        </div>
       </div>
 
-      <div class="sticky-card-container">
-        <!-- Card 1: Développement Web -->
-        <div class="sticky-card top-32">
-          <div class="card-light flex flex-col gap-12 lg:gap-16 min-h-[70vh] justify-center">
-            <!-- Row 1: Header -->
-            <div class="flex items-start gap-8 lg:gap-12">
-              <div class="w-20 h-20 lg:w-24 lg:h-24 bg-main/5 rounded-2xl flex items-center justify-center shrink-0">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="stroke-main stroke-[1.5]"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
-              </div>
-              <div class="flex-1 pt-2">
-                <h3 class="font-sans text-4xl lg:text-5xl font-bold mb-4 text-main">Développement Web</h3>
-                <p class="text-xl text-main/60 leading-relaxed max-w-2xl">Plateformes robustes et performantes, pensées pour l'expérience utilisateur et la conversion.</p>
-              </div>
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Service Card 01 -->
+        <div class="expertise-card p-12 lg:p-14 flex flex-col justify-between group reveal">
+          <div>
+            <div class="mb-8 flex items-center justify-between">
+              <span class="text-[10px] font-bold text-white/40 uppercase tracking-[0.4em]">01 / Strategy</span>
             </div>
+            <!-- Icon Integration -->
+            <div class="mb-10 w-full aspect-square max-w-[120px] icon-box-dark">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-[1.5]">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <line x1="3" y1="9" x2="21" y2="9"/>
+                <line x1="9" y1="21" x2="9" y2="9"/>
+              </svg>
+            </div>
+            <h3 class="text-4xl font-bold text-white mb-6 uppercase tracking-tight">Design & <br>Expérience</h3>
+            <p class="text-white/60 text-base leading-relaxed mb-12">
+              Création de systèmes d'interaction qui captivent et convertissent.
+            </p>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3 text-[10px] font-bold text-white/40 group-hover:text-brand-lime uppercase tracking-widest transition-colors">
+              <div class="w-1 h-1 bg-brand-lime"></div> UI/UX Design
+            </li>
+            <li class="flex items-center gap-3 text-[10px] font-bold text-white/40 group-hover:text-brand-lime uppercase tracking-widest transition-colors">
+              <div class="w-1 h-1 bg-brand-lime"></div> Design Systems
+            </li>
+          </ul>
+        </div>
 
-            <!-- Divider -->
-            <div class="h-[1px] bg-main/10 w-full"></div>
+        <!-- Service Card 02 -->
+        <div class="expertise-card p-12 lg:p-14 flex flex-col justify-between group reveal reveal-delay-1">
+          <div>
+            <div class="mb-8 flex items-center justify-between">
+              <span class="text-[10px] font-bold text-white/40 uppercase tracking-[0.4em]">02 / Tech</span>
+            </div>
+            <!-- Icon Integration -->
+            <div class="mb-10 w-full aspect-square max-w-[120px] icon-box-dark">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-[1.5]">
+                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6M14 4l-4 16"/>
+              </svg>
+            </div>
+            <h3 class="text-4xl font-bold text-white mb-6 uppercase tracking-tight">Web <br>Engineering</h3>
+            <p class="text-white/60 text-base leading-relaxed mb-12">
+              Développement robuste focus sur la performance et la scalabilité.
+            </p>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3 text-[10px] font-bold text-white/40 group-hover:text-brand-lime uppercase tracking-widest transition-colors">
+              <div class="w-1 h-1 bg-brand-lime"></div> Next.js / React
+            </li>
+            <li class="flex items-center gap-3 text-[10px] font-bold text-white/40 group-hover:text-brand-lime uppercase tracking-widest transition-colors">
+              <div class="w-1 h-1 bg-brand-lime"></div> Backend Architecture
+            </li>
+          </ul>
+        </div>
 
-            <!-- Row 2: Body -->
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-              <div class="rounded-3xl overflow-hidden aspect-[16/9] lg:aspect-auto">
-                <img src="/images/young-black-man-collaborating-with-colleagues-in-m-2026-01-21-02-38-50-utc.jpg" alt="Web Dev" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
-              </div>
-              <div class="flex flex-col h-full justify-between py-2">
-                <ul class="space-y-4">
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">01 STRATÉGIE TECHNIQUE</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">02 ARCHITECTURE NEXT.JS</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">03 OPTIMISATION PERFORMANCE</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">04 E-COMMERCE HEADLESS</li>
-                </ul>
-                <a href="#contact" class="group flex items-center gap-3 text-main font-bold mt-12 hover:text-accent transition-colors">
-                  Découvrir le service
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-              </div>
+        <!-- Service Card 03 -->
+        <div class="expertise-card p-12 lg:p-14 flex flex-col justify-between group reveal reveal-delay-2">
+          <div>
+            <div class="mb-8 flex items-center justify-between">
+              <span class="text-[10px] font-bold text-white/40 uppercase tracking-[0.4em]">03 / Intelligence</span>
+            </div>
+            <!-- Icon Integration -->
+            <div class="mb-10 w-full aspect-square max-w-[120px] icon-box-dark">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-[1.5]">
+                <path d="M10 3L11.5 8.5L17 10L11.5 11.5L10 17L8.5 11.5L3 10L8.5 8.5L10 3Z"/>
+                <path d="M19 15L19.5 17.5L22 18L19.5 18.5L19 21L18.5 18.5L16 18L18.5 17.5L19 15Z"/>
+              </svg>
+            </div>
+            <h3 class="text-4xl font-bold text-white mb-6 uppercase tracking-tight">IA & <br>Automation</h3>
+            <p class="text-white/60 text-base leading-relaxed mb-12">
+              Intégration d'IA générative pour automatiser vos processus business.
+            </p>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3 text-[10px] font-bold text-white/40 group-hover:text-brand-lime uppercase tracking-widest transition-colors">
+              <div class="w-1 h-1 bg-brand-lime"></div> LLM Integration
+            </li>
+            <li class="flex items-center gap-3 text-[10px] font-bold text-white/40 group-hover:text-brand-lime uppercase tracking-widest transition-colors">
+              <div class="w-1 h-1 bg-brand-lime"></div> RAG & Agents
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service Card 04 (Highlight) -->
+        <div class="expertise-card-lime p-12 lg:p-14 flex flex-col justify-between group reveal reveal-delay-3">
+          <div>
+            <div class="mb-8 flex items-center justify-between">
+              <span class="text-[10px] font-bold text-brand-lime uppercase tracking-[0.4em]">04 / Growth</span>
+            </div>
+            <!-- Icon Integration -->
+            <div class="mb-10 w-full aspect-square max-w-[120px] bg-brand-lime/10 border border-brand-lime/20 rounded-2xl flex items-center justify-center text-brand-lime">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-[1.5]">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+                <polyline points="16 7 22 7 22 13"/>
+              </svg>
+            </div>
+            <h3 class="text-4xl font-bold text-white mb-6 uppercase tracking-tight">Branding & <br>Stratégie</h3>
+            <p class="text-white/80 text-base leading-relaxed mb-12">
+              Identité forte et stratégie d'acquisition data-driven pour dominer.
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <div class="p-2 border border-brand-lime/20 rounded-lg bg-brand-lime/5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-brand-lime stroke-[1.5]">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="p-2 border border-brand-lime/20 rounded-lg bg-brand-lime/5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-brand-lime stroke-[1.5]">
+                <path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>
+              </svg>
             </div>
           </div>
         </div>
 
-        <!-- Card 2: Développement Mobile -->
-        <div class="sticky-card sm:top-36 top-24">
-          <div class="card-light flex flex-col gap-12 lg:gap-16 min-h-[70vh] justify-center">
-            <div class="flex items-start gap-8 lg:gap-12">
-              <div class="w-20 h-20 lg:w-24 lg:h-24 bg-main/5 rounded-2xl flex items-center justify-center shrink-0">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="stroke-main stroke-[1.5]"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-              </div>
-              <div class="flex-1 pt-2">
-                <h3 class="font-sans text-4xl lg:text-5xl font-bold mb-4 text-main">Développement Mobile</h3>
-                <p class="text-xl text-main/60 leading-relaxed max-w-2xl">Applications natives et hybrides intuitives pour connecter votre marque à vos utilisateurs partout.</p>
-              </div>
-            </div>
-            <div class="h-[1px] bg-main/10 w-full"></div>
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-              <div class="rounded-3xl overflow-hidden aspect-[16/9] lg:aspect-auto">
-                <img src="/images/african-american-man-and-woman-sit-at-a-stylish-ho-2026-01-11-10-58-43-utc.jpg" alt="Mobile Dev" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
-              </div>
-              <div class="flex flex-col h-full justify-between py-2">
-                <ul class="space-y-4">
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">01 DESIGN MOBILE-FIRST</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">02 REACT NATIVE & FLUTTER</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">03 INTÉGRATION API</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">04 MAINTENANCE PROACTIVE</li>
-                </ul>
-                <a href="#contact" class="group flex items-center gap-3 text-main font-bold mt-12 hover:text-accent transition-colors">
-                  Découvrir le service
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3: Design UI/UX -->
-        <div class="sticky-card sm:top-40 top-28">
-          <div class="card-light flex flex-col gap-12 lg:gap-16 min-h-[70vh] justify-center">
-            <div class="flex items-start gap-8 lg:gap-12">
-              <div class="w-20 h-20 lg:w-24 lg:h-24 bg-main/5 rounded-2xl flex items-center justify-center shrink-0">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="stroke-main stroke-[1.5]"><path d="M12 20h9"/><path d="m16.5 3.5 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
-              </div>
-              <div class="flex-1 pt-2">
-                <h3 class="font-sans text-4xl lg:text-5xl font-bold mb-4 text-main">Design UI/UX</h3>
-                <p class="text-xl text-main/60 leading-relaxed max-w-2xl">Interfaces mémorables qui racontent une histoire et simplifient le parcours de vos clients.</p>
-              </div>
-            </div>
-            <div class="h-[1px] bg-main/10 w-full"></div>
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-              <div class="rounded-3xl overflow-hidden aspect-[16/9] lg:aspect-auto">
-                <img src="/images/portrait-of-smiling-businessman-working-in-busy-mo-2026-03-10-04-50-52-utc.jpg" alt="UX Design" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
-              </div>
-              <div class="flex flex-col h-full justify-between py-2">
-                <ul class="space-y-4">
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">01 RECHERCHE UTILISATEUR</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">02 PROTOTYPAGE INTERACTIF</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">03 DESIGN SYSTEMS</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">04 AUDITS D'ACCESSIBILITÉ</li>
-                </ul>
-                <a href="#contact" class="group flex items-center gap-3 text-main font-bold mt-12 hover:text-accent transition-colors">
-                  Découvrir le service
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4: SEO & Performance -->
-        <div class="sticky-card sm:top-44 top-32">
-          <div class="card-light flex flex-col gap-12 lg:gap-16 min-h-[70vh] justify-center">
-            <div class="flex items-start gap-8 lg:gap-12">
-              <div class="w-20 h-20 lg:w-24 lg:h-24 bg-main/5 rounded-2xl flex items-center justify-center shrink-0">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="stroke-main stroke-[1.5]"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-              </div>
-              <div class="flex-1 pt-2">
-                <h3 class="font-sans text-4xl lg:text-5xl font-bold mb-4 text-main">SEO & Performance</h3>
-                <p class="text-xl text-main/60 leading-relaxed max-w-2xl">Dominez les moteurs de recherche avec une vitesse de chargement fulgurante et un contenu optimisé.</p>
-              </div>
-            </div>
-            <div class="h-[1px] bg-main/10 w-full"></div>
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-              <div class="rounded-3xl overflow-hidden aspect-[16/9] lg:aspect-auto">
-                <img src="/images/positive-black-man-is-sitting-business-people-are-2026-01-09-10-35-01-utc.JPG" alt="SEO" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
-              </div>
-              <div class="flex flex-col h-full justify-between py-2">
-                <ul class="space-y-4">
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">01 AUDIT TECHNIQUE COMPLET</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">02 STRATÉGIE DE CONTENU</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">03 NETLINKING QUALITATIF</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">04 CORE WEB VITALS</li>
-                </ul>
-                <a href="#contact" class="group flex items-center gap-3 text-main font-bold mt-12 hover:text-accent transition-colors">
-                  Découvrir le service
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 5: Branding & Stratégie -->
-        <div class="sticky-card sm:top-48 top-36">
-          <div class="card-light flex flex-col gap-12 lg:gap-16 min-h-[70vh] justify-center">
-            <div class="flex items-start gap-8 lg:gap-12">
-              <div class="w-20 h-20 lg:w-24 lg:h-24 bg-main/5 rounded-2xl flex items-center justify-center shrink-0">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="stroke-main stroke-[1.5]"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16v.01"/></svg>
-              </div>
-              <div class="flex-1 pt-2">
-                <h3 class="font-sans text-4xl lg:text-5xl font-bold mb-4 text-main">Branding & Stratégie</h3>
-                <p class="text-xl text-main/60 leading-relaxed max-w-2xl">Nous définissons votre identité unique pour vous démarquer sur un marché saturé.</p>
-              </div>
-            </div>
-            <div class="h-[1px] bg-main/10 w-full"></div>
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-              <div class="rounded-3xl overflow-hidden aspect-[16/9] lg:aspect-auto">
-                <img src="/images/portrait-of-smiling-young-businessman-working-in-b-2026-01-05-23-03-38-utc.jpg" alt="Branding" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
-              </div>
-              <div class="flex flex-col h-full justify-between py-2">
-                <ul class="space-y-4">
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">01 IDENTITÉ VISUELLE</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">02 CHARTE GRAPHIQUE</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">03 POSITIONNEMENT</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">04 STORYTELLING</li>
-                </ul>
-                <a href="#contact" class="group flex items-center gap-3 text-main font-bold mt-12 hover:text-accent transition-colors">
-                  Découvrir le service
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 6: Marketing Digital -->
-        <div class="sticky-card sm:top-52 top-40">
-          <div class="card-light flex flex-col gap-12 lg:gap-16 min-h-[70vh] justify-center">
-            <div class="flex items-start gap-8 lg:gap-12">
-              <div class="w-20 h-20 lg:w-24 lg:h-24 bg-main/5 rounded-2xl flex items-center justify-center shrink-0">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="stroke-main stroke-[1.5]"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-              </div>
-              <div class="flex-1 pt-2">
-                <h3 class="font-sans text-4xl lg:text-5xl font-bold mb-4 text-main">Marketing Digital</h3>
-                <p class="text-xl text-main/60 leading-relaxed max-w-2xl">Stratégies d'acquisition pilotées par la donnée pour booster votre retour sur investissement.</p>
-              </div>
-            </div>
-            <div class="h-[1px] bg-main/10 w-full"></div>
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-              <div class="rounded-3xl overflow-hidden aspect-[16/9] lg:aspect-auto">
-                <img src="/images/portrait-of-smiling-businessman-working-in-busy-mo-2026-03-10-04-50-52-utc.jpg" alt="Marketing" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
-              </div>
-              <div class="flex flex-col h-full justify-between py-2">
-                <ul class="space-y-4">
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">01 PUBLICITÉ (GOOGLE, META)</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">02 EMAIL AUTOMATION</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">03 INBOUND MARKETING</li>
-                  <li class="flex items-center justify-between text-sm font-bold uppercase tracking-wider text-main/40 border-b border-main/5 pb-4">04 ANALYSE DE DONNÉES</li>
-                </ul>
-                <a href="#contact" class="group flex items-center gap-3 text-main font-bold mt-12 hover:text-accent transition-colors">
-                  Découvrir le service
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
 
-
   <!-- PROCESS / STEPS SECTION (Dark) -->
   <!-- ROTATING PROCESS SECTION (Dark) -->
-  <section id="process" class="relative h-[350vh] bg-main overflow-visible">
-    <div class="sticky top-0 h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
-      <!-- Centered Header -->
-      <div id="processHeader" class="absolute inset-x-0 top-1/4 flex flex-col items-center text-center px-6 transition-all duration-500 z-20">
-         <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-white/40 mb-8 lg:mb-12">NOTRE PROCESS</span>
-         <h2 class="font-sans text-[clamp(2rem,6vw,4rem)] font-bold tracking-tight leading-[1.1] max-w-4xl text-white">
-           Le Protocole SAGANA : Votre passage à l'échelle <br class="hidden lg:block"> en 3 phases chirurgicales.
-         </h2>
+  <section id="process" class="relative h-[120vh] bg-main overflow-visible">
+    <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+      
+      <!-- Rotating Wheel (Background) -->
+      <div id="processWheel" class="absolute w-[320px] h-[320px] md:w-[700px] md:h-[700px] border border-white/5 rounded-full flex items-center justify-center z-0">
+        <!-- Markers -->
+        <div class="wheel-marker process-transition" data-step="1"><span>1</span></div>
+        <div class="wheel-marker process-transition" data-step="2"><span>2</span></div>
+        <div class="wheel-marker process-transition" data-step="3"><span>3</span></div>
       </div>
 
-      <!-- Background Arc -->
-      <div class="absolute inset-0 flex justify-center items-end pointer-events-none">
-        <div class="process-glow" id="processGlow"></div>
-        <div id="processWheel" class="w-[200vw] h-[200vw] lg:w-[130vw] lg:h-[130vw] border-[1px] border-white/5 rounded-full absolute -bottom-[170vw] lg:-bottom-[105vw] transition-transform duration-150 ease-out will-change-transform">
-            <!-- Dynamic Markers -->
-            <div class="wheel-marker" style="transform: rotate(0deg) translateY(0);"><span>01</span></div>
-            <div class="wheel-marker" style="transform: rotate(120deg) translateY(0);"><span>02</span></div>
-            <div class="wheel-marker" style="transform: rotate(240deg) translateY(0);"><span>03</span></div>
-            
-            <!-- Decorative dots -->
-            <div class="absolute top-0 left-1/2 w-1 h-1 bg-white/5 rounded-full" style="transform: rotate(60deg) translateY(-50%); transform-origin: 50% 100%;"></div>
-            <div class="absolute top-0 left-1/2 w-1 h-1 bg-white/5 rounded-full" style="transform: rotate(180deg) translateY(-50%); transform-origin: 50% 100%;"></div>
-            <div class="absolute top-0 left-1/2 w-1 h-1 bg-white/5 rounded-full" style="transform: rotate(300deg) translateY(-50%); transform-origin: 50% 100%;"></div>
+      <!-- Centered Content Wrapper -->
+      <div class="relative z-10 w-full max-w-4xl px-8 flex flex-col items-center text-center">
+        <!-- Main Section Header (Fades at start of scroll) -->
+        <div id="processHeader" class="mb-20 process-transition">
+          <span class="text-brand-lime font-bold uppercase tracking-[0.3em] text-[10px] mb-4 block">Notre Méthode</span>
+          <h2 class="text-5xl md:text-8xl font-bold text-white tracking-tighter uppercase leading-[0.9]">Approche <br>Systémique</h2>
+        </div>
+
+        <!-- Dynamic Step Content -->
+        <div id="stepContent" class="opacity-0 transition-all duration-700 flex flex-col items-center">
+          <span id="stepLabelDisplay" class="text-white/40 font-bold uppercase tracking-[0.4em] text-[10px] mb-6 block">Phase 01</span>
+          <h3 id="stepTitleDisplay" class="text-4xl md:text-6xl font-bold text-white mb-8 uppercase tracking-tight">Immersion</h3>
+          <p id="stepDescriptionDisplay" class="text-white/60 text-lg md:text-xl max-w-xl leading-relaxed mx-auto font-medium">
+            Exploration profonde de votre vision pour poser les fondations d'une stratégie hors-norme.
+          </p>
         </div>
       </div>
 
-      <!-- Active Step Content (Dynamic & Centered) -->
-      <div class="relative z-10 text-center max-w-2xl px-6 opacity-0 translate-y-8 transition-all duration-700" id="stepContent">
-          <div class="flex flex-col items-center">
-              <div class="flex flex-col items-center mb-12">
-                  <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-brand-lime" id="stepLabelDisplay">ÉTAPE 01</span>
-                  <div class="w-[1px] h-16 bg-white/10 my-6"></div>
-                  <div class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center text-xl font-bold text-white bg-white/5" id="stepNumberDisplay">1</div>
-              </div>
-              <h3 class="font-sans text-[clamp(2rem,4vw,3rem)] font-bold text-white mb-6 tracking-tight" id="stepTitleDisplay">Immersion & Stratégie</h3>
-              <p class="text-white/50 text-xl lg:text-2xl leading-relaxed max-w-lg" id="stepDescriptionDisplay">Nous plongeons dans votre univers pour définir une trajectoire claire, robuste et ambitieuse.</p>
-          </div>
+      <!-- Static Footer Progress (Premium Touch) -->
+      <div class="absolute bottom-12 left-0 w-full px-12 flex justify-between items-end">
+        <div class="flex flex-col gap-2">
+            <span class="text-[9px] text-white/20 font-mono tracking-[0.3em] uppercase">System State</span>
+            <div class="flex gap-2">
+                <div class="w-2 h-2 rounded-full bg-brand-lime animate-pulse"></div>
+                <div class="w-2 h-2 rounded-full bg-white/10"></div>
+                <div class="w-2 h-2 rounded-full bg-white/10"></div>
+            </div>
+        </div>
+        <div class="text-right">
+            <span class="text-[9px] text-white/20 font-mono tracking-[0.3em] uppercase block mb-2">Progress 01-03</span>
+            <div class="w-32 h-[1px] bg-white/10 relative overflow-hidden">
+                <div id="processProgressBar" class="absolute inset-y-0 left-0 bg-brand-lime transition-all duration-300" style="width: 0%"></div>
+            </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- COMPARISON SECTION (Dark) -->
-  <section class="py-32 lg:py-48 px-4 sm:px-6 lg:px-24 bg-main text-white border-t border-white/5" id="comparison">
+  <section class="py-32 lg:py-48 px-4 sm:px-6 lg:px-24 bg-main text-white border-t border-white/5 overflow-hidden" id="comparison">
     <div class="max-w-[1000px] mx-auto overflow-hidden">
       <div class="text-center mb-24 reveal">
         <h2 class="font-sans text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight mb-6">Côte à côte, le choix est <span class="text-brand-lime">simple</span></h2>
@@ -549,26 +517,26 @@
       </div>
       
       <div class="bg-white/5 rounded-[3rem] border border-white/10 overflow-hidden reveal reveal-delay-1">
-        <div class="grid grid-cols-2 text-center font-sans font-bold text-sm tracking-widest uppercase border-b border-white/10">
-           <div class="p-8 text-white/40">Les Autres</div>
-           <div class="p-8 bg-brand-lime text-main">SAGANA</div>
+        <div class="grid grid-cols-2 text-center font-sans font-bold text-[10px] sm:text-sm tracking-widest uppercase border-b border-white/10">
+           <div class="p-6 sm:p-8 text-white/40">Les Autres</div>
+           <div class="p-6 sm:p-8 bg-brand-lime text-main">SAGANA</div>
         </div>
         <div class="divide-y divide-white/10 text-white/70">
-          <div class="grid grid-cols-2 text-center text-sm lg:text-base font-medium">
-            <div class="p-8">Frais cachés et devis flous</div>
-            <div class="p-8 text-white font-bold">Transparence totale des prix</div>
+          <div class="grid grid-cols-2 text-center text-[11px] sm:text-base font-medium">
+            <div class="p-6 sm:p-8">Frais cachés et devis flous</div>
+            <div class="p-6 sm:p-8 text-white font-bold">Transparence totale des prix</div>
           </div>
-          <div class="grid grid-cols-2 text-center text-sm lg:text-base font-medium">
-            <div class="p-8">Communication lente (emails)</div>
-            <div class="p-8 text-white font-bold">Channel Slack & Updates hebdo</div>
+          <div class="grid grid-cols-2 text-center text-[11px] sm:text-base font-medium">
+            <div class="p-6 sm:p-8">Communication lente (emails)</div>
+            <div class="p-6 sm:p-8 text-white font-bold">Channel Slack & Updates hebdo</div>
           </div>
-          <div class="grid grid-cols-2 text-center text-sm lg:text-base font-medium">
-            <div class="p-8">Code obsolète et peu évolutif</div>
-            <div class="p-8 text-white font-bold">Stack moderne (Next.js, Tailwind v4)</div>
+          <div class="grid grid-cols-2 text-center text-[11px] sm:text-base font-medium">
+            <div class="p-6 sm:p-8">Code obsolète et peu évolutif</div>
+            <div class="p-6 sm:p-8 text-white font-bold">Stack moderne</div>
           </div>
-          <div class="grid grid-cols-2 text-center text-sm lg:text-base font-medium">
-            <div class="p-8">Focus sur le design uniquement</div>
-            <div class="p-8 text-white font-bold">Focus sur le ROI et le Business</div>
+          <div class="grid grid-cols-2 text-center text-[11px] sm:text-base font-medium">
+            <div class="p-6 sm:p-8">Focus sur le design uniquement</div>
+            <div class="p-6 sm:p-8 text-white font-bold">Focus sur le ROI</div>
           </div>
         </div>
       </div>
@@ -624,7 +592,7 @@
                 </div>
 
                 <!-- Middle Column: Immersive Image -->
-                <div class="relative h-[400px] lg:h-auto overflow-hidden">
+                <div class="relative h-[250px] sm:h-[400px] lg:h-auto overflow-hidden">
                     <img src="/portfolio/vortex.webp" alt="Vortex Mobile App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
                     <div class="absolute inset-0 bg-black/20"></div>
                     <div class="absolute inset-0 flex items-center justify-center p-12 text-center text-white font-black text-4xl lg:text-5xl uppercase tracking-[0.2em] mix-blend-overlay">
@@ -685,7 +653,7 @@
                 </div>
 
                 <!-- Middle Column: Immersive Image -->
-                <div class="relative h-[400px] lg:h-auto overflow-hidden">
+                <div class="relative h-[250px] sm:h-[400px] lg:h-auto overflow-hidden">
                     <img src="/portfolio/case study.webp" alt="Art du Bénin APK" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
                     <div class="absolute inset-0 bg-black/20"></div>
                     <div class="absolute inset-0 flex items-center justify-center p-12 text-center text-white font-black text-4xl lg:text-5xl uppercase tracking-[0.2em] mix-blend-overlay">
@@ -746,7 +714,7 @@
                 </div>
 
                 <!-- Middle Column: Immersive Image -->
-                <div class="relative h-[400px] lg:h-auto overflow-hidden">
+                <div class="relative h-[250px] sm:h-[400px] lg:h-auto overflow-hidden">
                     <img src="/portfolio/advisor.webp" alt="Sport Advisor IA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
                     <div class="absolute inset-0 bg-black/20"></div>
                     <div class="absolute inset-0 flex items-center justify-center p-12 text-center text-white font-black text-4xl lg:text-5xl uppercase tracking-[0.2em] mix-blend-overlay">
@@ -784,7 +752,7 @@
   </section>
 
   <!-- LIBRARY / BLOG SECTION (Dark) -->
-  <section class="py-32 lg:py-48 px-4 sm:px-6 lg:px-24 bg-main text-white border-t border-white/5" id="library">
+  <section class="py-32 lg:py-48 px-4 sm:px-6 lg:px-24 bg-main text-white border-t border-white/5 overflow-hidden" id="library">
     <div class="max-w-[1440px] mx-auto">
       <div class="reveal mb-32 max-w-4xl">
         <div class="flex items-center gap-3 mb-10">
@@ -871,8 +839,8 @@
            <p class="text-white/40 text-lg leading-relaxed mb-12 max-w-md font-medium">
              Transformez vos ambitions en produits digitaux d'exception. Notre équipe est prête à vous accompagner.
            </p>
-           <div class="reveal relative py-12 flex items-center justify-center">
-              <div class="glass-orb-container scale-110">
+           <div class="reveal relative py-12 flex items-center justify-center overflow-hidden">
+              <div class="glass-orb-container scale-100">
                   <div class="glass-orb-glow"></div>
                   <div class="glass-orb-ring" style="animation-duration: 15s; border-color: rgba(255,255,255,0.05)"></div>
                   <div class="glass-orb" style="width: 70%; height: 70%; animation-delay: -2s"></div>
@@ -882,14 +850,18 @@
         </div>
         
         <div class="bg-white/5 backdrop-blur-sm p-12 lg:p-16 rounded-[3rem] border border-white/10 shadow-2xl">
-           <form id="contactForm" class="space-y-12">
-             <div class="space-y-6">
-                <label class="block text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">Vos Informations</label>
-                <div class="grid grid-cols-2 gap-10">
-                   <input type="text" placeholder="Nom Complet" required class="bg-transparent border-b border-white/10 py-5 focus:outline-none focus:border-brand-lime transition-colors rounded-none placeholder:text-white/20 font-sans" />
-                   <input type="email" placeholder="Email Professionnel" required class="bg-transparent border-b border-white/10 py-5 focus:outline-none focus:border-brand-lime transition-colors rounded-none placeholder:text-white/20 font-sans" />
-                </div>
-             </div>
+           <form id="contactForm" class="space-y-4 lg:space-y-6">
+            <!-- Grid for First/Last Name -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+              <div class="space-y-2">
+                <label class="text-[10px] uppercase font-bold tracking-widest text-white/40">Nom Complet</label>
+                <input type="text" placeholder="John Doe" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 lg:px-6 py-3 lg:py-4 text-white focus:border-brand-lime transition-all outline-none">
+              </div>
+              <div class="space-y-2">
+                <label class="text-[10px] uppercase font-bold tracking-widest text-white/40">Email Professionnel</label>
+                <input type="email" placeholder="john@company.ai" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 lg:px-6 py-3 lg:py-4 text-white focus:border-brand-lime transition-all outline-none">
+              </div>
+            </div>
              <div class="space-y-6">
                 <label class="block text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">Votre Projet</label>
                 <textarea rows="4" placeholder="Décrivez votre besoin..." required class="bg-transparent border-b border-white/10 py-5 focus:outline-none focus:border-brand-lime transition-colors resize-none w-full rounded-none placeholder:text-white/20 font-sans"></textarea>
@@ -917,7 +889,7 @@
             </div>
             
             <div class="relative z-10">
-              <a href="#contact" class="flex items-center gap-4 bg-main text-white px-10 py-6 rounded-2xl font-bold text-lg hover:scale-105 transition-transform group">
+              <a href="mailto:dafiashalom@gmail.com" class="flex items-center justify-center lg:justify-start gap-4 bg-main text-white px-6 py-4 sm:px-10 sm:py-6 rounded-2xl font-bold text-sm sm:text-lg hover:scale-105 transition-transform group w-full lg:w-fit">
                 Parlons de votre projet dès aujourd'hui
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform group-hover:translate-x-1">
                   <path d="M4.16663 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -935,14 +907,14 @@
         </div>
 
         <!-- 2. CONTACT INFO SECTION -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-24 mt-12 border-t border-white/5 reveal reveal-delay-1">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 py-24 mt-12 border-t border-white/5 reveal reveal-delay-1">
           <div class="space-y-6">
             <div class="footer-section-title">
               <div class="footer-bullet"></div> TÉLÉPHONE
             </div>
             <div class="space-y-2">
-              <p class="text-white hover:text-brand-lime transition-colors font-medium">+33 (0) 1 23 45 67 89</p>
-              <p class="text-white/40 text-sm">Disponible du lun. au ven.</p>
+              <p class="text-white hover:text-brand-lime transition-colors font-medium">0160359022</p>
+              <p class="text-white/40 text-sm italic">Disponible du lundi au vendredi.</p>
             </div>
           </div>
 
@@ -951,59 +923,26 @@
               <div class="footer-bullet"></div> EMAIL
             </div>
             <div class="space-y-2">
-              <p class="text-white hover:text-brand-lime transition-colors font-medium">contact@sagana.ai</p>
-              <p class="text-white hover:text-brand-lime transition-colors font-medium">support@sagana.ai</p>
-            </div>
-          </div>
-
-          <div class="space-y-6">
-            <div class="footer-section-title">
-              <div class="footer-bullet"></div> ADRESSE
-            </div>
-            <div class="space-y-2">
-              <p class="text-white font-medium">8 Rue de la Paix</p>
-              <p class="text-white/40 text-sm">75002 Paris, France</p>
-            </div>
-          </div>
-
-          <div class="space-y-6">
-            <div class="footer-section-title">
-              <div class="footer-bullet"></div> HORAIRES
-            </div>
-            <div class="space-y-2">
-              <p class="text-white font-medium">Lun. au Ven. : 9h00 - 18h30</p>
+              <p class="text-white hover:text-brand-lime transition-colors font-medium">dafiashalom@gmail.com</p>
               <p class="text-brand-lime font-bold tracking-widest uppercase text-[10px]" id="footerClock">CHARGEMENT HORLOGE...</p>
             </div>
           </div>
         </div>
 
         <!-- 3. LINKS SECTION -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-32 py-24 border-t border-white/5 reveal reveal-delay-2">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-32 py-24 border-t border-white/5 reveal reveal-delay-2">
           <!-- Pages -->
           <div class="space-y-8">
             <div class="footer-section-title">
               <div class="footer-bullet"></div> PAGES
             </div>
-            <div class="flex flex-col">
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-12">
               <a href="#hero" class="footer-arrow-link"><span>Accueil</span> <span class="footer-arrow-icon">→</span></a>
               <a href="#about-company" class="footer-arrow-link"><span>À propos</span> <span class="footer-arrow-icon">→</span></a>
               <a href="#capabilities" class="footer-arrow-link"><span>Services</span> <span class="footer-arrow-icon">→</span></a>
               <a href="#process" class="footer-arrow-link"><span>Process</span> <span class="footer-arrow-icon">→</span></a>
               <a href="#testimonials" class="footer-arrow-link"><span>Réalisations</span> <span class="footer-arrow-icon">→</span></a>
-            </div>
-          </div>
-
-          <!-- Services -->
-          <div class="space-y-8">
-            <div class="footer-section-title">
-              <div class="footer-bullet"></div> EXPERTISES
-            </div>
-            <div class="flex flex-col">
-              <a href="#" class="footer-arrow-link"><span>Développement Web</span> <span class="footer-arrow-icon">→</span></a>
-              <a href="#" class="footer-arrow-link"><span>Expérience Mobile</span> <span class="footer-arrow-icon">→</span></a>
-              <a href="#" class="footer-arrow-link"><span>Intelligence Artificielle</span> <span class="footer-arrow-icon">→</span></a>
-              <a href="#" class="footer-arrow-link"><span>Stratégie SEO</span> <span class="footer-arrow-icon">→</span></a>
-              <a href="#" class="footer-arrow-link"><span>Automatisation SaaS</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#contact" class="footer-arrow-link"><span>Contact</span> <span class="footer-arrow-icon">→</span></a>
             </div>
           </div>
 
@@ -1016,7 +955,6 @@
               <a href="#" class="footer-arrow-link"><span>LinkedIn</span> <span class="footer-arrow-icon">→</span></a>
               <a href="#" class="footer-arrow-link"><span>X / Twitter</span> <span class="footer-arrow-icon">→</span></a>
               <a href="#" class="footer-arrow-link"><span>Instagram</span> <span class="footer-arrow-icon">→</span></a>
-              <a href="#" class="footer-arrow-link"><span>YouTube</span> <span class="footer-arrow-icon">→</span></a>
             </div>
           </div>
         </div>
@@ -1024,7 +962,7 @@
         <!-- BOTTOM BAR -->
         <div class="flex flex-col md:flex-row items-center justify-between gap-8 py-12 border-t border-white/5 opacity-40 hover:opacity-100 transition-opacity">
            <div class="font-sans font-black text-2xl tracking-tighter text-white">SAGANA.</div>
-           <div class="text-[10px] font-bold uppercase tracking-[0.2em]">© 2024 SAGANA LIMITED — TOUS DROITS RÉSERVÉS</div>
+           <div class="text-[10px] font-bold uppercase tracking-[0.2em]">© 2026 SAGANA LIMITED — TOUS DROITS RÉSERVÉS</div>
            <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em]">
               FABRIQUÉ AVEC PASSION PAR <span class="text-brand-lime">SAGANA</span>
            </div>
