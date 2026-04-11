@@ -7,8 +7,9 @@
   <meta name="description" content="SAGANA accompagne les entreprises ambitieuses dans la conception, le développement et la croissance de leurs produits numériques." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body class="bg-base text-main antialiased selection:bg-accent selection:text-white">
 
@@ -45,24 +46,27 @@
 
   <!-- MOBILE MENU OVERLAY -->
   <div id="mobileMenu" class="fixed inset-0 z-50 bg-[#0A0A0A] hidden opacity-0 transition-all duration-500 overflow-hidden h-[100dvh]">
-    <div class="h-full flex flex-col justify-center px-10 sm:px-16 relative overflow-hidden">
+    <div class="h-full flex flex-col justify-start px-10 sm:px-20 pt-32 relative overflow-hidden"> <!-- Changed to justify-start and added pt-32 -->
       <!-- Background pattern -->
       <div class="absolute inset-0 opacity-[0.02] pointer-events-none" style="background-image: radial-gradient(#FFF 1px, transparent 1px); background-size: 60px 60px;"></div>
-      <ul class="flex flex-col gap-8 text-4xl sm:text-5xl font-bold text-white lowercase">
-        <li class="reveal-mobile-item"><a href="#hero">Accueil</a></li>
-        <li class="reveal-mobile-item"><a href="#about-company">À propos</a></li>
-        <li class="reveal-mobile-item"><a href="#capabilities">Services</a></li>
-        <li class="reveal-mobile-item"><a href="#process">Process</a></li>
-        <li class="reveal-mobile-item"><a href="#testimonials">Réalisations</a></li>
-        <li class="reveal-mobile-item"><a href="#contact">Contact</a></li>
-      </ul>
       
-      <div class="mt-20 pt-10 border-t border-white/10">
-        <p class="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-6">Prêt à lancer ?</p>
-        <a href="mailto:dafiashalom@gmail.com" class="inline-flex items-center gap-4 text-brand-lime text-xl font-bold">
-          Prendre rendez-vous
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
+      <div class="relative z-10 w-full max-w-sm">
+        <ul class="flex flex-col gap-6 sm:gap-8 text-4xl sm:text-5xl font-bold text-white mb-16">
+          <li class="reveal-mobile-item"><a href="#hero">Accueil</a></li>
+          <li class="reveal-mobile-item"><a href="#about-company">À propos</a></li>
+          <li class="reveal-mobile-item"><a href="#capabilities">Services</a></li>
+          <li class="reveal-mobile-item"><a href="#process">Process</a></li>
+          <li class="reveal-mobile-item"><a href="#testimonials">Réalisations</a></li>
+          <li class="reveal-mobile-item"><a href="#contact">Contact</a></li>
+        </ul>
+        
+        <div class="pt-10 border-t border-white/10">
+          <p class="text-[10px] uppercase font-bold tracking-[0.3em] text-white/40 mb-6">Prêt à lancer ?</p>
+          <a href="mailto:contact@sagana-agency.com" class="inline-flex items-center gap-4 text-brand-lime text-xl font-bold group">
+            Prendre rendez-vous
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 transition-transform group-hover:translate-x-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -99,7 +103,7 @@
         
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6">
-          <a href="mailto:dafiashalom@gmail.com" class="btn-brand-lime px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg group w-full sm:w-fit !text-main">
+          <a href="mailto:contact@sagana-agency.com" class="btn-brand-lime px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg group w-full sm:w-fit !text-main">
             Prendre rendez-vous
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="ml-3 stroke-main stroke-2 group-hover:translate-x-2 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
@@ -112,7 +116,7 @@
   </header>
 
   <!-- PHILOSOPHY & CLARITY SECTION -->
-  <section class="py-24 bg-white overflow-hidden" id="about">
+  <section class="py-24 bg-white overflow-hidden" id="about" data-nav-dark="true">
     <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-12 text-center">
       <h2 class="font-sans text-xl sm:text-2xl text-main/80 max-w-4xl mx-auto leading-relaxed mb-16 reveal">
         Nous filtrons le bruit pour nous concentrer sur l'essentiel. <br class="hidden sm:block">
@@ -136,7 +140,7 @@
   </section>
 
   <!-- FEATURE GRID SECTION -->
-  <section class="bg-brand-beige border-t border-black/5 overflow-hidden" id="features">
+  <section class="bg-brand-beige border-t border-black/5 overflow-hidden" id="features" data-nav-dark="true">
     <div class="max-w-[1440px] mx-auto">
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 border-b border-black/5">
         <!-- Feature 1 -->
@@ -220,7 +224,7 @@
                 <div class="px-5 py-3 bg-white/5 border border-white/10 rounded-2xl text-[10px] font-bold uppercase tracking-widest text-white/60">Innovation</div>
             </div>
 
-            <a href="mailto:dafiashalom@gmail.com" class="btn-brand-lime px-8 py-4 text-sm group">
+            <a href="mailto:contact@sagana-agency.com" class="btn-brand-lime px-8 py-4 text-sm group">
               Notre Approche
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="ml-2 stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
@@ -312,144 +316,106 @@
   </section>
 
   <!-- EXPERTISE SECTION (MINIMALIST PREMIUM) -->
-  <section class="py-32 bg-main relative overflow-hidden" id="capabilities" data-nav-dark="true">
-    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-24">
+  <!-- SERVICES SECTION (High-End Card Grid) -->
+  <section id="expertises" class="service-grid-section" data-nav-dark="true">
+    <div class="max-w-[1400px] mx-auto">
       
-      <!-- Header Area -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-32 reveal">
-        <div>
-          <div class="flex items-center gap-3 mb-8">
-            <div class="w-10 h-px bg-brand-lime"></div>
-            <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-white/40">Expertise de pointe</span>
-          </div>
-          <h2 class="section-heading text-white">
-            Architecture digitale <span class="text-brand-lime/80">&</span> <br> Performance Business.
-          </h2>
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-32 reveal">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-main/10 bg-main/5 mb-8">
+          <div class="w-1.5 h-1.5 rounded-full bg-main"></div>
+          <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-main">Nos Services</span>
         </div>
-        <div class="lg:pt-16">
-          <p class="text-white/50 text-xl font-medium leading-relaxed max-w-xl">
-            Nous combinons design d'exception et technologies scalables pour transformer votre vision en leader du marché.
-          </p>
-        </div>
+        <h2 class="text-5xl lg:text-7xl font-bold text-main tracking-tighter leading-none mb-8">
+          Nos Expertises
+        </h2>
+        <p class="text-muted text-lg lg:text-xl font-medium leading-relaxed">
+          Nous proposons une suite complète de services stratégiques conçus pour aider les entreprises à prospérer dans l'écosystème numérique.
+        </p>
       </div>
 
       <!-- Services Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-20 lg:gap-y-24">
         
-        <!-- Service Card 01 -->
-        <div class="expertise-card p-12 lg:p-14 flex flex-col justify-between group reveal">
-          <div>
-            <div class="mb-8 flex items-center justify-between">
-              <span class="text-[10px] font-bold text-white/40 uppercase tracking-[0.4em]">01 / Strategy</span>
-            </div>
-            <!-- Icon Integration -->
-            <div class="mb-10 w-full aspect-square max-w-[120px] icon-box-dark">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-[1.5]">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <line x1="3" y1="9" x2="21" y2="9"/>
-                <line x1="9" y1="21" x2="9" y2="9"/>
-              </svg>
-            </div>
-            <h3 class="text-4xl font-bold text-white mb-6 uppercase tracking-tight">Design & <br>Expérience</h3>
-            <p class="text-white/60 text-base leading-relaxed mb-12">
-              Création de systèmes d'interaction qui captivent et convertissent.
-            </p>
+
+        <!-- Service 02: Web/Mobile -->
+        <div class="service-card-v2 reveal group">
+          <div class="service-card-icon-pill">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-[1.5]">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
           </div>
-          <ul class="space-y-4">
-            <li class="flex items-center gap-3 text-[10px] font-bold text-white/40 group-hover:text-brand-lime uppercase tracking-widest transition-colors">
-              <div class="w-1 h-1 bg-brand-lime"></div> UI/UX Design
-            </li>
-            <li class="flex items-center gap-3 text-[10px] font-bold text-white/40 group-hover:text-brand-lime uppercase tracking-widest transition-colors">
-              <div class="w-1 h-1 bg-brand-lime"></div> Design Systems
-            </li>
-          </ul>
+          <h3 class="service-card-title">Web & Mobile Dev</h3>
+          <p class="service-card-desc">
+            Propulsez votre innovation numérique grâce à nos services d'expert en développement haute performance, scalable et robuste.
+          </p>
+          <a href="#contact" class="service-card-link group/link">
+            En savoir plus
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 transition-transform duration-300 group-hover/link:translate-x-1">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
         </div>
 
-        <!-- Service Card 02 -->
-        <div class="expertise-card p-12 lg:p-14 flex flex-col justify-between group reveal reveal-delay-1">
-          <div>
-            <div class="mb-8 flex items-center justify-between">
-              <span class="text-[10px] font-bold text-white/40 uppercase tracking-[0.4em]">02 / Tech</span>
-            </div>
-            <!-- Icon Integration -->
-            <div class="mb-10 w-full aspect-square max-w-[120px] icon-box-dark">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-[1.5]">
-                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6M14 4l-4 16"/>
-              </svg>
-            </div>
-            <h3 class="text-4xl font-bold text-white mb-6 uppercase tracking-tight">Web <br>Engineering</h3>
-            <p class="text-white/60 text-base leading-relaxed mb-12">
-              Développement robuste focus sur la performance et la scalabilité.
-            </p>
+        <!-- Service 03: UI/UX -->
+        <div class="service-card-v2 reveal group">
+          <div class="service-card-icon-pill">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-[1.5]">
+              <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+            </svg>
           </div>
-          <ul class="space-y-4">
-            <li class="flex items-center gap-3 text-[10px] font-bold text-white/40 group-hover:text-brand-lime uppercase tracking-widest transition-colors">
-              <div class="w-1 h-1 bg-brand-lime"></div> Next.js / React
-            </li>
-            <li class="flex items-center gap-3 text-[10px] font-bold text-white/40 group-hover:text-brand-lime uppercase tracking-widest transition-colors">
-              <div class="w-1 h-1 bg-brand-lime"></div> Backend Architecture
-            </li>
-          </ul>
+          <h3 class="service-card-title">UI/UX Design</h3>
+          <p class="service-card-desc">
+            Créez des expériences numériques intuitives, fluides et visuellement captivantes qui connectent réellement avec vos utilisateurs.
+          </p>
+          <a href="#contact" class="service-card-link group/link">
+            En savoir plus
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 transition-transform duration-300 group-hover/link:translate-x-1">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
         </div>
 
-        <!-- Service Card 03 -->
-        <div class="expertise-card p-12 lg:p-14 flex flex-col justify-between group reveal reveal-delay-2">
-          <div>
-            <div class="mb-8 flex items-center justify-between">
-              <span class="text-[10px] font-bold text-white/40 uppercase tracking-[0.4em]">03 / Intelligence</span>
-            </div>
-            <!-- Icon Integration -->
-            <div class="mb-10 w-full aspect-square max-w-[120px] icon-box-dark">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-[1.5]">
-                <path d="M10 3L11.5 8.5L17 10L11.5 11.5L10 17L8.5 11.5L3 10L8.5 8.5L10 3Z"/>
-                <path d="M19 15L19.5 17.5L22 18L19.5 18.5L19 21L18.5 18.5L16 18L18.5 17.5L19 15Z"/>
-              </svg>
-            </div>
-            <h3 class="text-4xl font-bold text-white mb-6 uppercase tracking-tight">IA & <br>Automation</h3>
-            <p class="text-white/60 text-base leading-relaxed mb-12">
-              Intégration d'IA générative pour automatiser vos processus business.
-            </p>
+        <!-- Service 04: SEO -->
+        <div class="service-card-v2 reveal group">
+          <div class="service-card-icon-pill">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-[1.5]">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
           </div>
-          <ul class="space-y-4">
-            <li class="flex items-center gap-3 text-[10px] font-bold text-white/40 group-hover:text-brand-lime uppercase tracking-widest transition-colors">
-              <div class="w-1 h-1 bg-brand-lime"></div> LLM Integration
-            </li>
-            <li class="flex items-center gap-3 text-[10px] font-bold text-white/40 group-hover:text-brand-lime uppercase tracking-widest transition-colors">
-              <div class="w-1 h-1 bg-brand-lime"></div> RAG & Agents
-            </li>
-          </ul>
+          <h3 class="service-card-title">SEO & Performance</h3>
+          <p class="service-card-desc">
+            Optimisez votre visibilité et la vitesse de votre plateforme pour dominer les résultats de recherche et maximiser votre conversion.
+          </p>
+          <a href="#contact" class="service-card-link group/link">
+            En savoir plus
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 transition-transform duration-300 group-hover/link:translate-x-1">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
         </div>
 
-        <!-- Service Card 04 (Highlight) -->
-        <div class="expertise-card-lime p-12 lg:p-14 flex flex-col justify-between group reveal reveal-delay-3">
-          <div>
-            <div class="mb-8 flex items-center justify-between">
-              <span class="text-[10px] font-bold text-brand-lime uppercase tracking-[0.4em]">04 / Growth</span>
-            </div>
-            <!-- Icon Integration -->
-            <div class="mb-10 w-full aspect-square max-w-[120px] bg-brand-lime/10 border border-brand-lime/20 rounded-2xl flex items-center justify-center text-brand-lime">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-[1.5]">
-                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
-                <polyline points="16 7 22 7 22 13"/>
-              </svg>
-            </div>
-            <h3 class="text-4xl font-bold text-white mb-6 uppercase tracking-tight">Branding & <br>Stratégie</h3>
-            <p class="text-white/80 text-base leading-relaxed mb-12">
-              Identité forte et stratégie d'acquisition data-driven pour dominer.
-            </p>
+        <!-- Service 05: IA -->
+        <div class="service-card-v2 reveal group">
+          <div class="service-card-icon-pill">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-[1.5]">
+              <path d="M12 3l1.912 5.885h6.188l-5.007 3.638 1.913 5.885-5.006-3.637-5.006 3.637 1.913-5.885-5.007-3.638h6.188z"/>
+            </svg>
           </div>
-          <div class="flex gap-4">
-            <div class="p-2 border border-brand-lime/20 rounded-lg bg-brand-lime/5">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-brand-lime stroke-[1.5]">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-            </div>
-            <div class="p-2 border border-brand-lime/20 rounded-lg bg-brand-lime/5">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-brand-lime stroke-[1.5]">
-                <path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>
-              </svg>
-            </div>
-          </div>
+          <h3 class="service-card-title">IA & Automation</h3>
+          <p class="service-card-desc">
+            Intégrez la puissance de l'IA générative pour automatiser vos workflows business et décupler votre productivité opérationnelle.
+          </p>
+          <a href="#contact" class="service-card-link group/link">
+            En savoir plus
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 transition-transform duration-300 group-hover/link:translate-x-1">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
         </div>
 
       </div>
@@ -457,53 +423,117 @@
   </section>
 
 
-  <!-- PROCESS / STEPS SECTION (Dark) -->
-  <!-- ROTATING PROCESS SECTION (Dark) -->
-  <section id="process" class="relative h-[120vh] bg-main overflow-visible">
-    <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+  <!-- METHODOLOGY / PREMIUM SCROLLYTELLING SECTION -->
+  <section id="process" class="methodology-scrollytelling" data-nav-dark="true">
+    <div class="scrolly-container">
       
-      <!-- Rotating Wheel (Background) -->
-      <div id="processWheel" class="absolute w-[320px] h-[320px] md:w-[700px] md:h-[700px] border border-white/5 rounded-full flex items-center justify-center z-0">
-        <!-- Markers -->
-        <div class="wheel-marker process-transition" data-step="1"><span>1</span></div>
-        <div class="wheel-marker process-transition" data-step="2"><span>2</span></div>
-        <div class="wheel-marker process-transition" data-step="3"><span>3</span></div>
+      <!-- Section Header -->
+      <div class="text-center mb-48 reveal">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-black/10 bg-black/5 mb-8">
+          <div class="w-1.5 h-1.5 rounded-full bg-black animate-pulse"></div>
+          <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-black">Notre Approche</span>
+        </div>
+        <h2 class="text-5xl lg:text-7xl font-bold text-main tracking-tighter leading-none mb-8">
+          Design Thinking
+        </h2>
+        <p class="text-muted text-lg lg:text-xl font-medium leading-relaxed max-w-2xl mx-auto">
+          Une méthodologie centrée sur l'humain pour transformer vos idées en expériences numériques d'exception.
+        </p>
       </div>
 
-      <!-- Centered Content Wrapper -->
-      <div class="relative z-10 w-full max-w-4xl px-8 flex flex-col items-center text-center">
-        <!-- Main Section Header (Fades at start of scroll) -->
-        <div id="processHeader" class="mb-20 process-transition">
-          <span class="text-brand-lime font-bold uppercase tracking-[0.3em] text-[10px] mb-4 block">Notre Méthode</span>
-          <h2 class="text-5xl md:text-8xl font-bold text-white tracking-tighter uppercase leading-[0.9]">Approche <br>Systémique</h2>
-        </div>
-
-        <!-- Dynamic Step Content -->
-        <div id="stepContent" class="opacity-0 transition-all duration-700 flex flex-col items-center">
-          <span id="stepLabelDisplay" class="text-white/40 font-bold uppercase tracking-[0.4em] text-[10px] mb-6 block">Phase 01</span>
-          <h3 id="stepTitleDisplay" class="text-4xl md:text-6xl font-bold text-white mb-8 uppercase tracking-tight">Immersion</h3>
-          <p id="stepDescriptionDisplay" class="text-white/60 text-lg md:text-xl max-w-xl leading-relaxed mx-auto font-medium">
-            Exploration profonde de votre vision pour poser les fondations d'une stratégie hors-norme.
-          </p>
-        </div>
+      <!-- Centered Timeline Path -->
+      <div class="scrolly-timeline-path">
+        <div id="scrollyProgress" class="scrolly-timeline-fill"></div>
       </div>
 
-      <!-- Static Footer Progress (Premium Touch) -->
-      <div class="absolute bottom-12 left-0 w-full px-12 flex justify-between items-end">
-        <div class="flex flex-col gap-2">
-            <span class="text-[9px] text-white/20 font-mono tracking-[0.3em] uppercase">System State</span>
-            <div class="flex gap-2">
-                <div class="w-2 h-2 rounded-full bg-brand-lime animate-pulse"></div>
-                <div class="w-2 h-2 rounded-full bg-white/10"></div>
-                <div class="w-2 h-2 rounded-full bg-white/10"></div>
-            </div>
+      <!-- Scrolly Steps -->
+      <div class="flex flex-col">
+        
+        <!-- Step 01: Empathie -->
+        <div class="scrolly-step-row reveal scrolly-item" data-step="01">
+          <!-- Timeline Badge -->
+          <div class="scrolly-badge"><span>01</span></div>
+          
+          <div class="scrolly-photo-card">
+            <img src="portfolio/methodology_empathy_cinematic_1775844301734.png" alt="Empathie Phase">
+          </div>
+          <div class="scrolly-content-card">
+            <span class="scrolly-step-pill">Étape 01</span>
+            <h3>Comprendre <br>vos utilisateurs</h3>
+            <p>
+              Nous nous immergeons dans votre univers pour comprendre les besoins réels et les points de friction de vos utilisateurs finaux.
+            </p>
+          </div>
         </div>
-        <div class="text-right">
-            <span class="text-[9px] text-white/20 font-mono tracking-[0.3em] uppercase block mb-2">Progress 01-03</span>
-            <div class="w-32 h-[1px] bg-white/10 relative overflow-hidden">
-                <div id="processProgressBar" class="absolute inset-y-0 left-0 bg-brand-lime transition-all duration-300" style="width: 0%"></div>
-            </div>
+
+        <!-- Step 02: Définition -->
+        <div class="scrolly-step-row reveal scrolly-item" data-step="02">
+          <!-- Timeline Badge -->
+          <div class="scrolly-badge"><span>02</span></div>
+          
+          <div class="scrolly-photo-card">
+            <img src="portfolio/methodology_definition_cinematic_1775844331980.png" alt="Définition Phase">
+          </div>
+          <div class="scrolly-content-card">
+            <span class="scrolly-step-pill">Étape 02</span>
+            <h3>Cadrer la <br>problématique</h3>
+            <p>
+              Nous structurons les insights récoltés pour définir des objectifs clairs et une feuille de route stratégique précise.
+            </p>
+          </div>
         </div>
+
+        <!-- Step 03: Idéation -->
+        <div class="scrolly-step-row reveal scrolly-item" data-step="03">
+          <!-- Timeline Badge -->
+          <div class="scrolly-badge"><span>03</span></div>
+          
+          <div class="scrolly-photo-card">
+            <img src="portfolio/methodology_ideation_cinematic_1775844358232.png" alt="Idéation Phase">
+          </div>
+          <div class="scrolly-content-card">
+            <span class="scrolly-step-pill">Étape 03</span>
+            <h3>Libérer <br>la créativité</h3>
+            <p>
+              Ateliers de co-conception et brainstorming pour explorer toutes les solutions possibles sans aucune limite créative.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 04: Prototype -->
+        <div class="scrolly-step-row reveal scrolly-item" data-step="04">
+          <!-- Timeline Badge -->
+          <div class="scrolly-badge"><span>04</span></div>
+          
+          <div class="scrolly-photo-card">
+            <img src="portfolio/methodology_prototyping_cinematic_1775844386512.png" alt="Prototype Phase">
+          </div>
+          <div class="scrolly-content-card">
+            <span class="scrolly-step-pill">Étape 04</span>
+            <h3>Matérialiser <br>les concepts</h3>
+            <p>
+              Création de maquettes interactives haute fidélité pour tester et valider les parcours utilisateurs avant tout développement.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 05: Réalisation -->
+        <div class="scrolly-step-row reveal scrolly-item" data-step="05">
+          <!-- Timeline Badge -->
+          <div class="scrolly-badge"><span>05</span></div>
+          
+          <div class="scrolly-photo-card">
+            <img src="portfolio/methodology_realization_cinematic_1775844412122.png" alt="Réalisation Phase">
+          </div>
+          <div class="scrolly-content-card">
+            <span class="scrolly-step-pill">Étape 05</span>
+            <h3>Donner vie <br>au projet</h3>
+            <p>
+              Développement technique rigoureux et lancement de votre plateforme pour transformer votre vision en réalité tangible.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -543,210 +573,83 @@
     </div>
   </section>
 
-  <!-- PROJECTS / CASE STUDIES SECTION (Dark) -->
-  <section class="py-32 lg:py-56 px-4 sm:px-6 lg:px-24 bg-main text-white border-t border-white/5" id="testimonials">
-    <div class="max-w-[1440px] mx-auto">
-      <div class="reveal mb-32 max-w-4xl">
-        <div class="flex items-center gap-3 mb-10">
-          <div class="w-1.5 h-1.5 bg-brand-lime rounded-full"></div>
-          <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Nos Réalisations</span>
+  <!-- PROJECTS / CASE STUDIES SECTION (Glamorous Purple Grid) -->
+  <section class="showcase-purple-theme py-32 lg:py-56 px-4 sm:px-6 lg:px-24" id="testimonials">
+    <div class="grid-pattern-overlay"></div>
+    
+    <div class="max-w-[1440px] mx-auto relative z-10">
+      
+      <!-- Header -->
+      <div class="reveal text-center mb-32 max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/5 bg-white/[0.02] backdrop-blur-md mb-10">
+          <span class="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-lime">Nos Réalisations</span>
         </div>
         
-        <h2 class="section-heading mb-10">
-          Des projets qui <br>
-          marquent <span class="text-brand-lime italic">notre impact</span>.
+        <h2 class="glam-heading">
+          Façonner le futur de <br>
+          <em>l'Influence Numérique.</em>
         </h2>
-        <div class="w-20 h-1 bg-brand-lime/20 mb-10"></div>
-        <p class="text-white/40 text-lg lg:text-xl leading-relaxed font-medium max-w-2xl">
-          Nous accompagnons nos partenaires avec une approche pragmatique, centrée sur des solutions concrètes et une croissance maîtrisée.
+        
+        <p class="text-white/40 text-lg lg:text-xl leading-relaxed font-medium max-w-2xl mx-auto mt-8">
+          Chaque projet est une opportunité de redéfinir les standards de l'industrie. Nous combinons vision stratégique et exécution technique pour propulser vos ambitions numériques.
         </p>
       </div>
 
-      <!-- Vertical Card Stack -->
-      <div class="flex flex-col gap-12 lg:gap-20">
-
+      <!-- Projects Grid -->
+      <div class="showcase-grid-content">
+        
         <!-- Project 1: Vortex -->
-        <div class="reveal relative overflow-hidden rounded-[3rem] border border-white/10 group transition-all duration-700 hover:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)]">
-            <div class="grid lg:grid-cols-3">
-                <!-- Left Column: Metrics & Title (Beige) -->
-                <div class="bg-brand-beige p-12 lg:p-16 flex flex-col justify-between text-main">
-                    <div>
-                    <h3 class="font-sans text-2xl lg:text-3xl font-bold leading-tight mb-8">Comment Vortex a révolutionné l'accès au carburant avec une expérience mobile fluide</h3>
-                    <div class="flex flex-wrap gap-x-4 gap-y-2 mb-12 opacity-60">
-                        <span class="text-[9px] font-bold uppercase tracking-widest">Mobile Development</span>
-                        <span class="text-[9px] font-bold uppercase tracking-widest">Digital Wallet</span>
-                        <span class="text-[9px] font-bold uppercase tracking-widest">Geolocation</span>
-                        <span class="text-[9px] font-bold uppercase tracking-widest">UX Design</span>
-                    </div>
-                    </div>
-                    <div class="space-y-10 pt-10 border-t border-main/10">
-                     <div>
-                         <div class="text-4xl lg:text-5xl font-black mb-1">+8%</div>
-                         <div class="text-[10px] uppercase font-bold tracking-widest text-main/60">Optimisation du parcours client</div>
-                     </div>
-                     <div>
-                         <div class="text-4xl lg:text-5xl font-black mb-1">50+</div>
-                         <div class="text-[10px] uppercase font-bold tracking-widest text-main/60">Utilisateurs bêta-testeurs</div>
-                     </div>
-                     </div>
-                </div>
-
-                <!-- Middle Column: Immersive Image -->
-                <div class="relative h-[250px] sm:h-[400px] lg:h-auto overflow-hidden">
-                    <img src="/portfolio/vortex.webp" alt="Vortex Mobile App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
-                    <div class="absolute inset-0 bg-black/20"></div>
-                    <div class="absolute inset-0 flex items-center justify-center p-12 text-center text-white font-black text-4xl lg:text-5xl uppercase tracking-[0.2em] mix-blend-overlay">
-                        VORTEX
-                    </div>
-                </div>
-
-                <!-- Right Column: Testimonial & Quote (Dark) -->
-                <div class="bg-[#121212] p-12 lg:p-16 flex flex-col justify-between">
-                    <div class="mb-12">
-                        <blockquote class="font-sans text-lg lg:text-xl font-medium leading-relaxed text-white/80 italic">
-                            "Une solution simple et efficace pour digitaliser nos paiements. L'application a apporté une réelle clarté dans le suivi de nos consommations de carburant."
-                        </blockquote>
-                    </div>
-                    <div class="space-y-12">
-                        <div class="flex items-center gap-6">
-                            <div class="w-14 h-14 bg-brand-lime rounded-md flex items-center justify-center text-main font-black text-xl">VX</div>
-                            <div>
-                                <div class="font-bold text-lg text-white">Marc K.</div>
-                                <div class="text-[10px] uppercase font-bold tracking-widest text-white/30 mt-1">CEO Vortex</div>
-                            </div>
-                        </div>
-                        <a href="#" class="flex items-center justify-between font-sans text-[10px] font-bold uppercase tracking-[0.4em] text-white/40 group-hover:text-white transition-colors pt-8 border-t border-white/5">
-                            Voir le projet
-                            <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-brand-lime group-hover:text-main transition-all duration-500">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 5v14M5 12h14"/></svg>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <a href="#" class="project-card-glam reveal group">
+          <div class="project-card-overlay"></div>
+          <div class="project-tag-container">
+            <span class="glass-pill">Fintech</span>
+            <span class="glass-pill">Mobilité</span>
+          </div>
+          <img src="portfolio/vortex.webp" alt="Vortex mobile application">
+          <div class="glass-footer-glam">
+            <h3 class="project-title-glam">Vortex</h3>
+          </div>
+        </a>
 
         <!-- Project 2: Art du Bénin -->
-        <div class="reveal reveal-delay-1 relative overflow-hidden rounded-[3rem] border border-white/10 group transition-all duration-700 hover:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)]">
-            <div class="grid lg:grid-cols-3">
-                <!-- Left Column: Metrics & Title (Beige) -->
-                <div class="bg-brand-beige p-12 lg:p-16 flex flex-col justify-between text-main">
-                    <div>
-                    <h3 class="font-sans text-2xl lg:text-3xl font-bold leading-tight mb-8">Valoriser l'héritage culturel béninois à travers une médiation numérique immersive</h3>
-                    <div class="flex flex-wrap gap-x-4 gap-y-2 mb-12 opacity-60">
-                        <span class="text-[9px] font-bold uppercase tracking-widest">Android APK</span>
-                        <span class="text-[9px] font-bold uppercase tracking-widest">Médiation Culturelle</span>
-                        <span class="text-[9px] font-bold uppercase tracking-widest">Case Study</span>
-                        <span class="text-[9px] font-bold uppercase tracking-widest">UI/UX Design</span>
-                    </div>
-                    </div>
-                    <div class="space-y-10 pt-10 border-t border-main/10">
-                     <div>
-                         <div class="text-4xl lg:text-5xl font-black mb-1">450+</div>
-                         <div class="text-[10px] uppercase font-bold tracking-widest text-main/60">Visiteurs mobiles uniques</div>
-                     </div>
-                     <div>
-                         <div class="text-4xl lg:text-5xl font-black mb-1">4.7/5</div>
-                         <div class="text-[10px] uppercase font-bold tracking-widest text-main/60">Score d'utilisabilité</div>
-                     </div>
-                     </div>
-                </div>
-
-                <!-- Middle Column: Immersive Image -->
-                <div class="relative h-[250px] sm:h-[400px] lg:h-auto overflow-hidden">
-                    <img src="/portfolio/case study.webp" alt="Art du Bénin APK" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
-                    <div class="absolute inset-0 bg-black/20"></div>
-                    <div class="absolute inset-0 flex items-center justify-center p-12 text-center text-white font-black text-4xl lg:text-5xl uppercase tracking-[0.2em] mix-blend-overlay">
-                        BÉNIN ART
-                    </div>
-                </div>
-
-                <!-- Right Column: Testimonial & Quote (Dark) -->
-                <div class="bg-[#121212] p-12 lg:p-16 flex flex-col justify-between">
-                    <div class="mb-12">
-                        <blockquote class="font-sans text-lg lg:text-xl font-medium leading-relaxed text-white/80 italic">
-                            "Un bel outil qui a permis d'enrichir l'expérience de nos visiteurs. L'interface est intuitive et le contenu culturel est très bien mis en valeur."
-                        </blockquote>
-                    </div>
-                    <div class="space-y-12">
-                        <div class="flex items-center gap-6">
-                            <div class="w-14 h-14 bg-brand-lime rounded-md flex items-center justify-center text-main font-black text-xl">AB</div>
-                            <div>
-                                <div class="font-bold text-lg text-white">Direction</div>
-                                <div class="text-[10px] uppercase font-bold tracking-widest text-white/30 mt-1">Patrimoine Culturel</div>
-                            </div>
-                        </div>
-                        <a href="#" class="flex items-center justify-between font-sans text-[10px] font-bold uppercase tracking-[0.4em] text-white/40 group-hover:text-white transition-colors pt-8 border-t border-white/5">
-                            Voir le Case Study
-                            <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-brand-lime group-hover:text-main transition-all duration-500">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 5v14M5 12h14"/></svg>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <a href="#" class="project-card-glam reveal reveal-delay-1 group">
+          <div class="project-card-overlay"></div>
+          <div class="project-tag-container">
+            <span class="glass-pill">Culture</span>
+            <span class="glass-pill">Immersif</span>
+          </div>
+          <img src="portfolio/case study.webp" alt="Art du Bénin digital experience">
+          <div class="glass-footer-glam">
+            <h3 class="project-title-glam">Art du Bénin</h3>
+          </div>
+        </a>
 
         <!-- Project 3: Sport Advisor -->
-        <div class="reveal reveal-delay-2 relative overflow-hidden rounded-[3rem] border border-white/10 group transition-all duration-700 hover:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)]">
-            <div class="grid lg:grid-cols-3">
-                <!-- Left Column: Metrics & Title (Beige) -->
-                <div class="bg-brand-beige p-12 lg:p-16 flex flex-col justify-between text-main">
-                    <div>
-                    <h3 class="font-sans text-2xl lg:text-3xl font-bold leading-tight mb-8">Une plateforme d'analyse sportive propulsée par l'IA pour des prédictions ultra-précises</h3>
-                    <div class="flex flex-wrap gap-x-4 gap-y-2 mb-12 opacity-60">
-                        <span class="text-[9px] font-bold uppercase tracking-widest">Landing Page</span>
-                        <span class="text-[9px] font-bold uppercase tracking-widest">AI Analysis</span>
-                        <span class="text-[9px] font-bold uppercase tracking-widest">Sports Tech</span>
-                        <span class="text-[9px] font-bold uppercase tracking-widest">Dashboard Design</span>
-                    </div>
-                    </div>
-                    <div class="space-y-10 pt-10 border-t border-main/10">
-                     <div>
-                         <div class="text-4xl lg:text-5xl font-black mb-1">+12%</div>
-                         <div class="text-[10px] uppercase font-bold tracking-widest text-main/60">Taux de clic sur Landing Page</div>
-                     </div>
-                     <div>
-                         <div class="text-4xl lg:text-5xl font-black mb-1">Beta</div>
-                         <div class="text-[10px] uppercase font-bold tracking-widest text-main/60">Validation du concept (MVP)</div>
-                     </div>
-                     </div>
-                </div>
+        <a href="#" class="project-card-glam reveal group">
+          <div class="project-card-overlay"></div>
+          <div class="project-tag-container">
+            <span class="glass-pill">Big Data</span>
+            <span class="glass-pill">IA Analytics</span>
+          </div>
+          <img src="portfolio/advisor.webp" alt="Sport Advisor IA platform">
+          <div class="glass-footer-glam">
+            <h3 class="project-title-glam">Sport AI</h3>
+          </div>
+        </a>
 
-                <!-- Middle Column: Immersive Image -->
-                <div class="relative h-[250px] sm:h-[400px] lg:h-auto overflow-hidden">
-                    <img src="/portfolio/advisor.webp" alt="Sport Advisor IA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
-                    <div class="absolute inset-0 bg-black/20"></div>
-                    <div class="absolute inset-0 flex items-center justify-center p-12 text-center text-white font-black text-4xl lg:text-5xl uppercase tracking-[0.2em] mix-blend-overlay">
-                        SPORT AI
-                    </div>
-                </div>
+        <!-- Project 4: EasyManaging -->
+        <a href="https://easymanagingg.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-card-glam reveal reveal-delay-1 group">
+          <div class="project-card-overlay"></div>
+          <div class="project-tag-container">
+            <span class="glass-pill">SaaS & ERP</span>
+            <span class="glass-pill">Management</span>
+          </div>
+          <img src="portfolio/easymanaging.png" alt="EasyManaging SaaS Dashboard">
+          <div class="glass-footer-glam">
+            <h3 class="project-title-glam">EasyManaging</h3>
+          </div>
+        </a>
 
-                <!-- Right Column: Testimonial & Quote (Dark) -->
-                <div class="bg-[#121212] p-12 lg:p-16 flex flex-col justify-between">
-                    <div class="mb-12">
-                        <blockquote class="font-sans text-lg lg:text-xl font-medium leading-relaxed text-white/80 italic">
-                            "Une plateforme prometteuse pour centraliser les données sportives. Les analyses fournies sont une aide précieuse pour comprendre les dynamiques de match."
-                        </blockquote>
-                    </div>
-                    <div class="space-y-12">
-                        <div class="flex items-center gap-6">
-                            <div class="w-14 h-14 bg-brand-lime rounded-md flex items-center justify-center text-main font-black text-xl">SA</div>
-                            <div>
-                                <div class="font-bold text-lg text-white">Jean-Luc T.</div>
-                                <div class="text-[10px] uppercase font-bold tracking-widest text-white/30 mt-1">Analyste Sportif Senior</div>
-                            </div>
-                        </div>
-                        <a href="#" class="flex items-center justify-between font-sans text-[10px] font-bold uppercase tracking-[0.4em] text-white/40 group-hover:text-white transition-colors pt-8 border-t border-white/5">
-                            Voir la Landing Page
-                            <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-brand-lime group-hover:text-main transition-all duration-500">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 5v14M5 12h14"/></svg>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
       </div>
     </div>
   </section>
@@ -889,7 +792,7 @@
             </div>
             
             <div class="relative z-10">
-              <a href="mailto:dafiashalom@gmail.com" class="flex items-center justify-center lg:justify-start gap-4 bg-main text-white px-6 py-4 sm:px-10 sm:py-6 rounded-2xl font-bold text-sm sm:text-lg hover:scale-105 transition-transform group w-full lg:w-fit">
+              <a href="mailto:contact@sagana-agency.com" class="flex items-center justify-center lg:justify-start gap-4 bg-main text-white px-6 py-4 sm:px-10 sm:py-6 rounded-2xl font-bold text-sm sm:text-lg hover:scale-105 transition-transform group w-full lg:w-fit">
                 Parlons de votre projet dès aujourd'hui
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform group-hover:translate-x-1">
                   <path d="M4.16663 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -907,14 +810,24 @@
         </div>
 
         <!-- 2. CONTACT INFO SECTION -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 py-24 mt-12 border-t border-white/5 reveal reveal-delay-1">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 py-24 mt-12 border-t border-white/5 reveal reveal-delay-1">
           <div class="space-y-6">
             <div class="footer-section-title">
               <div class="footer-bullet"></div> TÉLÉPHONE
             </div>
             <div class="space-y-2">
-              <p class="text-white hover:text-brand-lime transition-colors font-medium">0160359022</p>
+              <p class="text-white hover:text-brand-lime transition-colors font-medium">01 54 92 18 01</p>
               <p class="text-white/40 text-sm italic">Disponible du lundi au vendredi.</p>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="footer-section-title">
+              <div class="footer-bullet"></div> WHATSAPP
+            </div>
+            <div class="space-y-2">
+              <a href="https://wa.me/33160359022" target="_blank" class="text-white hover:text-brand-lime transition-colors font-medium">01 60 35 90 22</a>
+              <p class="text-white/40 text-sm italic">Réponse rapide garantie.</p>
             </div>
           </div>
 
@@ -923,7 +836,7 @@
               <div class="footer-bullet"></div> EMAIL
             </div>
             <div class="space-y-2">
-              <p class="text-white hover:text-brand-lime transition-colors font-medium">dafiashalom@gmail.com</p>
+              <p class="text-white hover:text-brand-lime transition-colors font-medium">contact@sagana-agency.com</p>
               <p class="text-brand-lime font-bold tracking-widest uppercase text-[10px]" id="footerClock">CHARGEMENT HORLOGE...</p>
             </div>
           </div>
@@ -952,9 +865,8 @@
               <div class="footer-bullet"></div> RÉSEAUX
             </div>
             <div class="flex flex-col">
-              <a href="#" class="footer-arrow-link"><span>LinkedIn</span> <span class="footer-arrow-icon">→</span></a>
-              <a href="#" class="footer-arrow-link"><span>X / Twitter</span> <span class="footer-arrow-icon">→</span></a>
-              <a href="#" class="footer-arrow-link"><span>Instagram</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#" class="footer-arrow-link"><span>Facebook</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="https://www.instagram.com/sagana.agence?igsh=YjVzZ3J5dHJoZ2Zm" target="_blank" rel="noopener noreferrer" class="footer-arrow-link"><span>Instagram</span> <span class="footer-arrow-icon">→</span></a>
             </div>
           </div>
         </div>

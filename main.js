@@ -148,16 +148,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Navbar Color Switcher ---
+  // --- Navbar Visibility & Color Switcher ---
   const navbar = document.getElementById('navbar');
   const navTriggerSections = document.querySelectorAll('section[data-nav-dark="true"]');
   
   if (navbar) {
-    window.addEventListener('scroll', () => {
+    const handleNavbarScroll = () => {
+      const scrolled = window.scrollY > 50;
       let isDarkNav = false;
       const navbarRect = navbar.getBoundingClientRect();
       const navbarCenter = navbarRect.top + navbarRect.height / 2;
 
+      // 1. Check for light sections to switch text color
       navTriggerSections.forEach(section => {
         const rect = section.getBoundingClientRect();
         if (navbarCenter >= rect.top && navbarCenter <= rect.bottom) {
@@ -165,197 +167,78 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
+      // 2. Apply classes
+      if (scrolled) {
+        navbar.classList.add('nav-scrolled');
+      } else {
+        navbar.classList.remove('nav-scrolled');
+      }
+
       if (isDarkNav) {
         navbar.classList.add('nav-is-dark');
       } else {
         navbar.classList.remove('nav-is-dark');
       }
+    };
+
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(handleNavbarScroll);
     }, { passive: true });
+    
+    // Run once on load
+    handleNavbarScroll();
   }
 
-  // --- BI-DIRECTIONAL SCROLL-LOCKED PROCESS WHEEL ---
-  const processSection = document.getElementById('process');
-  const processHeader = document.getElementById('processHeader');
-  const processWheel = document.getElementById('processWheel');
-  const stepContent = document.getElementById('stepContent');
-  const stepLabelDisplay = document.getElementById('stepLabelDisplay');
-  const stepTitleDisplay = document.getElementById('stepTitleDisplay');
-  const stepDescriptionDisplay = document.getElementById('stepDescriptionDisplay');
-  const wheelMarkers = document.querySelectorAll('.wheel-marker');
-  const progressBar = document.getElementById('processProgressBar');
 
-  const steps = [
-    { label: "PHASE 01", title: "Immersion & Audit", desc: "Nous forgeons une trajectoire précise en analysant vos leviers de croissance les plus profonds." },
-    { label: "PHASE 02", title: "Build & Propulsion", desc: "Conception sur-mesure de solutions à haute performance, orchestrées avec une précision chirurgicale." },
-    { label: "PHASE 03", title: "Impact & Évolution", desc: "Déploiement massif et optimisation continue pour garantir une dominance durable sur votre marché." }
-  ];
+  // --- METHODOLOGY SCROLLYTELLING LOGIC ---
+  const scrollyProgress = document.getElementById('scrollyProgress');
+  const scrollyItems = document.querySelectorAll('.scrolly-item');
+  const scrollySection = document.getElementById('process');
 
-  let currentStepIndex = -1;
-  let lockProgress = 0; 
-  let lerpProgress = 0;
-  let isLocked = false;
-  let isExiting = false;
-  let touchStartY = 0;
-
-  function updateProcessVisuals(prog) {
-    if (processHeader) {
-      const headerOpacity = Math.max(0, 1 - prog * 8);
-      processHeader.style.opacity = headerOpacity;
-      processHeader.style.pointerEvents = headerOpacity < 0.1 ? 'none' : 'auto';
-    }
-
-    const angle = -(prog * 240);
-    if (processWheel) processWheel.style.transform = `rotate(${angle}deg)`;
-
-    let stepIndex = 0;
-    if (prog > 0.35 && prog <= 0.7) stepIndex = 1;
-    else if (prog > 0.7) stepIndex = 2;
-
-    if (stepIndex !== currentStepIndex) {
-      currentStepIndex = stepIndex;
-      const step = steps[stepIndex];
+  if (scrollySection && scrollyProgress) {
+    // 1. Progressive Timeline Fill
+    const updateScrollyTimeline = () => {
+      const rect = scrollySection.getBoundingClientRect();
+      const sectionHeight = rect.height;
+      const viewHeight = window.innerHeight;
       
-      stepContent.style.opacity = '0';
-      setTimeout(() => {
-        if (stepLabelDisplay) stepLabelDisplay.innerText = step.label;
-        if (stepTitleDisplay) stepTitleDisplay.innerText = step.title;
-        if (stepDescriptionDisplay) stepDescriptionDisplay.innerText = step.desc;
-        stepContent.style.opacity = '1';
-      }, 300);
-    }
+      // Start filling when the section is partially visible
+      const startPoint = viewHeight * 0.5;
+      const progress = Math.max(0, Math.min(1, (startPoint - rect.top) / (sectionHeight - startPoint)));
+      
+      scrollyProgress.style.height = `${progress * 100}%`;
+    };
 
-    wheelMarkers.forEach((marker, idx) => {
-      if (idx === stepIndex) marker.classList.add('active');
-      else marker.classList.remove('active');
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(updateScrollyTimeline);
+    }, { passive: true });
+
+    // 2. Observer for Badges and Row Visibility
+    const scrollyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const badge = entry.target.querySelector('.scrolly-badge');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          entry.target.classList.remove('not-visible');
+          if (badge) badge.classList.add('active');
+        } else if (entry.boundingClientRect.top > 0) {
+          // Only remove if we are scrolling back up
+          entry.target.classList.remove('is-visible');
+          entry.target.classList.add('not-visible');
+          if (badge) badge.classList.remove('active');
+        }
+      });
+    }, {
+      threshold: 0.2,
+      rootMargin: "0px 0px -10% 0px"
     });
 
-    if (progressBar) progressBar.style.width = `${prog * 100}%`;
-  }
-
-  // --- Smooth Lerp Animation Loop ---
-  function animate() {
-    if (!isLocked && !isExiting && Math.abs(lerpProgress - lockProgress) < 0.001) {
-        requestAnimationFrame(animate);
-        return;
-    }
-
-    // Smoothly interpolate lockProgress -> lerpProgress
-    const ease = 0.12; // Adjust for "weight" feel (lower = heavier)
-    lerpProgress += (lockProgress - lerpProgress) * ease;
-    
-    updateProcessVisuals(Math.max(0, Math.min(1, lerpProgress)));
-    
-    requestAnimationFrame(animate);
-  }
-  requestAnimationFrame(animate);
-
-  function handleInteraction(delta) {
-    if (!isLocked) return;
-    
-    const sensitivity = 0.0015; // Increased for more dynamism
-    lockProgress = Math.max(-0.05, Math.min(1.05, lockProgress + delta * sensitivity));
-
-    if (lockProgress >= 1.05 && delta > 0) {
-        unlockProcess('down');
-    } else if (lockProgress <= -0.05 && delta < 0) {
-        unlockProcess('up');
-    }
-  }
-
-  function unlockProcess(direction) {
-    isLocked = false;
-    isExiting = true;
-    document.body.style.overflow = '';
-    document.documentElement.style.overflow = '';
-    
-    if (direction === 'down') {
-        lockProgress = 1.05; // Set to end
-        const nextTarget = document.getElementById('comparison');
-        if (nextTarget) nextTarget.scrollIntoView({ behavior: 'smooth' });
-    } else {
-        lockProgress = -0.05; // Set to start
-        const prevTarget = document.getElementById('expertises');
-        if (prevTarget) prevTarget.scrollIntoView({ behavior: 'smooth' });
-    }
-    
-    setTimeout(() => { isExiting = false; }, 800);
-  }
-
-  if (processSection) {
-    window.addEventListener('wheel', (e) => {
-      if (isExiting) return;
-
-      const rect = processSection.getBoundingClientRect();
-      const atTop = Math.abs(rect.top) < 30;
-
-      // Enter from ABOVE (scrolling down)
-      if (!isLocked && atTop && e.deltaY > 0 && lockProgress < 1) {
-          isLocked = true;
-          lockProgress = 0;
-          document.body.style.overflow = 'hidden';
-          document.documentElement.style.overflow = 'hidden';
-          processSection.scrollIntoView({ behavior: 'auto' });
-          updateProcessVisuals(0);
-      }
-      
-      // Enter from BELOW (scrolling up)
-      if (!isLocked && atTop && e.deltaY < 0 && lockProgress > 0) {
-          isLocked = true;
-          lockProgress = 1;
-          document.body.style.overflow = 'hidden';
-          document.documentElement.style.overflow = 'hidden';
-          processSection.scrollIntoView({ behavior: 'auto' });
-          updateProcessVisuals(1);
-      }
-
-      if (isLocked) {
-        e.preventDefault();
-        handleInteraction(e.deltaY);
-      }
-    }, { passive: false });
-
-    // Touch Support
-    window.addEventListener('touchstart', (e) => {
-        touchStartY = e.touches[0].clientY;
+    scrollyItems.forEach(item => {
+      item.classList.add('not-visible'); // Initial state
+      scrollyObserver.observe(item);
     });
-    window.addEventListener('touchmove', (e) => {
-        if (isExiting) return;
-        
-        const rect = processSection.getBoundingClientRect();
-        const atTop = Math.abs(rect.top) < 30;
 
-        if (isLocked) {
-            e.preventDefault();
-            const touchY = e.touches[0].clientY;
-            const deltaY = (touchStartY - touchY) * 2;
-            handleInteraction(deltaY);
-            touchStartY = touchY;
-            return;
-        }
-
-        // Detect entry (swipe up = scroll down)
-        if (!isLocked && atTop) {
-            const deltaY = touchStartY - e.touches[0].clientY;
-            // From top going down
-            if (deltaY > 0 && lockProgress < 1) {
-                isLocked = true;
-                lockProgress = 0;
-                document.body.style.overflow = 'hidden';
-                document.documentElement.style.overflow = 'hidden';
-                processSection.scrollIntoView({ behavior: 'auto' });
-                updateProcessVisuals(0);
-            }
-            // From bottom going up
-            else if (deltaY < 0 && lockProgress > 0) {
-                isLocked = true;
-                lockProgress = 1;
-                document.body.style.overflow = 'hidden';
-                document.documentElement.style.overflow = 'hidden';
-                processSection.scrollIntoView({ behavior: 'auto' });
-                updateProcessVisuals(1);
-            }
-        }
-    }, { passive: false });
+    updateScrollyTimeline();
   }
 
   // Footer Clock

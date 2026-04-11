@@ -8,8 +8,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['"Playfair Display"', 'serif'],
+        sans: ['Outfit', 'sans-serif'],
+        display: ['Outfit', 'sans-serif'],
+        body: ['"Instrument Sans"', 'sans-serif'],
+        serif: ['"Instrument Serif"', 'serif'],
       },
       colors: {
         base: '#F9F8F6',
