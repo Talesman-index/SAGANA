@@ -567,7 +567,11 @@
 }
 
 .project-title-glam {
-  @apply font-serif text-3xl lg:text-4xl italic text-white leading-none;
+  @apply font-serif text-3xl lg:text-4xl italic text-white leading-none mb-3;
+}
+
+.project-desc-glam {
+  @apply font-sans text-sm text-white/60 leading-relaxed font-medium max-w-[85%];
 }
 
 /* --- PREMIUM BLOG TYPOGRAPHY & LAYOUT --- */
