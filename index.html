@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAGANA — Agence Digitale Premium</title>
+  <meta name="description" content="SAGANA accompagne les entreprises ambitieuses dans la conception, le développement et la croissance de leurs produits numériques." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script type="module" crossorigin src="/assets/main-BPOZJcHz.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-C73A8QwY.css">
+</head>
+<body class="bg-base text-main antialiased selection:bg-accent selection:text-white">
+
+  <nav class="fixed top-0 left-0 w-full z-[70] px-6 sm:px-10 lg:px-12 py-6 transition-all duration-300" id="navbar">
+    <div class="max-w-[1440px] mx-auto flex items-center justify-between w-full">
+      <div class="flex items-center gap-3 shrink-0">
+        <div class="w-10 h-10 rounded-full border-2 border-brand-lime flex items-center justify-center shrink-0">
+            <div class="w-5 h-5 rounded-full bg-brand-lime animate-pulse-slow"></div>
+        </div>
+        <a href="#hero" class="font-sans font-black text-2xl tracking-tighter text-white uppercase whitespace-nowrap">SAGANA</a>
+      </div>
+      
+      <ul class="hidden lg:flex items-center gap-10 font-sans text-[12px] font-bold text-white/50 uppercase tracking-[0.2em]">
+        <li><a href="#hero" class="hover:text-brand-lime transition-colors">Accueil</a></li>
+        <li><a href="#about-company" class="hover:text-brand-lime transition-colors">Vision</a></li>
+        <li><a href="#expertises" class="hover:text-brand-lime transition-colors">Expertises</a></li>
+        <li><a href="#process" class="hover:text-brand-lime transition-colors">Méthode</a></li>
+        <li><a href="#testimonials" class="hover:text-brand-lime transition-colors">Réalisations</a></li>
+        <li><a href="blog.html" class="hover:text-brand-lime transition-colors">Blog</a></li>
+      </ul>
+      
+      <div class="hidden lg:block">
+        <a href="#contact" class="btn-brand-lime px-8 py-4 text-[12px] group">
+          Démarrer un projet
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="ml-2 stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <button class="lg:hidden relative z-[60] w-12 h-12 text-white flex flex-col items-center justify-center gap-1.5 bg-white/5 rounded-full border border-white/10 transition-all hover:bg-white/10" id="navToggle" aria-label="Menu">
+        <span class="block w-6 h-[2px] bg-current transition-all duration-300 origin-center"></span>
+        <span class="block w-6 h-[2px] bg-current transition-all duration-300 origin-center"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div id="mobileMenu" class="fixed inset-0 z-50 bg-[#0A0A0A] hidden opacity-0 transition-all duration-500 overflow-hidden h-[100dvh]">
+    <div class="h-full flex flex-col justify-start px-10 sm:px-20 pt-32 relative overflow-hidden"> <!-- Changed to justify-start and added pt-32 -->
+      <!-- Background pattern -->
+      <div class="absolute inset-0 opacity-[0.02] pointer-events-none" style="background-image: radial-gradient(#FFF 1px, transparent 1px); background-size: 60px 60px;"></div>
+      
+      <div class="relative z-10 w-full max-w-sm">
+        <ul class="flex flex-col gap-6 sm:gap-8 text-4xl sm:text-5xl font-bold text-white mb-16">
+          <li class="reveal-mobile-item"><a href="#hero">Accueil</a></li>
+          <li class="reveal-mobile-item"><a href="#about-company">À propos</a></li>
+          <li class="reveal-mobile-item"><a href="#expertises">Services</a></li>
+          <li class="reveal-mobile-item"><a href="#process">Process</a></li>
+          <li class="reveal-mobile-item"><a href="#testimonials">Réalisations</a></li>
+          <li class="reveal-mobile-item"><a href="blog.html">Blog</a></li>
+          <li class="reveal-mobile-item"><a href="#contact">Contact</a></li>
+        </ul>
+        
+        <div class="pt-10 border-t border-white/10">
+          <p class="text-[10px] uppercase font-bold tracking-[0.3em] text-white/40 mb-6">Prêt à lancer ?</p>
+          <a href="mailto:contact@sagana-agency.com" class="inline-flex items-center gap-4 text-brand-lime text-xl font-bold group">
+            Prendre rendez-vous
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 transition-transform group-hover:translate-x-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <header class="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-24 overflow-hidden bg-main" id="hero">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0">
+        <img src="/assets/african-american-man-and-woman-sit-at-a-stylish-ho-2026-01-11-10-58-43-utc-CwOkRVqY.jpg" alt="Meeting" class="w-full h-full object-cover">
+        <div class="hero-overlay"></div>
+        <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+
+    <div class="relative z-10 max-w-[1440px] mx-auto w-full pt-20">
+      <div class="max-w-4xl reveal">
+        <!-- Top Small Text (Badge) -->
+          <div class="flex flex-wrap reveal mb-8">
+            <span class="inline-flex items-center px-4 py-2 rounded-full bg-brand-lime/10 border border-brand-lime/20 text-brand-lime text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-center">
+              12+ projets livrés • 100% de satisfaction • Accompagnement sur mesure
+            </span>
+          </div>
+        
+        <!-- Headline -->
+        <h1 class="font-sans text-3xl sm:text-5xl lg:text-[clamp(2.25rem,6vw,4.5rem)] leading-[1.1] lg:leading-[0.95] font-bold tracking-tight text-white mb-10 lg:mb-14">
+          Nous concevons, développons <br class="hidden lg:block">
+          et faisons grandir les <br class="hidden lg:block">
+          produits digitaux.
+        </h1>
+        
+        <!-- Subtext -->
+        <p class="text-white/70 text-lg sm:text-xl lg:text-2xl leading-relaxed mb-12 lg:mb-20 max-w-2xl">
+            SAGANA accompagne les entreprises ambitieuses avec une approche alliant design, technologie et croissance.
+        </p>
+        
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6">
+          <a href="mailto:contact@sagana-agency.com" class="btn-brand-lime px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg group w-full sm:w-fit !text-main">
+            Prendre rendez-vous
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="ml-3 stroke-main stroke-2 group-hover:translate-x-2 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="#testimonials" class="px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg font-bold text-white border border-white/20 rounded-full hover:bg-white/10 transition-all w-full sm:w-fit text-center">
+            Voir nos réalisations
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PHILOSOPHY & CLARITY SECTION -->
+  <section class="py-24 bg-white overflow-hidden" id="about" data-nav-dark="true">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-12 text-center">
+      <h2 class="font-sans text-xl sm:text-2xl text-main/80 max-w-4xl mx-auto leading-relaxed mb-16 reveal">
+        Nous filtrons le bruit pour nous concentrer sur l'essentiel. <br class="hidden sm:block">
+        Nous apportons la clarté nécessaire pour faire rayonner votre entreprise.
+      </h2>
+
+      <!-- Floating Tag Cloud -->
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-4 max-w-5xl mx-auto reveal reveal-delay-1 px-4">
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Quels sont les risques à anticiper ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Comment optimiser ma rentabilité ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Quel canal d'acquisition privilégier ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Le marché est-il prêt pour mon produit ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Comment me différencier de la concurrence ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Qui est mon client idéal ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Comment accélérer ma croissance ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Quel capital pour mon expansion ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Comment structurer mes opérations ?</span>
+        <span class="floating-tag bg-brand-beige text-main/80 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium border border-black/5 shadow-sm max-w-[calc(100vw-2rem)]">Quelle est ma vision à long terme ?</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE GRID SECTION -->
+  <section class="bg-brand-beige border-t border-black/5 overflow-hidden" id="features" data-nav-dark="true">
+    <div class="max-w-[1440px] mx-auto">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 border-b border-black/5">
+        <!-- Feature 1 -->
+        <div class="p-10 lg:p-16 flex flex-col gap-8 reveal border-b sm:border-b-0 sm:border-r border-black/5 border-dashed">
+          <div class="text-accent">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2">
+              <circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="7" r="2.5"/><circle cx="7" cy="17" r="2.5"/><circle cx="17" cy="17" r="2.5"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-sans font-bold text-2xl mb-4">Simplicité radicale</h3>
+            <p class="text-main/70 leading-relaxed font-medium">Pas de jargon. Des étapes claires pour lancer et faire croître votre entreprise en toute confiance.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="p-10 lg:p-16 flex flex-col gap-8 reveal reveal-delay-1 border-b sm:border-b-0 lg:border-r border-black/5 border-dashed">
+          <div class="text-accent text-3xl">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2">
+               <path d="M12 22a10 10 0 0 0-10-10"/><path d="M12 18a6 6 0 0 0-6-6"/><path d="M12 14a2 2 0 0 0-2-2"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-sans font-bold text-2xl mb-4">Résultats concrets</h3>
+            <p class="text-main/70 leading-relaxed font-medium">Chaque stratégie est pensée pour accélérer votre lancement et maximiser vos profits.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="p-10 lg:p-16 flex flex-col gap-8 reveal reveal-delay-2 border-b sm:border-b-0 sm:border-r border-black/5 border-dashed">
+          <div class="text-accent text-3xl">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-sans font-bold text-2xl mb-4">Expertise éprouvée</h3>
+            <p class="text-main/70 leading-relaxed font-medium">Notre expérience multisectorielle nous permet d'apporter des solutions pratiques et durables.</p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="p-10 lg:p-16 flex flex-col gap-8 reveal reveal-delay-3 border-black/5 border-dashed">
+          <div class="text-accent text-3xl">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2">
+              <circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-sans font-bold text-2xl mb-4">Partenaire durable</h3>
+            <p class="text-main/70 leading-relaxed font-medium">De l'idée initiale au passage à l'échelle, nous vous accompagnons à chaque étape stratégique.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT COMPANY SECTION (Dark) -->
+  <section class="py-24 bg-main text-white" id="about-company">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-24">
+      <!-- Breadcrumb Label -->
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-32">
+          <div class="reveal">
+            <div class="flex items-center gap-3 mb-8">
+              <div class="w-1.5 h-1.5 bg-brand-lime rounded-full"></div>
+              <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">L'Agence</span>
+            </div>
+            
+            <h2 class="section-heading mb-4">SAGANA</h2>
+            <h3 class="text-2xl lg:text-3xl font-bold text-white mb-8 border-l-2 border-brand-lime pl-6">
+              L'architecture de votre <br> <span class="text-brand-lime">croissance digitale.</span>
+            </h3>
+            
+            <p class="text-white/40 text-lg leading-relaxed mb-10 max-w-xl font-medium">
+              Plus de <span class="text-white font-bold">12 entreprises</span> accompagnées, <span class="text-white font-bold">25 stratégies</span> sur mesure et une présence dans <span class="text-white font-bold">2 pays</span>. Nous construisons des systèmes qui durent.
+            </p>
+            
+            <div class="flex flex-wrap gap-4 mb-12">
+                <div class="px-5 py-3 bg-white/5 border border-white/10 rounded-2xl text-[10px] font-bold uppercase tracking-widest text-white/60">Performance</div>
+                <div class="px-5 py-3 bg-white/5 border border-white/10 rounded-2xl text-[10px] font-bold uppercase tracking-widest text-white/60">Transparence</div>
+                <div class="px-5 py-3 bg-white/5 border border-white/10 rounded-2xl text-[10px] font-bold uppercase tracking-widest text-white/60">Innovation</div>
+            </div>
+
+            <a href="mailto:contact@sagana-agency.com" class="btn-brand-lime px-8 py-4 text-sm group">
+              Notre Approche
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="ml-2 stroke-current stroke-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        <div class="reveal reveal-delay-2 relative flex items-center justify-center">
+            <div class="glass-orb-container scale-100 lg:scale-150">
+                <div class="glass-orb-glow"></div>
+                <div class="glass-orb-ring"></div>
+                <div class="glass-orb"></div>
+                <!-- Additional floating particles for depth -->
+                <div class="absolute w-4 h-4 rounded-full bg-brand-lime/40 blur-sm top-0 left-10 animation-float-slow"></div>
+                <div class="absolute w-2 h-2 rounded-full bg-white/40 blur-[1px] bottom-10 right-0 animation-float"></div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Value Grid (Three Columns) -->
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Value 1 -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-10 reveal">
+          <div class="text-brand-lime mb-8 flex items-center gap-3">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2">
+              <circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="7" r="2.5"/><circle cx="7" cy="17" r="2.5"/><circle cx="17" cy="17" r="2.5"/>
+            </svg>
+            <h3 class="font-sans font-bold text-xl">Sur-mesure</h3>
+          </div>
+          <p class="text-white/50 leading-relaxed">Pas de solutions génériques. Chaque projet est façonné selon vos objectifs précis.</p>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-10 reveal reveal-delay-1">
+          <div class="text-brand-lime mb-8 flex items-center gap-3">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2">
+               <path d="M12 22a10 10 0 0 0-10-10"/><path d="M12 18a6 6 0 0 0-6-6"/><path d="M12 14a2 2 0 0 0-2-2"/>
+            </svg>
+            <h3 class="font-sans font-bold text-xl">Impact direct</h3>
+          </div>
+          <p class="text-white/50 leading-relaxed">Nous privilégions les actions qui génèrent de la valeur immédiate pour votre business.</p>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-10 reveal reveal-delay-2">
+          <div class="text-brand-lime mb-8 flex items-center gap-3">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+            </svg>
+            <h3 class="font-sans font-bold text-xl">Proximité</h3>
+          </div>
+          <p class="text-white/50 leading-relaxed">Une communication fluide et transparente pour avancer ensemble, sans friction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS SECTION (Dark) -->
+  <section class="py-32 bg-main text-white border-t border-white/5 overflow-hidden" id="metrics">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-24">
+      <div class="grid lg:grid-cols-2 gap-24 items-center reveal">
+        <div>
+            <h2 class="font-sans text-[clamp(2.5rem,6vw,4.5rem)] font-bold tracking-tight leading-none mb-10">
+                Les chiffres parlent d'eux-mêmes — <br>
+                vous êtes entre de <span class="text-brand-lime italic">bonnes mains</span>.
+            </h2>
+            <p class="text-xl text-white/50 max-w-md leading-relaxed">
+                Une trajectoire de succès bâtie sur un impact mesurable, une précision stratégique et un dévouement total à l'excellence.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-12 sm:gap-20">
+            <div class="reveal reveal-delay-1 border-l border-white/10 pl-8 py-4">
+              <div class="font-sans text-5xl sm:text-8xl font-bold text-white mb-4 counter" data-target="2">0</div>
+              <p class="text-white/40 font-sans font-bold tracking-[0.2em] uppercase text-xs">Années d'exp.</p>
+            </div>
+            <div class="reveal reveal-delay-2 border-l border-white/10 pl-8 py-4">
+              <div class="font-sans text-5xl sm:text-8xl font-bold text-white mb-4 counter" data-target="100">0</div>
+              <p class="text-white/40 font-sans font-bold tracking-[0.2em] uppercase text-xs">Satisfaction %</p>
+            </div>
+            <div class="reveal reveal-delay-3 border-l border-white/10 pl-8 py-4">
+              <div class="font-sans text-5xl sm:text-8xl font-bold text-white mb-4 counter" data-target="12">0</div>
+              <p class="text-white/40 font-sans font-bold tracking-[0.2em] uppercase text-xs">Projets livrés</p>
+            </div>
+            <div class="reveal reveal-delay-4 border-l border-white/10 pl-8 py-4">
+              <div class="font-sans text-5xl sm:text-8xl font-bold text-white mb-4 counter" data-target="4">0</div>
+              <p class="text-white/40 font-sans font-bold tracking-[0.2em] uppercase text-xs">Pays atteints</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE SECTION (MINIMALIST PREMIUM) -->
+  <!-- SERVICES SECTION (High-End Card Grid) -->
+  <section id="expertises" class="service-grid-section" data-nav-dark="true">
+    <div class="max-w-[1400px] mx-auto">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-32 reveal">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-main/10 bg-main/5 mb-8">
+          <div class="w-1.5 h-1.5 rounded-full bg-main"></div>
+          <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-main">Nos Services</span>
+        </div>
+        <h2 class="text-5xl lg:text-7xl font-bold text-main tracking-tighter leading-none mb-8">
+          Notre Expertises
+        </h2>
+        <p class="text-muted text-lg lg:text-xl font-medium leading-relaxed">
+          Nous proposons une suite complète de services stratégiques conçus pour aider les entreprises à prospérer dans l'écosystème numérique.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-20 lg:gap-y-24">
+        
+
+        <!-- Service 02: Web/Mobile -->
+        <div class="service-card-v2 reveal group">
+          <div class="service-card-icon-pill">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-[1.5]">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3 class="service-card-title">Web & Mobile Dev</h3>
+          <p class="service-card-desc">
+            Propulsez votre innovation numérique grâce à nos services d'expert en développement haute performance, scalable et robuste.
+          </p>
+          <a href="#contact" class="service-card-link group/link">
+            En savoir plus
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 transition-transform duration-300 group-hover/link:translate-x-1">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 03: UI/UX -->
+        <div class="service-card-v2 reveal group">
+          <div class="service-card-icon-pill">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-[1.5]">
+              <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+            </svg>
+          </div>
+          <h3 class="service-card-title">UI/UX Design</h3>
+          <p class="service-card-desc">
+            Créez des expériences numériques intuitives, fluides et visuellement captivantes qui connectent réellement avec vos utilisateurs.
+          </p>
+          <a href="#contact" class="service-card-link group/link">
+            En savoir plus
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 transition-transform duration-300 group-hover/link:translate-x-1">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 04: SEO -->
+        <div class="service-card-v2 reveal group">
+          <div class="service-card-icon-pill">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-[1.5]">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <h3 class="service-card-title">SEO & Performance</h3>
+          <p class="service-card-desc">
+            Optimisez votre visibilité et la vitesse de votre plateforme pour dominer les résultats de recherche et maximiser votre conversion.
+          </p>
+          <a href="#contact" class="service-card-link group/link">
+            En savoir plus
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 transition-transform duration-300 group-hover/link:translate-x-1">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Service 05: IA -->
+        <div class="service-card-v2 reveal group">
+          <div class="service-card-icon-pill">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-[1.5]">
+              <path d="M12 3l1.912 5.885h6.188l-5.007 3.638 1.913 5.885-5.006-3.637-5.006 3.637 1.913-5.885-5.007-3.638h6.188z"/>
+            </svg>
+          </div>
+          <h3 class="service-card-title">IA & Automation</h3>
+          <p class="service-card-desc">
+            Intégrez la puissance de l'IA générative pour automatiser vos workflows business et décupler votre productivité opérationnelle.
+          </p>
+          <a href="#contact" class="service-card-link group/link">
+            En savoir plus
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2 transition-transform duration-300 group-hover/link:translate-x-1">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- METHODOLOGY / PREMIUM SCROLLYTELLING SECTION -->
+  <section id="process" class="methodology-scrollytelling" data-nav-dark="true">
+    <div class="scrolly-container">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-48 reveal">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-black/10 bg-black/5 mb-8">
+          <div class="w-1.5 h-1.5 rounded-full bg-black animate-pulse"></div>
+          <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-black">Notre Approche</span>
+        </div>
+        <h2 class="text-5xl lg:text-7xl font-bold text-main tracking-tighter leading-none mb-8">
+          Design Thinking
+        </h2>
+        <p class="text-muted text-lg lg:text-xl font-medium leading-relaxed max-w-2xl mx-auto">
+          Une méthodologie centrée sur l'humain pour transformer vos idées en expériences numériques d'exception.
+        </p>
+      </div>
+
+      <!-- Centered Timeline Path -->
+      <div class="scrolly-timeline-path">
+        <div id="scrollyProgress" class="scrolly-timeline-fill"></div>
+      </div>
+
+      <!-- Scrolly Steps -->
+      <div class="flex flex-col">
+        
+        <!-- Step 01: Empathie -->
+        <div class="scrolly-step-row reveal scrolly-item" data-step="01">
+          <!-- Timeline Badge -->
+          <div class="scrolly-badge"><span>01</span></div>
+          
+          <div class="scrolly-photo-card">
+            <img src="/assets/methodology_empathy_cinematic_1775844301734-Dpo1eAWc.png" alt="Empathie Phase">
+          </div>
+          <div class="scrolly-content-card">
+            <span class="scrolly-step-pill">Étape 01</span>
+            <h3>Comprendre <br>vos utilisateurs</h3>
+            <p>
+              Nous nous immergeons dans votre univers pour comprendre les besoins réels et les points de friction de vos utilisateurs finaux.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 02: Définition -->
+        <div class="scrolly-step-row reveal scrolly-item" data-step="02">
+          <!-- Timeline Badge -->
+          <div class="scrolly-badge"><span>02</span></div>
+          
+          <div class="scrolly-photo-card">
+            <img src="/assets/methodology_definition_cinematic_1775844331980-BYEef_qR.png" alt="Définition Phase">
+          </div>
+          <div class="scrolly-content-card">
+            <span class="scrolly-step-pill">Étape 02</span>
+            <h3>Cadrer la <br>problématique</h3>
+            <p>
+              Nous structurons les insights récoltés pour définir des objectifs clairs et une feuille de route stratégique précise.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 03: Idéation -->
+        <div class="scrolly-step-row reveal scrolly-item" data-step="03">
+          <!-- Timeline Badge -->
+          <div class="scrolly-badge"><span>03</span></div>
+          
+          <div class="scrolly-photo-card">
+            <img src="/assets/methodology_ideation_cinematic_1775844358232-g3fwQxgS.png" alt="Idéation Phase">
+          </div>
+          <div class="scrolly-content-card">
+            <span class="scrolly-step-pill">Étape 03</span>
+            <h3>Libérer <br>la créativité</h3>
+            <p>
+              Ateliers de co-conception et brainstorming pour explorer toutes les solutions possibles sans aucune limite créative.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 04: Prototype -->
+        <div class="scrolly-step-row reveal scrolly-item" data-step="04">
+          <!-- Timeline Badge -->
+          <div class="scrolly-badge"><span>04</span></div>
+          
+          <div class="scrolly-photo-card">
+            <img src="/assets/methodology_prototyping_cinematic_1775844386512-DnkI0MIw.png" alt="Prototype Phase">
+          </div>
+          <div class="scrolly-content-card">
+            <span class="scrolly-step-pill">Étape 04</span>
+            <h3>Matérialiser <br>les concepts</h3>
+            <p>
+              Création de maquettes interactives haute fidélité pour tester et valider les parcours utilisateurs avant tout développement.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 05: Réalisation -->
+        <div class="scrolly-step-row reveal scrolly-item" data-step="05">
+          <!-- Timeline Badge -->
+          <div class="scrolly-badge"><span>05</span></div>
+          
+          <div class="scrolly-photo-card">
+            <img src="/assets/methodology_realization_cinematic_1775844412122-BUNQZl4c.png" alt="Réalisation Phase">
+          </div>
+          <div class="scrolly-content-card">
+            <span class="scrolly-step-pill">Étape 05</span>
+            <h3>Donner vie <br>au projet</h3>
+            <p>
+              Développement technique rigoureux et lancement de votre plateforme pour transformer votre vision en réalité tangible.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON SECTION (Dark) -->
+  <section class="py-32 lg:py-48 px-4 sm:px-6 lg:px-24 bg-main text-white border-t border-white/5 overflow-hidden" id="comparison">
+    <div class="max-w-[850px] mx-auto overflow-hidden">
+      <div class="text-center mb-24 reveal">
+        <h2 class="font-sans text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight mb-6">Côte à côte, le choix est <span class="text-brand-lime">simple</span></h2>
+        <p class="text-white/50 font-sans font-medium">Pourquoi SAGANA est le partenaire privilégié des entreprises ambitieuses.</p>
+      </div>
+      
+      <div class="bg-white/5 rounded-[3rem] border border-white/10 overflow-hidden reveal reveal-delay-1">
+        <div class="grid grid-cols-2 text-center font-sans font-bold text-xs sm:text-base tracking-widest uppercase border-b border-white/10">
+           <div class="p-8 sm:p-10 text-white/40">Les Autres</div>
+           <div class="p-8 sm:p-10 bg-brand-lime text-main">SAGANA</div>
+        </div>
+        <div class="divide-y divide-white/10 text-white/70">
+          <div class="grid grid-cols-2 text-center text-sm sm:text-xl font-medium">
+            <div class="p-8 sm:p-12">Frais cachés et devis flous</div>
+            <div class="p-8 sm:p-12 text-white font-bold">Transparence totale des prix</div>
+          </div>
+          <div class="grid grid-cols-2 text-center text-sm sm:text-xl font-medium">
+            <div class="p-8 sm:p-12">Communication lente (emails)</div>
+            <div class="p-8 sm:p-12 text-white font-bold">Channel Slack & Updates hebdo</div>
+          </div>
+          <div class="grid grid-cols-2 text-center text-sm sm:text-xl font-medium">
+            <div class="p-8 sm:p-12">Code obsolète et peu évolutif</div>
+            <div class="p-8 sm:p-12 text-white font-bold">Stack moderne</div>
+          </div>
+          <div class="grid grid-cols-2 text-center text-sm sm:text-xl font-medium">
+            <div class="p-8 sm:p-12">Focus sur le design uniquement</div>
+            <div class="p-8 sm:p-12 text-white font-bold">Focus sur le ROI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS / CASE STUDIES SECTION (Glamorous Purple Grid) -->
+  <section class="showcase-purple-theme py-32 lg:py-56 px-4 sm:px-6 lg:px-24" id="testimonials">
+    <div class="grid-pattern-overlay"></div>
+    
+    <div class="max-w-[1440px] mx-auto relative z-10">
+      
+      <!-- Header -->
+      <div class="reveal text-center mb-32 max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/5 bg-white/[0.02] backdrop-blur-md mb-10">
+          <span class="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-lime">Nos Réalisations</span>
+        </div>
+        
+        <h2 class="glam-heading">
+          Façonner le futur de <br>
+          <em>l'Influence Numérique.</em>
+        </h2>
+        
+        <p class="text-white/40 text-lg lg:text-xl leading-relaxed font-medium max-w-2xl mx-auto mt-8">
+          Chaque projet est une opportunité de redéfinir les standards de l'industrie. Nous combinons vision stratégique et exécution technique pour propulser vos ambitions numériques.
+        </p>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="showcase-grid-content">
+        
+        <!-- Project 1: Vortex -->
+        <a href="#" class="project-card-glam reveal group">
+          <div class="project-card-overlay"></div>
+          <div class="project-tag-container">
+            <span class="glass-pill">Fintech</span>
+            <span class="glass-pill">Mobilité</span>
+          </div>
+          <img src="/assets/vortex-C9X5xf7I.webp" alt="Vortex mobile application">
+          <div class="glass-footer-glam">
+            <h3 class="project-title-glam">Vortex</h3>
+            <p class="project-desc-glam">Solution fintech de gestion de carburant et paiements sécurisés pour flottes.</p>
+          </div>
+        </a>
+
+        <!-- Project 2: Art du Bénin -->
+        <a href="#" class="project-card-glam reveal reveal-delay-1 group">
+          <div class="project-card-overlay"></div>
+          <div class="project-tag-container">
+            <span class="glass-pill">Culture</span>
+            <span class="glass-pill">Immersif</span>
+          </div>
+          <img src="/assets/case%20study-D5f47oi9.webp" alt="Art du Bénin digital experience">
+          <div class="glass-footer-glam">
+            <h3 class="project-title-glam">Art du Bénin</h3>
+            <p class="project-desc-glam">Médiation culturelle immersive valorisant le patrimoine artistique béninois.</p>
+          </div>
+        </a>
+
+        <!-- Project 3: Sport Advisor -->
+        <a href="#" class="project-card-glam reveal group">
+          <div class="project-card-overlay"></div>
+          <div class="project-tag-container">
+            <span class="glass-pill">Big Data</span>
+            <span class="glass-pill">IA Analytics</span>
+          </div>
+          <img src="/assets/advisor-gZyN5Ipw.webp" alt="Sport Advisor IA platform">
+          <div class="glass-footer-glam">
+            <h3 class="project-title-glam">Sport AI</h3>
+            <p class="project-desc-glam">Analyse prédictive haute performance pour l'élite du sport mondial.</p>
+          </div>
+        </a>
+
+        <!-- Project 4: EasyManaging -->
+        <a href="https://easymanagingg.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-card-glam reveal reveal-delay-1 group">
+          <div class="project-card-overlay"></div>
+          <div class="project-tag-container">
+            <span class="glass-pill">SaaS & ERP</span>
+            <span class="glass-pill">Management</span>
+          </div>
+          <img src="/assets/easymanaging-C7FQ1Lf-.png" alt="EasyManaging SaaS Dashboard">
+          <div class="glass-footer-glam">
+            <h3 class="project-title-glam">EasyManaging</h3>
+            <p class="project-desc-glam">Plateforme ERP cloud optimisant la gestion opérationnelle des PME.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIBRARY / BLOG SECTION (Dark) -->
+  <section class="py-32 lg:py-48 px-4 sm:px-6 lg:px-24 bg-main text-white border-t border-white/5 overflow-hidden" id="library">
+    <div class="max-w-[1440px] mx-auto">
+      <div class="reveal mb-32 max-w-4xl">
+        <div class="flex items-center gap-3 mb-10">
+          <div class="w-1.5 h-1.5 bg-brand-lime rounded-full"></div>
+          <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Librairie SAGANA</span>
+        </div>
+        
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-12">
+            <div>
+                <h2 class="section-heading mb-10">
+                  Votre base de <br> 
+                  <span class="text-brand-lime italic">connaissances.</span>
+                </h2>
+                <div class="w-20 h-1 bg-brand-lime/20 mb-10"></div>
+                <p class="text-white/40 text-lg lg:text-xl leading-relaxed font-medium max-w-2xl">
+                  Découvrez nos analyses et méthodes pour comprendre les dynamiques du digital et propulser votre business.
+                </p>
+            </div>
+            <div class="flex gap-4 mb-2">
+               <button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-lime hover:text-main transition-all duration-300" id="prevSlide">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><polyline points="15 18 9 12 15 6"/></svg>
+               </button>
+               <button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-lime hover:text-main transition-all duration-300" id="nextSlide">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><polyline points="9 18 15 12 9 6"/></svg>
+               </button>
+            </div>
+        </div>
+      </div>
+
+      <div class="flex gap-8 overflow-x-auto pb-12 snap-x snap-mandatory scrollbar-hide no-scrollbar" id="blogSlider">
+        <!-- Article 1: IA -->
+        <a href="blog/ia-automatisation-business.html" class="min-w-[320px] md:min-w-[450px] snap-start reveal group cursor-pointer block">
+           <div class="rounded-[2.5rem] overflow-hidden aspect-[4/3] mb-8 relative border border-white/10">
+              <img src="/assets/young-black-man-collaborating-with-colleagues-in-m-2026-01-21-02-38-50-utc-y8hahpkV.jpg" alt="IA Business Automation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div class="absolute top-8 left-8 bg-brand-lime px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-main">Technologie</div>
+           </div>
+           <div class="px-2">
+            <div class="text-white/60 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Janvier 2026 • 4 min lecture</div>
+             <h3 class="font-sans text-2xl font-bold group-hover:text-brand-lime transition-colors leading-snug">Pourquoi l'IA et l'automatisation sont les clés de demain.</h3>
+           </div>
+        </a>
+
+        <!-- Article 2: Design -->
+        <a href="blog/design-thinking-strategie.html" class="min-w-[320px] md:min-w-[450px] snap-start reveal reveal-delay-1 group cursor-pointer block">
+           <div class="rounded-[2.5rem] overflow-hidden aspect-[4/3] mb-8 relative border border-white/10">
+              <img src="/assets/group-of-young-creative-designers-gathered-in-fron-2026-01-09-00-08-32-utc-40a_8W_p.jpg" alt="Design Thinking Team" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div class="absolute top-8 left-8 bg-brand-lime px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-main">Design</div>
+           </div>
+           <div class="px-2">
+            <div class="text-white/60 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Février 2026 • 5 min lecture</div>
+             <h3 class="font-sans text-2xl font-bold group-hover:text-brand-lime transition-colors leading-snug">L'impact du Design Thinking sur la rentabilité de votre produit.</h3>
+           </div>
+        </a>
+
+        <!-- Article 3: SEO -->
+        <a href="blog/optimisation-seo-2026.html" class="min-w-[320px] md:min-w-[450px] snap-start reveal reveal-delay-2 group cursor-pointer block">
+           <div class="rounded-[2.5rem] overflow-hidden aspect-[4/3] mb-8 relative border border-white/10">
+              <img src="/assets/seo-search-engine-optimization-2026-03-25-06-29-14-utc-6pEJmg6y.jpg" alt="SEO Strategy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div class="absolute top-8 left-8 bg-brand-lime px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-main">Stratégie</div>
+           </div>
+           <div class="px-2">
+            <div class="text-white/60 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Mars 2026 • 6 min lecture</div>
+             <h3 class="font-sans text-2xl font-bold group-hover:text-brand-lime transition-colors leading-snug">Comment optimiser votre SEO en 2026 : Le guide complet.</h3>
+           </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA & FOOTER (Dark) -->
+  <footer class="bg-main text-white pt-32 lg:pt-48 pb-16 px-4 sm:px-6 lg:px-24 border-t border-white/5" id="contact">
+    <div class="max-w-[1440px] mx-auto">
+      <div class="grid lg:grid-cols-2 gap-24 items-start mb-32 reveal">
+        <div class="space-y-12">
+           <div class="flex items-center gap-3">
+             <div class="w-2 h-2 bg-brand-lime"></div>
+             <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60">Contact</span>
+           </div>
+           <h2 class="section-heading text-white mb-8">
+             Construisons ensemble <br> 
+             votre prochain <br> 
+             <span class="text-brand-lime">succès digital.</span>
+           </h2>
+           <p class="text-white/60 text-lg leading-relaxed mb-12 max-w-md font-medium">
+             Transformez vos ambitions en produits digitaux d'exception. Notre équipe est prête à vous accompagner.
+           </p>
+           <div class="reveal relative py-12 flex items-center justify-center overflow-hidden">
+              <div class="glass-orb-container scale-100">
+                  <div class="glass-orb-glow"></div>
+                  <div class="glass-orb-ring" style="animation-duration: 15s; border-color: rgba(255,255,255,0.05)"></div>
+                  <div class="glass-orb" style="width: 70%; height: 70%; animation-delay: -2s"></div>
+                  <div class="absolute w-3 h-3 rounded-full bg-brand-lime/30 blur-sm top-20 right-10 animation-float-slow"></div>
+              </div>
+           </div>
+        </div>
+        
+        <div class="bg-white/5 backdrop-blur-sm p-12 lg:p-16 rounded-[3rem] border border-white/10 shadow-2xl">
+           <form id="contactForm" class="space-y-4 lg:space-y-6">
+            <!-- Grid for First/Last Name -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+              <div class="space-y-2">
+                <label class="text-[10px] uppercase font-bold tracking-widest text-white/40">Nom Complet</label>
+                <input type="text" placeholder="John Doe" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 lg:px-6 py-3 lg:py-4 text-white focus:border-brand-lime transition-all outline-none">
+              </div>
+              <div class="space-y-2">
+                <label class="text-[10px] uppercase font-bold tracking-widest text-white/40">Email Professionnel</label>
+                <input type="email" placeholder="john@company.ai" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 lg:px-6 py-3 lg:py-4 text-white focus:border-brand-lime transition-all outline-none">
+              </div>
+            </div>
+             <div class="space-y-6">
+                <label class="block text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">Votre Projet</label>
+                <textarea rows="4" placeholder="Décrivez votre besoin..." required class="bg-transparent border-b border-white/10 py-5 focus:outline-none focus:border-brand-lime transition-colors resize-none w-full rounded-none placeholder:text-white/20 font-sans"></textarea>
+             </div>
+             <button type="submit" class="btn-brand-lime w-full py-6 text-lg">Envoyer la demande</button>
+             <div id="formSuccess" class="hidden text-brand-lime font-sans font-bold text-xl text-center">Merci ! Notre équipe vous répondra sous 24h.</div>
+           </form>
+        </div>
+      </div>
+
+      <!-- PREMIUM FOOTER -->
+      <div class="mt-32">
+        <!-- 1. CTA BANNER -->
+        <div class="reveal">
+          <div class="bg-brand-lime rounded-[2rem] p-8 lg:p-16 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-12 group">
+            <!-- Decorative Graphic -->
+            <div class="cta-banner-graphic hidden lg:block">
+              <div class="cta-banner-circles"></div>
+            </div>
+            
+            <div class="relative z-10 max-w-2xl text-center lg:text-left">
+              <p class="font-sans text-[10px] lg:text-[12px] font-black uppercase tracking-[0.4em] text-main/60 mb-2">Faire le premier pas</p>
+              <h2 class="font-sans text-2xl lg:text-3xl font-bold leading-tight text-main">
+                Vous décidez de l'élan. <br class="hidden lg:block">Nous maîtrisons la trajectoire.
+              </h2>
+            </div>
+            
+            <div class="relative z-10">
+              <a href="mailto:contact@sagana-agency.com" class="flex items-center justify-center lg:justify-start gap-4 bg-main text-white px-6 py-4 sm:px-10 sm:py-6 rounded-2xl font-bold text-sm sm:text-lg hover:scale-105 transition-transform group w-full lg:w-fit">
+                Parlons de votre projet dès aujourd'hui
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform group-hover:translate-x-1">
+                  <path d="M4.16663 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Premium Window Detail -->
+            <div class="absolute top-6 right-6 flex gap-1.5 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+               <div class="w-1.5 h-1.5 rounded-full border border-main bg-transparent"></div>
+               <div class="w-1.5 h-1.5 rounded-full border border-main bg-transparent"></div>
+               <div class="w-1.5 h-1.5 rounded-full border border-main bg-main"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. CONTACT INFO SECTION -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 py-24 mt-12 border-t border-white/5 reveal reveal-delay-1">
+          <div class="space-y-6">
+            <div class="footer-section-title">
+              <div class="footer-bullet"></div> TÉLÉPHONE
+            </div>
+            <div class="space-y-2">
+              <p class="text-white hover:text-brand-lime transition-colors font-medium">+229 01 54 92 18 01</p>
+              <p class="text-white/60 text-sm italic">Disponible du lundi au vendredi.</p>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="footer-section-title">
+              <div class="footer-bullet"></div> WHATSAPP
+            </div>
+            <div class="space-y-2">
+              <a href="https://wa.me/2290160359022" target="_blank" class="text-white hover:text-brand-lime transition-colors font-medium">+229 01 60 35 90 22</a>
+              <p class="text-white/60 text-sm italic">Réponse rapide garantie.</p>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div class="footer-section-title">
+              <div class="footer-bullet"></div> EMAIL
+            </div>
+            <div class="space-y-2">
+              <p class="text-white hover:text-brand-lime transition-colors font-medium">contact@sagana-agency.com</p>
+              <p class="text-brand-lime font-bold tracking-widest uppercase text-[10px]" id="footerClock">CHARGEMENT HORLOGE...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. LINKS SECTION -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-32 py-24 border-t border-white/5 reveal reveal-delay-2">
+          <!-- Pages -->
+          <div class="space-y-8">
+            <div class="footer-section-title">
+              <div class="footer-bullet"></div> PAGES
+            </div>
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-x-12">
+              <a href="#hero" class="footer-arrow-link"><span>Accueil</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#about-company" class="footer-arrow-link"><span>À propos</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#expertises" class="footer-arrow-link"><span>Services</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#process" class="footer-arrow-link"><span>Process</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#testimonials" class="footer-arrow-link"><span>Réalisations</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="#contact" class="footer-arrow-link"><span>Contact</span> <span class="footer-arrow-icon">→</span></a>
+            </div>
+          </div>
+
+          <!-- Socials -->
+          <div class="space-y-8">
+            <div class="footer-section-title">
+              <div class="footer-bullet"></div> RÉSEAUX
+            </div>
+            <div class="flex flex-col">
+              <a href="#" class="footer-arrow-link"><span>Facebook</span> <span class="footer-arrow-icon">→</span></a>
+              <a href="https://www.instagram.com/sagana.agence?igsh=YjVzZ3J5dHJoZ2Zm" target="_blank" rel="noopener noreferrer" class="footer-arrow-link"><span>Instagram</span> <span class="footer-arrow-icon">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8 py-12 border-t border-white/5 opacity-70 hover:opacity-100 transition-opacity">
+           <div class="font-sans font-black text-2xl tracking-tighter text-white">SAGANA.</div>
+           <div class="text-[10px] font-bold uppercase tracking-[0.2em]">© 2026 SAGANA LIMITED — TOUS DROITS RÉSERVÉS</div>
+           <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em]">
+              CONÇU AVEC PASSION PAR <span class="text-brand-lime">SAGANA</span>
+           </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
