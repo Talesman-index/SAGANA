@@ -511,67 +511,65 @@
 }
 
 .showcase-grid-content {
-  @apply grid lg:grid-cols-2 gap-8 lg:gap-12;
+  @apply grid md:grid-cols-2 gap-12 lg:gap-20;
 }
 
 .project-card-glam {
-  @apply relative aspect-[4/3] rounded-[2.5rem] lg:rounded-[3.5rem] overflow-hidden border border-white/5 cursor-pointer block transition-all duration-500;
+  @apply relative flex flex-col cursor-pointer;
 }
 
-.project-card-glam:hover {
-  @apply border-white/20 -translate-y-2;
-  box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5);
+.project-image-container {
+  @apply relative aspect-[16/10] rounded-[2rem] lg:rounded-[3rem] overflow-hidden border border-white/10 mb-8 transition-all duration-500;
 }
 
-.project-card-glam img {
+.project-card-glam:hover .project-image-container {
+  @apply border-brand-lime/30 -translate-y-2;
+  box-shadow: 0 30px 60px -15px rgba(212, 255, 62, 0.15);
+}
+
+.project-image-container img {
   @apply w-full h-full object-cover transition-transform duration-1000;
 }
 
-.project-card-glam:hover img {
-  @apply scale-110;
-}
-
-.project-card-overlay {
-  @apply absolute inset-0 bg-gradient-to-t from-[#080B09]/90 via-[#080B09]/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500;
+.project-card-glam:hover .project-image-container img {
+  @apply scale-105;
 }
 
 .project-tag-container {
-  @apply absolute top-8 right-8 flex gap-3 z-20;
+  @apply flex flex-wrap gap-2 mb-4;
 }
 
 .glass-pill {
-  @apply px-4 py-2 rounded-full border border-white/20 text-[11px] font-bold uppercase tracking-widest text-white;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  transition: all 300ms ease;
+  @apply px-3 py-1 rounded-full border border-white/10 text-[9px] font-bold uppercase tracking-widest text-white/60 transition-colors duration-300;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .project-card-glam:hover .glass-pill {
-  @apply border-brand-lime/30 bg-white/25;
-}
-
-.glass-footer-glam {
-  @apply absolute bottom-0 left-0 right-0 p-8 lg:p-12 z-20;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-  backdrop-filter: blur(15px);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  transform: translateY(20px);
-  opacity: 0;
-  transition: all 600ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.project-card-glam:hover .glass-footer-glam {
-  transform: translateY(0);
-  opacity: 1;
+  @apply border-brand-lime/20 text-brand-lime bg-brand-lime/5;
 }
 
 .project-title-glam {
-  @apply font-serif text-3xl lg:text-4xl italic text-white leading-none mb-3;
+  @apply font-sans text-2xl lg:text-3xl font-bold text-white mb-3 transition-colors duration-300;
+}
+
+.project-card-glam:hover .project-title-glam {
+  @apply text-brand-lime;
 }
 
 .project-desc-glam {
-  @apply font-sans text-sm text-white/60 leading-relaxed font-medium max-w-[85%];
+  @apply font-sans text-base text-white/40 leading-relaxed font-medium transition-colors duration-300;
+}
+
+.project-card-glam:hover .project-desc-glam {
+  @apply text-white/70;
+}
+
+.project-link-glam {
+  @apply mt-6 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-brand-lime opacity-0 translate-x-[-10px] transition-all duration-500;
+}
+
+.project-card-glam:hover .project-link-glam {
+  @apply opacity-100 translate-x-0;
 }
 
 /* --- PREMIUM BLOG TYPOGRAPHY & LAYOUT --- */
