@@ -56,11 +56,11 @@
 
 @layer components {
   .section-tag {
-    @apply inline-flex items-center gap-3 text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase text-accent before:content-[''] before:block before:w-8 before:h-[1px] before:bg-accent/30;
+    @apply inline-flex items-center gap-3 text-[10px] sm:text-xs font-normal tracking-[0.3em] uppercase text-accent before:content-[''] before:block before:w-8 before:h-[1px] before:bg-accent/30;
   }
   
   .section-tag-light {
-    @apply inline-flex items-center gap-3 text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase text-accent-light before:content-[''] before:block before:w-8 before:h-[1px] before:bg-accent-light/30;
+    @apply inline-flex items-center gap-3 text-[10px] sm:text-xs font-normal tracking-[0.3em] uppercase text-accent-light before:content-[''] before:block before:w-8 before:h-[1px] before:bg-accent-light/30;
   }
  /* Mobile Menu Icon Animation */
 #navToggle span:first-child.is-active {
@@ -153,7 +153,7 @@
   }
 
   .service-card-icon-pill {
-    @apply absolute -top-8 left-10 w-16 h-16 lg:w-20 lg:h-20 bg-main rounded-2xl flex items-center justify-center text-brand-lime transition-all duration-500;
+    @apply absolute -top-8 left-10 w-16 h-16 lg:w-20 lg:h-20 bg-main rounded-2xl flex items-center justify-center text-white transition-all duration-500;
     box-shadow: 0 10px 25px rgba(26,26,26,0.2);
   }
 
@@ -166,11 +166,11 @@
   }
 
   .service-card-desc {
-    @apply text-muted text-base lg:text-lg leading-relaxed font-medium;
+    @apply text-muted text-base lg:text-lg leading-relaxed font-normal;
   }
 
   .service-card-link {
-    @apply mt-auto flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-main border-b border-main/10 pb-1 hover:border-brand-lime transition-all duration-300;
+    @apply mt-auto flex items-center gap-2 text-xs font-normal uppercase text-main border-b border-main/10 pb-1 hover:border-white transition-all duration-300;
   }
 
   /* --- Vertical Methodology Timeline --- */
@@ -221,7 +221,7 @@
   }
 
   .scrolly-step-pill {
-    @apply px-4 py-1.5 bg-black rounded-full text-[10px] font-bold text-white uppercase tracking-widest;
+    @apply px-4 py-1.5 bg-black rounded-full text-[10px] font-normal text-white uppercase tracking-widest;
   }
 
   .scrolly-content-card h3 {
@@ -229,7 +229,7 @@
   }
 
   .scrolly-content-card p {
-    @apply text-muted text-lg lg:text-xl font-medium leading-relaxed max-w-md;
+    @apply text-muted text-lg lg:text-xl font-normal leading-relaxed max-w-md;
   }
 
   /* Timeline Badge */
@@ -267,7 +267,7 @@
   }
 
   .step-pill-glam {
-    @apply inline-flex items-center px-4 py-2 bg-main rounded-full text-[10px] font-bold uppercase tracking-widest text-white mb-8;
+    @apply inline-flex items-center px-4 py-2 bg-main rounded-full text-[10px] font-normal uppercase tracking-widest text-white mb-8;
   }
 
   /* Alternating Logic (Desktop) */
@@ -434,11 +434,11 @@
 
 /* Premium Footer Styles */
 .footer-bullet {
-  @apply w-1.5 h-1.5 bg-brand-lime rounded-full;
+  @apply w-1.5 h-1.5 bg-white/20 rounded-full;
 }
 
 .footer-section-title {
-  @apply flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 mb-8;
+  @apply flex items-center gap-3 text-[10px] font-normal uppercase tracking-[0.3em] text-white/40 mb-8;
 }
 
 .footer-arrow-link {
@@ -540,12 +540,12 @@
 }
 
 .glass-pill {
-  @apply px-3 py-1 rounded-full border border-white/10 text-[9px] font-bold uppercase tracking-widest text-white/60 transition-colors duration-300;
+  @apply px-3 py-1 rounded-full border border-white/10 text-[9px] font-normal uppercase tracking-widest text-white/60 transition-colors duration-300;
   background: rgba(255, 255, 255, 0.03);
 }
 
 .project-card-glam:hover .glass-pill {
-  @apply border-brand-lime/20 text-brand-lime bg-brand-lime/5;
+  @apply border-white/20 text-white bg-white/5;
 }
 
 .project-title-glam {
@@ -553,11 +553,11 @@
 }
 
 .project-card-glam:hover .project-title-glam {
-  @apply text-brand-lime;
+  @apply text-white;
 }
 
 .project-desc-glam {
-  @apply font-sans text-base text-white/40 leading-relaxed font-medium transition-colors duration-300;
+  @apply font-sans text-base text-white/40 leading-relaxed font-normal transition-colors duration-300;
 }
 
 .project-card-glam:hover .project-desc-glam {
@@ -565,7 +565,7 @@
 }
 
 .project-link-glam {
-  @apply mt-6 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-brand-lime transition-all duration-300;
+  @apply mt-6 flex items-center gap-2 text-[10px] font-normal uppercase text-white transition-all duration-300;
 }
 
 .project-card-glam:hover .project-link-glam {
@@ -680,7 +680,7 @@
 }
 
 .article-badge {
-  @apply inline-block px-4 py-1.5 rounded-full bg-brand-lime/10 border border-brand-lime/20 text-brand-lime text-[10px] font-bold uppercase tracking-widest mb-6;
+  @apply inline-block px-4 py-1.5 rounded-full bg-brand-lime/10 border border-brand-lime/20 text-brand-lime text-[10px] font-normal uppercase tracking-widest mb-6;
 }
 
 .article-title {
@@ -688,7 +688,7 @@
 }
 
 .article-meta {
-  @apply flex items-center gap-6 text-[11px] font-bold uppercase tracking-widest text-white/40 mb-16 border-b border-white/10 pb-10;
+  @apply flex items-center gap-6 text-[11px] font-normal uppercase text-white/40 mb-16 border-b border-white/10 pb-10;
 }
 
 .article-featured-img {
