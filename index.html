@@ -74,42 +74,36 @@
   </div>
 
   <!-- HERO SECTION -->
-  <header class="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-24 overflow-hidden bg-main" id="hero">
+  <header class="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center px-6 sm:px-12 lg:px-24 overflow-hidden bg-main" id="hero">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0">
         <img src="images/african-american-man-and-woman-sit-at-a-stylish-ho-2026-01-11-10-58-43-utc.jpg" alt="Meeting" class="w-full h-full object-cover">
         <div class="hero-overlay"></div>
-        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="absolute inset-0 bg-black/60"></div>
     </div>
 
-    <div class="relative z-10 max-w-[1440px] mx-auto w-full pt-20">
+    <div class="relative z-10 max-w-[1440px] mx-auto w-full pt-28 pb-12">
       <div class="max-w-4xl reveal">
-        <!-- Top Small Text (Badge) -->
-          <div class="flex flex-wrap reveal mb-8">
-            <span class="inline-flex items-center px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white/50 text-[9px] sm:text-[10px] font-normal uppercase text-center">
-              12+ projets livrés • 100% de satisfaction • Accompagnement sur mesure
-            </span>
-          </div>
         
         <!-- Headline -->
-        <h1 class="font-sans text-3xl sm:text-5xl lg:text-[clamp(2.25rem,6vw,4.5rem)] leading-[1.1] lg:leading-[0.95] font-extrabold tracking-tight text-white mb-10 lg:mb-14">
-          Nous concevons, développons <br class="hidden lg:block">
-          et faisons grandir les <br class="hidden lg:block">
+        <h1 class="font-sans text-4xl sm:text-6xl lg:text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.1] lg:leading-[1.05] font-extrabold tracking-tight text-white mb-8 lg:mb-10">
+          Nous concevons, développons <br class="hidden sm:block">
+          et faisons grandir les <br class="hidden sm:block">
           produits digitaux.
         </h1>
         
         <!-- Subtext -->
-        <p class="text-white/70 text-lg sm:text-xl lg:text-2xl leading-relaxed mb-12 lg:mb-20 max-w-2xl">
+        <p class="text-white/70 text-lg sm:text-xl lg:text-2xl leading-relaxed mb-10 lg:mb-12 max-w-2xl">
             SAGANA accompagne les entreprises ambitieuses avec une approche alliant design, technologie et croissance.
         </p>
         
         <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6">
-          <a href="mailto:contact@sagana-agency.com" class="btn-brand-lime px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg group w-full sm:w-fit !text-main">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+          <a href="mailto:contact@sagana-agency.com" class="btn-brand-lime px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg group w-full sm:w-auto !text-main text-center">
             Prendre rendez-vous
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="ml-3 stroke-main stroke-2 group-hover:translate-x-2 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="inline-block ml-3 stroke-main stroke-2 group-hover:translate-x-2 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="#testimonials" class="px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg font-bold text-white border border-white/20 rounded-full hover:bg-white/10 transition-all w-full sm:w-fit text-center">
+          <a href="#testimonials" class="px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg font-bold text-white border border-white/20 rounded-full hover:bg-white/10 transition-all w-full sm:w-auto text-center">
             Voir nos réalisations
           </a>
         </div>
@@ -598,27 +592,11 @@
       </div>
 
       <!-- Projects Grid -->
-      <div class="showcase-grid-content">
+      <!-- Projects Grid -->
+      <div class="max-w-3xl mx-auto">
         
-        <!-- Project 1: Sport AI -->
-        <a href="https://www.behance.net/gallery/232665713/Sport-Advisor-IA-dAnalyse-Sportive" target="_blank" rel="noopener noreferrer" class="project-card-glam reveal group">
-          <div class="project-image-container">
-            <img src="portfolio/advisor.webp" alt="Sport Advisor IA platform">
-          </div>
-          <div class="project-tag-container">
-            <span class="glass-pill">Big Data</span>
-            <span class="glass-pill">IA Analytics</span>
-          </div>
-          <h3 class="project-title-glam">Sport AI</h3>
-          <p class="project-desc-glam">Plateforme d'analyse prédictive haute performance utilisant l'IA pour l'optimisation des performances sportives.</p>
-          <div class="project-link-glam">
-            Voir le projet
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </div>
-        </a>
-
-        <!-- Project 2: EasyManaging -->
-        <a href="https://easymanagingg.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-card-glam reveal reveal-delay-1 group">
+        <!-- Project: EasyManaging -->
+        <a href="https://easymanagingg.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-card-glam reveal group">
           <div class="project-image-container">
             <img src="portfolio/easymanaging.png" alt="EasyManaging SaaS Dashboard">
           </div>
@@ -795,7 +773,7 @@
         </div>
 
         <!-- 2. CONTACT INFO SECTION -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 py-24 mt-12 border-t border-white/5 reveal reveal-delay-1">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 py-24 mt-12 border-t border-white/5 reveal reveal-delay-1">
           <div class="space-y-6">
             <div class="footer-section-title">
               <div class="footer-bullet"></div> TÉLÉPHONE
@@ -803,16 +781,6 @@
             <div class="space-y-2">
               <p class="text-white hover:text-brand-lime transition-colors font-medium">+229 01 54 92 18 01</p>
               <p class="text-white/60 text-sm italic">Disponible du lundi au vendredi.</p>
-            </div>
-          </div>
-
-          <div class="space-y-6">
-            <div class="footer-section-title">
-              <div class="footer-bullet"></div> WHATSAPP
-            </div>
-            <div class="space-y-2">
-              <a href="https://wa.me/2290160359022" target="_blank" class="text-white hover:text-brand-lime transition-colors font-medium">+229 01 60 35 90 22</a>
-              <p class="text-white/60 text-sm italic">Réponse rapide garantie.</p>
             </div>
           </div>
 
@@ -861,8 +829,7 @@
            <div class="font-sans font-black text-2xl tracking-tighter text-white">SAGANA.</div>
            <div class="text-[10px] font-bold uppercase tracking-[0.2em]">© 2026 SAGANA LIMITED — TOUS DROITS RÉSERVÉS</div>
            <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] opacity-60">
-              CONÇU PAR <span class="text-brand-lime">SAGANA</span> — 
-              <a href="https://www.truvox.studio/" target="_blank" class="hover:text-brand-lime transition-colors">SITE BY TRUVOX STUDIO</a>
+              CONÇU PAR <span class="text-brand-lime">SAGANA</span>
            </div>
         </div>
       </div>
